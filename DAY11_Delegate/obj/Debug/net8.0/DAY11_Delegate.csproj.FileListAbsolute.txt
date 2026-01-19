@@ -1,0 +1,15 @@
+C:\LPU_Capgemini\DAY11_Delegate\bin\Debug\net8.0\DAY11_Delegate.exe
+C:\LPU_Capgemini\DAY11_Delegate\bin\Debug\net8.0\DAY11_Delegate.deps.json
+C:\LPU_Capgemini\DAY11_Delegate\bin\Debug\net8.0\DAY11_Delegate.runtimeconfig.json
+C:\LPU_Capgemini\DAY11_Delegate\bin\Debug\net8.0\DAY11_Delegate.dll
+C:\LPU_Capgemini\DAY11_Delegate\bin\Debug\net8.0\DAY11_Delegate.pdb
+C:\LPU_Capgemini\DAY11_Delegate\obj\Debug\net8.0\DAY11_Delegate.GeneratedMSBuildEditorConfig.editorconfig
+C:\LPU_Capgemini\DAY11_Delegate\obj\Debug\net8.0\DAY11_Delegate.AssemblyInfoInputs.cache
+C:\LPU_Capgemini\DAY11_Delegate\obj\Debug\net8.0\DAY11_Delegate.AssemblyInfo.cs
+C:\LPU_Capgemini\DAY11_Delegate\obj\Debug\net8.0\DAY11_Delegate.csproj.CoreCompileInputs.cache
+C:\LPU_Capgemini\DAY11_Delegate\obj\Debug\net8.0\DAY11_Delegate.sourcelink.json
+C:\LPU_Capgemini\DAY11_Delegate\obj\Debug\net8.0\DAY11_Delegate.dll
+C:\LPU_Capgemini\DAY11_Delegate\obj\Debug\net8.0\refint\DAY11_Delegate.dll
+C:\LPU_Capgemini\DAY11_Delegate\obj\Debug\net8.0\DAY11_Delegate.pdb
+C:\LPU_Capgemini\DAY11_Delegate\obj\Debug\net8.0\DAY11_Delegate.genruntimeconfig.cache
+C:\LPU_Capgemini\DAY11_Delegate\obj\Debug\net8.0\ref\DAY11_Delegate.dll

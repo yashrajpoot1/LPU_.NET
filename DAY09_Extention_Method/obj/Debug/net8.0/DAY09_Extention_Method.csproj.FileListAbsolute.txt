@@ -1,0 +1,15 @@
+C:\LPU_Capgemini\DAY09_Extention_Method\bin\Debug\net8.0\DAY09_Extention_Method.exe
+C:\LPU_Capgemini\DAY09_Extention_Method\bin\Debug\net8.0\DAY09_Extention_Method.deps.json
+C:\LPU_Capgemini\DAY09_Extention_Method\bin\Debug\net8.0\DAY09_Extention_Method.runtimeconfig.json
+C:\LPU_Capgemini\DAY09_Extention_Method\bin\Debug\net8.0\DAY09_Extention_Method.dll
+C:\LPU_Capgemini\DAY09_Extention_Method\bin\Debug\net8.0\DAY09_Extention_Method.pdb
+C:\LPU_Capgemini\DAY09_Extention_Method\obj\Debug\net8.0\DAY09_Extention_Method.GeneratedMSBuildEditorConfig.editorconfig
+C:\LPU_Capgemini\DAY09_Extention_Method\obj\Debug\net8.0\DAY09_Extention_Method.AssemblyInfoInputs.cache
+C:\LPU_Capgemini\DAY09_Extention_Method\obj\Debug\net8.0\DAY09_Extention_Method.AssemblyInfo.cs
+C:\LPU_Capgemini\DAY09_Extention_Method\obj\Debug\net8.0\DAY09_Extention_Method.csproj.CoreCompileInputs.cache
+C:\LPU_Capgemini\DAY09_Extention_Method\obj\Debug\net8.0\DAY09_Extention_Method.sourcelink.json
+C:\LPU_Capgemini\DAY09_Extention_Method\obj\Debug\net8.0\DAY09_Extention_Method.dll
+C:\LPU_Capgemini\DAY09_Extention_Method\obj\Debug\net8.0\refint\DAY09_Extention_Method.dll
+C:\LPU_Capgemini\DAY09_Extention_Method\obj\Debug\net8.0\DAY09_Extention_Method.pdb
+C:\LPU_Capgemini\DAY09_Extention_Method\obj\Debug\net8.0\DAY09_Extention_Method.genruntimeconfig.cache
+C:\LPU_Capgemini\DAY09_Extention_Method\obj\Debug\net8.0\ref\DAY09_Extention_Method.dll

@@ -1,0 +1,15 @@
+C:\LPU_Capgemini\DAY03_OOPs\obj\Debug\net8.0\DAY03_OOPs.GeneratedMSBuildEditorConfig.editorconfig
+C:\LPU_Capgemini\DAY03_OOPs\obj\Debug\net8.0\DAY03_OOPs.AssemblyInfoInputs.cache
+C:\LPU_Capgemini\DAY03_OOPs\obj\Debug\net8.0\DAY03_OOPs.AssemblyInfo.cs
+C:\LPU_Capgemini\DAY03_OOPs\obj\Debug\net8.0\DAY03_OOPs.csproj.CoreCompileInputs.cache
+C:\LPU_Capgemini\DAY03_OOPs\obj\Debug\net8.0\DAY03_OOPs.sourcelink.json
+C:\LPU_Capgemini\DAY03_OOPs\bin\Debug\net8.0\DAY03_OOPs.exe
+C:\LPU_Capgemini\DAY03_OOPs\bin\Debug\net8.0\DAY03_OOPs.deps.json
+C:\LPU_Capgemini\DAY03_OOPs\bin\Debug\net8.0\DAY03_OOPs.runtimeconfig.json
+C:\LPU_Capgemini\DAY03_OOPs\bin\Debug\net8.0\DAY03_OOPs.dll
+C:\LPU_Capgemini\DAY03_OOPs\bin\Debug\net8.0\DAY03_OOPs.pdb
+C:\LPU_Capgemini\DAY03_OOPs\obj\Debug\net8.0\DAY03_OOPs.dll
+C:\LPU_Capgemini\DAY03_OOPs\obj\Debug\net8.0\refint\DAY03_OOPs.dll
+C:\LPU_Capgemini\DAY03_OOPs\obj\Debug\net8.0\DAY03_OOPs.pdb
+C:\LPU_Capgemini\DAY03_OOPs\obj\Debug\net8.0\DAY03_OOPs.genruntimeconfig.cache
+C:\LPU_Capgemini\DAY03_OOPs\obj\Debug\net8.0\ref\DAY03_OOPs.dll

@@ -1,0 +1,15 @@
+C:\LPU_Capgemini\DAY06_OOPs_Interface\bin\Debug\net8.0\DAY06_OOPs_Interface.exe
+C:\LPU_Capgemini\DAY06_OOPs_Interface\bin\Debug\net8.0\DAY06_OOPs_Interface.deps.json
+C:\LPU_Capgemini\DAY06_OOPs_Interface\bin\Debug\net8.0\DAY06_OOPs_Interface.runtimeconfig.json
+C:\LPU_Capgemini\DAY06_OOPs_Interface\bin\Debug\net8.0\DAY06_OOPs_Interface.dll
+C:\LPU_Capgemini\DAY06_OOPs_Interface\bin\Debug\net8.0\DAY06_OOPs_Interface.pdb
+C:\LPU_Capgemini\DAY06_OOPs_Interface\obj\Debug\net8.0\DAY06_OOPs_Interface.GeneratedMSBuildEditorConfig.editorconfig
+C:\LPU_Capgemini\DAY06_OOPs_Interface\obj\Debug\net8.0\DAY06_OOPs_Interface.AssemblyInfoInputs.cache
+C:\LPU_Capgemini\DAY06_OOPs_Interface\obj\Debug\net8.0\DAY06_OOPs_Interface.AssemblyInfo.cs
+C:\LPU_Capgemini\DAY06_OOPs_Interface\obj\Debug\net8.0\DAY06_OOPs_Interface.csproj.CoreCompileInputs.cache
+C:\LPU_Capgemini\DAY06_OOPs_Interface\obj\Debug\net8.0\DAY06_OOPs_Interface.sourcelink.json
+C:\LPU_Capgemini\DAY06_OOPs_Interface\obj\Debug\net8.0\DAY06_OOPs_Interface.dll
+C:\LPU_Capgemini\DAY06_OOPs_Interface\obj\Debug\net8.0\refint\DAY06_OOPs_Interface.dll
+C:\LPU_Capgemini\DAY06_OOPs_Interface\obj\Debug\net8.0\DAY06_OOPs_Interface.pdb
+C:\LPU_Capgemini\DAY06_OOPs_Interface\obj\Debug\net8.0\DAY06_OOPs_Interface.genruntimeconfig.cache
+C:\LPU_Capgemini\DAY06_OOPs_Interface\obj\Debug\net8.0\ref\DAY06_OOPs_Interface.dll

@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "DAY08_Indexer/1.0.0": {
+        "runtime": {
+          "DAY08_Indexer.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DAY08_Indexer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

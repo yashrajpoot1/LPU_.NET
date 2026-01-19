@@ -1,0 +1,15 @@
+C:\LPU_Capgemini\DAY01_C#_Fundamentals\bin\Debug\net8.0\DAY01_Fundamentals.exe
+C:\LPU_Capgemini\DAY01_C#_Fundamentals\bin\Debug\net8.0\DAY01_Fundamentals.deps.json
+C:\LPU_Capgemini\DAY01_C#_Fundamentals\bin\Debug\net8.0\DAY01_Fundamentals.runtimeconfig.json
+C:\LPU_Capgemini\DAY01_C#_Fundamentals\bin\Debug\net8.0\DAY01_Fundamentals.dll
+C:\LPU_Capgemini\DAY01_C#_Fundamentals\bin\Debug\net8.0\DAY01_Fundamentals.pdb
+C:\LPU_Capgemini\DAY01_C#_Fundamentals\obj\Debug\net8.0\DAY01_Fundamentals.GeneratedMSBuildEditorConfig.editorconfig
+C:\LPU_Capgemini\DAY01_C#_Fundamentals\obj\Debug\net8.0\DAY01_Fundamentals.AssemblyInfoInputs.cache
+C:\LPU_Capgemini\DAY01_C#_Fundamentals\obj\Debug\net8.0\DAY01_Fundamentals.AssemblyInfo.cs
+C:\LPU_Capgemini\DAY01_C#_Fundamentals\obj\Debug\net8.0\DAY01_Fundamentals.csproj.CoreCompileInputs.cache
+C:\LPU_Capgemini\DAY01_C#_Fundamentals\obj\Debug\net8.0\DAY01_Fundamentals.sourcelink.json
+C:\LPU_Capgemini\DAY01_C#_Fundamentals\obj\Debug\net8.0\DAY01_Fundamentals.dll
+C:\LPU_Capgemini\DAY01_C#_Fundamentals\obj\Debug\net8.0\refint\DAY01_Fundamentals.dll
+C:\LPU_Capgemini\DAY01_C#_Fundamentals\obj\Debug\net8.0\DAY01_Fundamentals.pdb
+C:\LPU_Capgemini\DAY01_C#_Fundamentals\obj\Debug\net8.0\DAY01_Fundamentals.genruntimeconfig.cache
+C:\LPU_Capgemini\DAY01_C#_Fundamentals\obj\Debug\net8.0\ref\DAY01_Fundamentals.dll

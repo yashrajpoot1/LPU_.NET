@@ -1,0 +1,15 @@
+C:\LPU_Capgemini\DAY10_Serialization\bin\Debug\net8.0\DAY10_Serialization.exe
+C:\LPU_Capgemini\DAY10_Serialization\bin\Debug\net8.0\DAY10_Serialization.deps.json
+C:\LPU_Capgemini\DAY10_Serialization\bin\Debug\net8.0\DAY10_Serialization.runtimeconfig.json
+C:\LPU_Capgemini\DAY10_Serialization\bin\Debug\net8.0\DAY10_Serialization.dll
+C:\LPU_Capgemini\DAY10_Serialization\bin\Debug\net8.0\DAY10_Serialization.pdb
+C:\LPU_Capgemini\DAY10_Serialization\obj\Debug\net8.0\DAY10_Serialization.GeneratedMSBuildEditorConfig.editorconfig
+C:\LPU_Capgemini\DAY10_Serialization\obj\Debug\net8.0\DAY10_Serialization.AssemblyInfoInputs.cache
+C:\LPU_Capgemini\DAY10_Serialization\obj\Debug\net8.0\DAY10_Serialization.AssemblyInfo.cs
+C:\LPU_Capgemini\DAY10_Serialization\obj\Debug\net8.0\DAY10_Serialization.csproj.CoreCompileInputs.cache
+C:\LPU_Capgemini\DAY10_Serialization\obj\Debug\net8.0\DAY10_Serialization.sourcelink.json
+C:\LPU_Capgemini\DAY10_Serialization\obj\Debug\net8.0\DAY10_Serialization.dll
+C:\LPU_Capgemini\DAY10_Serialization\obj\Debug\net8.0\refint\DAY10_Serialization.dll
+C:\LPU_Capgemini\DAY10_Serialization\obj\Debug\net8.0\DAY10_Serialization.pdb
+C:\LPU_Capgemini\DAY10_Serialization\obj\Debug\net8.0\DAY10_Serialization.genruntimeconfig.cache
+C:\LPU_Capgemini\DAY10_Serialization\obj\Debug\net8.0\ref\DAY10_Serialization.dll

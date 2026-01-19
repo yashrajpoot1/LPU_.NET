@@ -1,0 +1,15 @@
+C:\LPU_Capgemini\DAY08_Indexer\bin\Debug\net8.0\DAY08_Indexer.exe
+C:\LPU_Capgemini\DAY08_Indexer\bin\Debug\net8.0\DAY08_Indexer.deps.json
+C:\LPU_Capgemini\DAY08_Indexer\bin\Debug\net8.0\DAY08_Indexer.runtimeconfig.json
+C:\LPU_Capgemini\DAY08_Indexer\bin\Debug\net8.0\DAY08_Indexer.dll
+C:\LPU_Capgemini\DAY08_Indexer\bin\Debug\net8.0\DAY08_Indexer.pdb
+C:\LPU_Capgemini\DAY08_Indexer\obj\Debug\net8.0\DAY08_Indexer.GeneratedMSBuildEditorConfig.editorconfig
+C:\LPU_Capgemini\DAY08_Indexer\obj\Debug\net8.0\DAY08_Indexer.AssemblyInfoInputs.cache
+C:\LPU_Capgemini\DAY08_Indexer\obj\Debug\net8.0\DAY08_Indexer.AssemblyInfo.cs
+C:\LPU_Capgemini\DAY08_Indexer\obj\Debug\net8.0\DAY08_Indexer.csproj.CoreCompileInputs.cache
+C:\LPU_Capgemini\DAY08_Indexer\obj\Debug\net8.0\DAY08_Indexer.sourcelink.json
+C:\LPU_Capgemini\DAY08_Indexer\obj\Debug\net8.0\DAY08_Indexer.dll
+C:\LPU_Capgemini\DAY08_Indexer\obj\Debug\net8.0\refint\DAY08_Indexer.dll
+C:\LPU_Capgemini\DAY08_Indexer\obj\Debug\net8.0\DAY08_Indexer.pdb
+C:\LPU_Capgemini\DAY08_Indexer\obj\Debug\net8.0\DAY08_Indexer.genruntimeconfig.cache
+C:\LPU_Capgemini\DAY08_Indexer\obj\Debug\net8.0\ref\DAY08_Indexer.dll

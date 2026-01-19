@@ -1,0 +1,15 @@
+C:\LPU_Capgemini\DAY04_OOPs\bin\Debug\net8.0\DAY04_OOPs.exe
+C:\LPU_Capgemini\DAY04_OOPs\bin\Debug\net8.0\DAY04_OOPs.deps.json
+C:\LPU_Capgemini\DAY04_OOPs\bin\Debug\net8.0\DAY04_OOPs.runtimeconfig.json
+C:\LPU_Capgemini\DAY04_OOPs\bin\Debug\net8.0\DAY04_OOPs.dll
+C:\LPU_Capgemini\DAY04_OOPs\bin\Debug\net8.0\DAY04_OOPs.pdb
+C:\LPU_Capgemini\DAY04_OOPs\obj\Debug\net8.0\DAY04_OOPs.GeneratedMSBuildEditorConfig.editorconfig
+C:\LPU_Capgemini\DAY04_OOPs\obj\Debug\net8.0\DAY04_OOPs.AssemblyInfoInputs.cache
+C:\LPU_Capgemini\DAY04_OOPs\obj\Debug\net8.0\DAY04_OOPs.AssemblyInfo.cs
+C:\LPU_Capgemini\DAY04_OOPs\obj\Debug\net8.0\DAY04_OOPs.csproj.CoreCompileInputs.cache
+C:\LPU_Capgemini\DAY04_OOPs\obj\Debug\net8.0\DAY04_OOPs.sourcelink.json
+C:\LPU_Capgemini\DAY04_OOPs\obj\Debug\net8.0\DAY04_OOPs.dll
+C:\LPU_Capgemini\DAY04_OOPs\obj\Debug\net8.0\refint\DAY04_OOPs.dll
+C:\LPU_Capgemini\DAY04_OOPs\obj\Debug\net8.0\DAY04_OOPs.pdb
+C:\LPU_Capgemini\DAY04_OOPs\obj\Debug\net8.0\DAY04_OOPs.genruntimeconfig.cache
+C:\LPU_Capgemini\DAY04_OOPs\obj\Debug\net8.0\ref\DAY04_OOPs.dll

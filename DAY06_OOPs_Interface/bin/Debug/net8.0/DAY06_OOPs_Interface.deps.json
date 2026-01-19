@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "DAY06_OOPs_Interface/1.0.0": {
+        "runtime": {
+          "DAY06_OOPs_Interface.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DAY06_OOPs_Interface/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

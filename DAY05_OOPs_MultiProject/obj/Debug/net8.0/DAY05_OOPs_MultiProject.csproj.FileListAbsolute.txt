@@ -1,0 +1,15 @@
+C:\LPU_Capgemini\DAY05_OOPs_MultiProject\bin\Debug\net8.0\DAY05_OOPs_MultiProject.exe
+C:\LPU_Capgemini\DAY05_OOPs_MultiProject\bin\Debug\net8.0\DAY05_OOPs_MultiProject.deps.json
+C:\LPU_Capgemini\DAY05_OOPs_MultiProject\bin\Debug\net8.0\DAY05_OOPs_MultiProject.runtimeconfig.json
+C:\LPU_Capgemini\DAY05_OOPs_MultiProject\bin\Debug\net8.0\DAY05_OOPs_MultiProject.dll
+C:\LPU_Capgemini\DAY05_OOPs_MultiProject\bin\Debug\net8.0\DAY05_OOPs_MultiProject.pdb
+C:\LPU_Capgemini\DAY05_OOPs_MultiProject\obj\Debug\net8.0\DAY05_OOPs_MultiProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\LPU_Capgemini\DAY05_OOPs_MultiProject\obj\Debug\net8.0\DAY05_OOPs_MultiProject.AssemblyInfoInputs.cache
+C:\LPU_Capgemini\DAY05_OOPs_MultiProject\obj\Debug\net8.0\DAY05_OOPs_MultiProject.AssemblyInfo.cs
+C:\LPU_Capgemini\DAY05_OOPs_MultiProject\obj\Debug\net8.0\DAY05_OOPs_MultiProject.csproj.CoreCompileInputs.cache
+C:\LPU_Capgemini\DAY05_OOPs_MultiProject\obj\Debug\net8.0\DAY05_OOPs_MultiProject.sourcelink.json
+C:\LPU_Capgemini\DAY05_OOPs_MultiProject\obj\Debug\net8.0\DAY05_OOPs_MultiProject.dll
+C:\LPU_Capgemini\DAY05_OOPs_MultiProject\obj\Debug\net8.0\refint\DAY05_OOPs_MultiProject.dll
+C:\LPU_Capgemini\DAY05_OOPs_MultiProject\obj\Debug\net8.0\DAY05_OOPs_MultiProject.pdb
+C:\LPU_Capgemini\DAY05_OOPs_MultiProject\obj\Debug\net8.0\DAY05_OOPs_MultiProject.genruntimeconfig.cache
+C:\LPU_Capgemini\DAY05_OOPs_MultiProject\obj\Debug\net8.0\ref\DAY05_OOPs_MultiProject.dll

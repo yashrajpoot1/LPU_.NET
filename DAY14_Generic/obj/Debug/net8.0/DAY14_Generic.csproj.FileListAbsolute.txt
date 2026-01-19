@@ -1,0 +1,15 @@
+C:\LPU_Capgemini\DAY14_Generic\bin\Debug\net8.0\DAY14_Generic.exe
+C:\LPU_Capgemini\DAY14_Generic\bin\Debug\net8.0\DAY14_Generic.deps.json
+C:\LPU_Capgemini\DAY14_Generic\bin\Debug\net8.0\DAY14_Generic.runtimeconfig.json
+C:\LPU_Capgemini\DAY14_Generic\bin\Debug\net8.0\DAY14_Generic.dll
+C:\LPU_Capgemini\DAY14_Generic\bin\Debug\net8.0\DAY14_Generic.pdb
+C:\LPU_Capgemini\DAY14_Generic\obj\Debug\net8.0\DAY14_Generic.GeneratedMSBuildEditorConfig.editorconfig
+C:\LPU_Capgemini\DAY14_Generic\obj\Debug\net8.0\DAY14_Generic.AssemblyInfoInputs.cache
+C:\LPU_Capgemini\DAY14_Generic\obj\Debug\net8.0\DAY14_Generic.AssemblyInfo.cs
+C:\LPU_Capgemini\DAY14_Generic\obj\Debug\net8.0\DAY14_Generic.csproj.CoreCompileInputs.cache
+C:\LPU_Capgemini\DAY14_Generic\obj\Debug\net8.0\DAY14_Generic.sourcelink.json
+C:\LPU_Capgemini\DAY14_Generic\obj\Debug\net8.0\DAY14_Generic.dll
+C:\LPU_Capgemini\DAY14_Generic\obj\Debug\net8.0\refint\DAY14_Generic.dll
+C:\LPU_Capgemini\DAY14_Generic\obj\Debug\net8.0\DAY14_Generic.pdb
+C:\LPU_Capgemini\DAY14_Generic\obj\Debug\net8.0\DAY14_Generic.genruntimeconfig.cache
+C:\LPU_Capgemini\DAY14_Generic\obj\Debug\net8.0\ref\DAY14_Generic.dll

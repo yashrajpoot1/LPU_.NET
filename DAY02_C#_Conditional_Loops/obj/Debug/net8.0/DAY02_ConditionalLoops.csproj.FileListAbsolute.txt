@@ -1,0 +1,15 @@
+C:\LPU_Capgemini\DAY02_C#_Conditional_Loops\bin\Debug\net8.0\DAY02_ConditionalLoops.exe
+C:\LPU_Capgemini\DAY02_C#_Conditional_Loops\bin\Debug\net8.0\DAY02_ConditionalLoops.deps.json
+C:\LPU_Capgemini\DAY02_C#_Conditional_Loops\bin\Debug\net8.0\DAY02_ConditionalLoops.runtimeconfig.json
+C:\LPU_Capgemini\DAY02_C#_Conditional_Loops\bin\Debug\net8.0\DAY02_ConditionalLoops.dll
+C:\LPU_Capgemini\DAY02_C#_Conditional_Loops\bin\Debug\net8.0\DAY02_ConditionalLoops.pdb
+C:\LPU_Capgemini\DAY02_C#_Conditional_Loops\obj\Debug\net8.0\DAY02_ConditionalLoops.GeneratedMSBuildEditorConfig.editorconfig
+C:\LPU_Capgemini\DAY02_C#_Conditional_Loops\obj\Debug\net8.0\DAY02_ConditionalLoops.AssemblyInfoInputs.cache
+C:\LPU_Capgemini\DAY02_C#_Conditional_Loops\obj\Debug\net8.0\DAY02_ConditionalLoops.AssemblyInfo.cs
+C:\LPU_Capgemini\DAY02_C#_Conditional_Loops\obj\Debug\net8.0\DAY02_ConditionalLoops.csproj.CoreCompileInputs.cache
+C:\LPU_Capgemini\DAY02_C#_Conditional_Loops\obj\Debug\net8.0\DAY02_ConditionalLoops.sourcelink.json
+C:\LPU_Capgemini\DAY02_C#_Conditional_Loops\obj\Debug\net8.0\DAY02_ConditionalLoops.dll
+C:\LPU_Capgemini\DAY02_C#_Conditional_Loops\obj\Debug\net8.0\refint\DAY02_ConditionalLoops.dll
+C:\LPU_Capgemini\DAY02_C#_Conditional_Loops\obj\Debug\net8.0\DAY02_ConditionalLoops.pdb
+C:\LPU_Capgemini\DAY02_C#_Conditional_Loops\obj\Debug\net8.0\DAY02_ConditionalLoops.genruntimeconfig.cache
+C:\LPU_Capgemini\DAY02_C#_Conditional_Loops\obj\Debug\net8.0\ref\DAY02_ConditionalLoops.dll

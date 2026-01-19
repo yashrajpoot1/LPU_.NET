@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "DAY05_OOPs_MultiProject/1.0.0": {
+        "runtime": {
+          "DAY05_OOPs_MultiProject.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DAY05_OOPs_MultiProject/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
