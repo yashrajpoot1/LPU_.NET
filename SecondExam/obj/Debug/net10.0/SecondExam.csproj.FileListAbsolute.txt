@@ -1,0 +1,15 @@
+F:\DotNetP\SecondExam\bin\Debug\net10.0\SecondExam.exe
+F:\DotNetP\SecondExam\bin\Debug\net10.0\SecondExam.deps.json
+F:\DotNetP\SecondExam\bin\Debug\net10.0\SecondExam.runtimeconfig.json
+F:\DotNetP\SecondExam\bin\Debug\net10.0\SecondExam.dll
+F:\DotNetP\SecondExam\bin\Debug\net10.0\SecondExam.pdb
+F:\DotNetP\SecondExam\obj\Debug\net10.0\SecondExam.GeneratedMSBuildEditorConfig.editorconfig
+F:\DotNetP\SecondExam\obj\Debug\net10.0\SecondExam.AssemblyInfoInputs.cache
+F:\DotNetP\SecondExam\obj\Debug\net10.0\SecondExam.AssemblyInfo.cs
+F:\DotNetP\SecondExam\obj\Debug\net10.0\SecondExam.csproj.CoreCompileInputs.cache
+F:\DotNetP\SecondExam\obj\Debug\net10.0\SecondExam.sourcelink.json
+F:\DotNetP\SecondExam\obj\Debug\net10.0\SecondExam.dll
+F:\DotNetP\SecondExam\obj\Debug\net10.0\refint\SecondExam.dll
+F:\DotNetP\SecondExam\obj\Debug\net10.0\SecondExam.pdb
+F:\DotNetP\SecondExam\obj\Debug\net10.0\SecondExam.genruntimeconfig.cache
+F:\DotNetP\SecondExam\obj\Debug\net10.0\ref\SecondExam.dll

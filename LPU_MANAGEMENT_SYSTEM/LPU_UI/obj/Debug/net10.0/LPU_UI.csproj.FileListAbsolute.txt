@@ -1,0 +1,15 @@
+F:\DotNetP\VS2026\LPU_MANAGEMENT_SYSTEM\LPU_UI\bin\Debug\net10.0\LPU_UI.exe
+F:\DotNetP\VS2026\LPU_MANAGEMENT_SYSTEM\LPU_UI\bin\Debug\net10.0\LPU_UI.deps.json
+F:\DotNetP\VS2026\LPU_MANAGEMENT_SYSTEM\LPU_UI\bin\Debug\net10.0\LPU_UI.runtimeconfig.json
+F:\DotNetP\VS2026\LPU_MANAGEMENT_SYSTEM\LPU_UI\bin\Debug\net10.0\LPU_UI.dll
+F:\DotNetP\VS2026\LPU_MANAGEMENT_SYSTEM\LPU_UI\bin\Debug\net10.0\LPU_UI.pdb
+F:\DotNetP\VS2026\LPU_MANAGEMENT_SYSTEM\LPU_UI\obj\Debug\net10.0\LPU_UI.GeneratedMSBuildEditorConfig.editorconfig
+F:\DotNetP\VS2026\LPU_MANAGEMENT_SYSTEM\LPU_UI\obj\Debug\net10.0\LPU_UI.AssemblyInfoInputs.cache
+F:\DotNetP\VS2026\LPU_MANAGEMENT_SYSTEM\LPU_UI\obj\Debug\net10.0\LPU_UI.AssemblyInfo.cs
+F:\DotNetP\VS2026\LPU_MANAGEMENT_SYSTEM\LPU_UI\obj\Debug\net10.0\LPU_UI.csproj.CoreCompileInputs.cache
+F:\DotNetP\VS2026\LPU_MANAGEMENT_SYSTEM\LPU_UI\obj\Debug\net10.0\LPU_UI.sourcelink.json
+F:\DotNetP\VS2026\LPU_MANAGEMENT_SYSTEM\LPU_UI\obj\Debug\net10.0\LPU_UI.dll
+F:\DotNetP\VS2026\LPU_MANAGEMENT_SYSTEM\LPU_UI\obj\Debug\net10.0\refint\LPU_UI.dll
+F:\DotNetP\VS2026\LPU_MANAGEMENT_SYSTEM\LPU_UI\obj\Debug\net10.0\LPU_UI.pdb
+F:\DotNetP\VS2026\LPU_MANAGEMENT_SYSTEM\LPU_UI\obj\Debug\net10.0\LPU_UI.genruntimeconfig.cache
+F:\DotNetP\VS2026\LPU_MANAGEMENT_SYSTEM\LPU_UI\obj\Debug\net10.0\ref\LPU_UI.dll

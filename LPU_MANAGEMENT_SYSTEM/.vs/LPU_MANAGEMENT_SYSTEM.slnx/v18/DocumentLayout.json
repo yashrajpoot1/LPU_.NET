@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "F:\\DotNetP\\VS2026\\LPU_MANAGEMENT_SYSTEM\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5352B91A-6E04-90B1-D9FC-1ADD574DD2BF}|LPU_BL\\LPU_BL.csproj|f:\\dotnetp\\vs2026\\lpu_management_system\\lpu_bl\\studentbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5352B91A-6E04-90B1-D9FC-1ADD574DD2BF}|LPU_BL\\LPU_BL.csproj|solutionrelative:lpu_bl\\studentbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABCCE68B-AD7D-4DF6-7ABB-D3AF64EFC98E}|LPU_EXCEPTION\\LPU_EXCEPTION.csproj|f:\\dotnetp\\vs2026\\lpu_management_system\\lpu_exception\\lpu_exception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABCCE68B-AD7D-4DF6-7ABB-D3AF64EFC98E}|LPU_EXCEPTION\\LPU_EXCEPTION.csproj|solutionrelative:lpu_exception\\lpu_exception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{74224216-1A78-F74D-CB29-2EA08A232833}|LPU_COMMON\\LPU_COMMON.csproj|f:\\dotnetp\\vs2026\\lpu_management_system\\lpu_common\\istudentcrud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{74224216-1A78-F74D-CB29-2EA08A232833}|LPU_COMMON\\LPU_COMMON.csproj|solutionrelative:lpu_common\\istudentcrud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18317590-9BAD-F9A4-5DDE-7BA01CBAC2FF}|LPU_DAL\\LPU_DAL.csproj|f:\\dotnetp\\vs2026\\lpu_management_system\\lpu_dal\\studentdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18317590-9BAD-F9A4-5DDE-7BA01CBAC2FF}|LPU_DAL\\LPU_DAL.csproj|solutionrelative:lpu_dal\\studentdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "StudentBl.cs",
+              "DocumentMoniker": "F:\\DotNetP\\VS2026\\LPU_MANAGEMENT_SYSTEM\\LPU_BL\\StudentBl.cs",
+              "RelativeDocumentMoniker": "LPU_BL\\StudentBl.cs",
+              "ToolTip": "F:\\DotNetP\\VS2026\\LPU_MANAGEMENT_SYSTEM\\LPU_BL\\StudentBl.cs",
+              "RelativeToolTip": "LPU_BL\\StudentBl.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-29T10:27:09.089Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Lpu_Exception.cs",
+              "DocumentMoniker": "F:\\DotNetP\\VS2026\\LPU_MANAGEMENT_SYSTEM\\LPU_EXCEPTION\\Lpu_Exception.cs",
+              "RelativeDocumentMoniker": "LPU_EXCEPTION\\Lpu_Exception.cs",
+              "ToolTip": "F:\\DotNetP\\VS2026\\LPU_MANAGEMENT_SYSTEM\\LPU_EXCEPTION\\Lpu_Exception.cs",
+              "RelativeToolTip": "LPU_EXCEPTION\\Lpu_Exception.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-29T10:21:12.433Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IStudentCRUD.cs",
+              "DocumentMoniker": "F:\\DotNetP\\VS2026\\LPU_MANAGEMENT_SYSTEM\\LPU_COMMON\\IStudentCRUD.cs",
+              "RelativeDocumentMoniker": "LPU_COMMON\\IStudentCRUD.cs",
+              "ToolTip": "F:\\DotNetP\\VS2026\\LPU_MANAGEMENT_SYSTEM\\LPU_COMMON\\IStudentCRUD.cs",
+              "RelativeToolTip": "LPU_COMMON\\IStudentCRUD.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-29T09:56:53.746Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "StudentDAO.cs",
+              "DocumentMoniker": "F:\\DotNetP\\VS2026\\LPU_MANAGEMENT_SYSTEM\\LPU_DAL\\StudentDAO.cs",
+              "RelativeDocumentMoniker": "LPU_DAL\\StudentDAO.cs",
+              "ToolTip": "F:\\DotNetP\\VS2026\\LPU_MANAGEMENT_SYSTEM\\LPU_DAL\\StudentDAO.cs",
+              "RelativeToolTip": "LPU_DAL\\StudentDAO.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAgwDwAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-29T08:58:52.252Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

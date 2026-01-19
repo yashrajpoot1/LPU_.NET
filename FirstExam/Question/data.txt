@@ -1,0 +1,18 @@
+Name: Mahesh Singh
+Supersetid: 6901260
+
+
+###############
+
+For Running following files 
+problem1.cs
+problem2.cs
+
+first enter in Question folder 
+then run
+
+"dotnet run problem1.cs"
+"dotnet run problem2.cs"
+
+
+################

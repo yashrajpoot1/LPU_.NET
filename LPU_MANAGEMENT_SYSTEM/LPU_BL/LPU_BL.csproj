@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LPU_COMMON\LPU_COMMON.csproj" />
+    <ProjectReference Include="..\LPU_DAL\LPU_DAL.csproj" />
+    <ProjectReference Include="..\LPU_ENTITY\LPU_ENTITY.csproj" />
+    <ProjectReference Include="..\LPU_EXCEPTION\LPU_EXCEPTION.csproj" />
+  </ItemGroup>
+
+</Project>

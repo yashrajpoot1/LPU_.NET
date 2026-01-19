@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "LPU_ENTITY/1.0.0": {
+        "runtime": {
+          "LPU_ENTITY.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "LPU_ENTITY/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

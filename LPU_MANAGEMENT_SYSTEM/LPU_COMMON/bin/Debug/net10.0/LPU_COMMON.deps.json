@@ -1,0 +1,53 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "LPU_COMMON/1.0.0": {
+        "dependencies": {
+          "LPU_ENTITY": "1.0.0",
+          "LPU_EXCEPTION": "1.0.0"
+        },
+        "runtime": {
+          "LPU_COMMON.dll": {}
+        }
+      },
+      "LPU_ENTITY/1.0.0": {
+        "runtime": {
+          "LPU_ENTITY.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "LPU_EXCEPTION/1.0.0": {
+        "runtime": {
+          "LPU_EXCEPTION.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "LPU_COMMON/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LPU_ENTITY/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LPU_EXCEPTION/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

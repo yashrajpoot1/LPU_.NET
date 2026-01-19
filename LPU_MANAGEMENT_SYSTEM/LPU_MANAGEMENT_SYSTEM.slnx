@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="LPU_COMMON/LPU_COMMON.csproj" />
+<Project Path="LPU_ENTITY/LPU_ENTITY.csproj" />
+<Project Path="LPU_DAL/LPU_DAL.csproj" />
+<Project Path="LPU_EXCEPTION/LPU_EXCEPTION.csproj" />
+<Project Path="LPU_BL/LPU_BL.csproj" />
+<Project Path="LPU_UI/LPU_UI.csproj" />
+</Solution>
