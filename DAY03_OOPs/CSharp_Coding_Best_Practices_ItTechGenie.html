@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>C# Coding Best Practices (with Naming Conventions)</title>
+  <style>
+    :root{
+      --green:#04AA6D;
+      --dark:#1f2a37;
+      --bg:#ffffff;
+      --muted:#6b7280;
+      --border:#e5e7eb;
+      --codebg:#0b1020;
+      --codefg:#e5e7eb;
+      --note:#e7f3fe;
+      --warn:#fff4e5;
+      --ok:#eaf7ee;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      background:var(--bg);
+      color:#111827;
+      line-height:1.55;
+    }
+    a{color:var(--green); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .topbar{
+      background:var(--green);
+      color:white;
+      padding:14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .topbar .title{
+      font-weight:700;
+      font-size:18px;
+      letter-spacing:.2px;
+    }
+    .topbar .meta{
+      font-size:12px;
+      opacity:.95;
+      white-space:nowrap;
+    }
+    .layout{
+      display:flex;
+      min-height:calc(100vh - 52px);
+    }
+    .sidebar{
+      width:290px;
+      border-right:1px solid var(--border);
+      padding:16px 14px;
+      position:sticky;
+      top:0;
+      height:calc(100vh - 52px);
+      overflow:auto;
+      background:#fafafa;
+    }
+    .sidebar h2{
+      font-size:14px;
+      margin:0 0 10px;
+      color:#111827;
+    }
+    .toc a{
+      display:block;
+      padding:8px 10px;
+      border-radius:10px;
+      color:#111827;
+      font-size:14px;
+    }
+    .toc a:hover{
+      background:#f0fdf4;
+      text-decoration:none;
+    }
+    .content{
+      flex:1;
+      padding:22px 22px 80px;
+      max-width:1000px;
+    }
+    h1{font-size:30px; margin:6px 0 10px}
+    h2{font-size:22px; margin:28px 0 10px}
+    h3{font-size:18px; margin:18px 0 8px}
+    p{margin:8px 0}
+    .subtitle{color:var(--muted); margin-top:0}
+    .card{
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:16px;
+      background:white;
+      box-shadow:0 1px 0 rgba(0,0,0,.03);
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap:14px;
+    }
+    @media (max-width: 960px){
+      .layout{flex-direction:column}
+      .sidebar{
+        width:100%;
+        height:auto;
+        position:relative;
+        border-right:none;
+        border-bottom:1px solid var(--border);
+      }
+      .grid{grid-template-columns:1fr}
+      .content{padding:18px}
+    }
+    .note, .warn, .ok{
+      border-radius:14px;
+      padding:12px 14px;
+      margin:12px 0;
+      border:1px solid var(--border);
+    }
+    .note{background:var(--note)}
+    .warn{background:var(--warn)}
+    .ok{background:var(--ok)}
+    .label{
+      font-weight:700;
+      margin-right:6px;
+    }
+    .example{
+      border:1px solid var(--border);
+      border-radius:16px;
+      overflow:hidden;
+      margin:12px 0;
+    }
+    .example .exhdr{
+      padding:10px 14px;
+      background:#f9fafb;
+      border-bottom:1px solid var(--border);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      font-weight:700;
+      font-size:14px;
+    }
+    .example .try{
+      font-weight:600;
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      background:#ecfeff;
+      border:1px solid #cffafe;
+      color:#0f766e;
+      white-space:nowrap;
+    }
+    pre{
+      margin:0;
+      padding:14px;
+      overflow:auto;
+      background:var(--codebg);
+      color:var(--codefg);
+      font-size:13px;
+    }
+    code{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
+    table{
+      width:100%;
+      border-collapse:separate;
+      border-spacing:0;
+      overflow:hidden;
+      border:1px solid var(--border);
+      border-radius:16px;
+      margin:10px 0;
+      background:white;
+    }
+    th, td{
+      padding:10px 12px;
+      border-bottom:1px solid var(--border);
+      text-align:left;
+      vertical-align:top;
+      font-size:14px;
+    }
+    th{background:#f9fafb; font-weight:700}
+    tr:last-child td{border-bottom:none}
+    .pill{
+      display:inline-block;
+      padding:2px 10px;
+      border-radius:999px;
+      font-size:12px;
+      border:1px solid var(--border);
+      background:#fff;
+      color:#111827;
+      margin-right:6px;
+      margin-top:6px;
+    }
+    .footer{
+      margin-top:30px;
+      color:var(--muted);
+      font-size:12px;
+    }
+    .navbtns{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      margin-top:24px;
+    }
+    .btn{
+      display:inline-block;
+      padding:10px 14px;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background:white;
+      color:#111827;
+      font-weight:700;
+      font-size:14px;
+    }
+    .btn:hover{background:#f9fafb; text-decoration:none}
+    .btn.primary{
+      background:var(--green);
+      color:white;
+      border-color:rgba(255,255,255,.25);
+    }
+    .btn.primary:hover{background:#03935e}
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="title">C# Coding Best Practices (with Examples)</div>
+    <div class="meta">ItTechGenie • Updated: 19 Dec 2025</div>
+  </div>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <h2>On this page</h2>
+      <nav class="toc">
+        <a href="#intro">1. What are “best practices”?</a>
+        <a href="#naming">2. Naming Conventions (C# style)</a>
+        <a href="#project-structure">3. Project & Folder Structure</a>
+        <a href="#clean-code">4. Clean Code Rules</a>
+        <a href="#exceptions">5. Exceptions & Error Handling</a>
+        <a href="#async">6. Async/Await Best Practices</a>
+        <a href="#linq">7. LINQ & Collections</a>
+        <a href="#performance">8. Performance & Memory</a>
+        <a href="#security">9. Security & Safety</a>
+        <a href="#testing">10. Testing & Maintainability</a>
+        <a href="#checklist">11. Quick Checklist (Daily Use)</a>
+      </nav>
+      <div class="footer">
+        Tip: Open this page and jump to sections using the menu.
+      </div>
+    </aside>
+
+    <main class="content">
+      <header>
+        <h1 id="intro">C# Coding Best Practices</h1>
+        <p class="subtitle">A practical, real‑world guide for writing readable, maintainable, and professional C# code.</p>
+
+        <div class="card">
+          <p><strong>What you will learn:</strong> naming conventions, clean code habits, correct exception handling, async rules, LINQ best practices, performance basics, security hints, and a daily checklist.</p>
+          <p>
+            <span class="pill">Beginner-friendly</span>
+            <span class="pill">Real-world examples</span>
+            <span class="pill">Copy-paste ready code</span>
+          </p>
+        </div>
+      </header>
+
+      <section>
+        <h2>1) What are “best practices”?</h2>
+        <p>Best practices are commonly accepted patterns that make code easier to read, safer to change, and less likely to produce bugs in production.</p>
+
+        <div class="note">
+          <strong>Golden Rules:</strong>
+          Prefer clarity over cleverness, keep responsibilities small, handle errors intentionally, and write code as if someone else will maintain it (because they will!).
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Readable</h3>
+            <p>Names explain intent, functions are small, and the code “tells the story”.</p>
+          </div>
+          <div class="card">
+            <h3>Maintainable</h3>
+            <p>Easy to test, easy to change, and less risky for future updates.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="naming">
+        <h2>2) Naming Conventions (C# style)</h2>
+        <p>Consistent naming is the fastest way to make your code look professional. Below are widely used conventions in modern C# projects.</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Convention</th>
+              <th>Example</th>
+              <th>Why it matters</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Class / Struct / Record</td>
+              <td>PascalCase</td>
+              <td><code>OrderService</code>, <code>CustomerAddress</code></td>
+              <td>Types stand out clearly.</td>
+            </tr>
+            <tr>
+              <td>Method</td>
+              <td>PascalCase (verbs)</td>
+              <td><code>CalculateTotal()</code>, <code>SaveAsync()</code></td>
+              <td>Methods describe an action.</td>
+            </tr>
+            <tr>
+              <td>Property</td>
+              <td>PascalCase (nouns)</td>
+              <td><code>TotalAmount</code>, <code>CreatedAt</code></td>
+              <td>Properties represent data.</td>
+            </tr>
+            <tr>
+              <td>Local variable / Parameter</td>
+              <td>camelCase</td>
+              <td><code>orderId</code>, <code>discountRate</code></td>
+              <td>Easy to differentiate from types.</td>
+            </tr>
+            <tr>
+              <td>Private field</td>
+              <td>_camelCase</td>
+              <td><code>_logger</code>, <code>_dbContext</code></td>
+              <td>Clearly indicates a field.</td>
+            </tr>
+            <tr>
+              <td>Interface</td>
+              <td>Prefix with I</td>
+              <td><code>IOrderRepository</code></td>
+              <td>Immediately recognized as a contract.</td>
+            </tr>
+            <tr>
+              <td>Enum</td>
+              <td>PascalCase (singular)</td>
+              <td><code>OrderStatus</code></td>
+              <td>Represents one value at a time.</td>
+            </tr>
+            <tr>
+              <td>Async methods</td>
+              <td>Suffix with Async</td>
+              <td><code>GetOrderAsync()</code></td>
+              <td>Signals that it returns a Task.</td>
+            </tr>
+            <tr>
+              <td>Constant</td>
+              <td>PascalCase</td>
+              <td><code>MaxRetryCount</code></td>
+              <td>Same style as other members in C#.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="example">
+          <div class="exhdr">
+            Good naming example (real-world: order processing)
+            <span class="try">Try It Yourself (paste into a console app)</span>
+          </div>
+          <pre><code>public interface IOrderRepository
+{
+    Task&lt;Order?&gt; GetByIdAsync(Guid orderId, CancellationToken cancellationToken);
+    Task SaveAsync(Order order, CancellationToken cancellationToken);
+}
+
+public sealed class OrderService
+{
+    private readonly IOrderRepository _orderRepository;
+
+    public OrderService(IOrderRepository orderRepository)
+    {
+        _orderRepository = orderRepository;
+    }
+
+    public async Task&lt;decimal&gt; CalculateTotalAsync(Guid orderId, CancellationToken cancellationToken)
+    {
+        var order = await _orderRepository.GetByIdAsync(orderId, cancellationToken);
+
+        if (order is null)
+            throw new InvalidOperationException($&quot;Order not found: {orderId}&quot;);
+
+        var totalAmount = order.Items.Sum(i =&gt; i.UnitPrice * i.Quantity);
+        return totalAmount;
+    }
+}</code></pre>
+        </div>
+
+        <div class="warn">
+          <strong>Avoid:</strong> meaningless names like <code>temp</code>, <code>data</code>, <code>obj</code>, or abbreviations like <code>calcTot</code>.
+        </div>
+      </section>
+
+      <section id="project-structure">
+        <h2>3) Project &amp; Folder Structure</h2>
+        <p>Good structure prevents “spaghetti projects”. A simple and common approach:</p>
+
+        <div class="example">
+          <div class="exhdr">Suggested structure (for API / Service projects)</div>
+          <pre><code>MyApp/
+  MyApp.Domain/           // Entities, value objects, domain rules
+  MyApp.Application/      // Use-cases, business services, DTOs
+  MyApp.Infrastructure/   // EF Core, external APIs, repositories
+  MyApp.WebApi/           // Controllers, middleware, DI, endpoints
+  MyApp.Tests/            // Unit/integration tests</code></pre>
+        </div>
+
+        <div class="note">
+          <strong>Tip:</strong> Keep “pure business rules” away from frameworks. Your business logic should not depend on ASP.NET Core, EF Core, etc.
+        </div>
+      </section>
+
+      <section id="clean-code">
+        <h2>4) Clean Code Rules</h2>
+
+        <h3>4.1 Keep methods small (single responsibility)</h3>
+        <p>A method should do one thing well. If it’s doing 5 things, split it.</p>
+
+        <div class="example">
+          <div class="exhdr">Bad vs Good: validation + business logic</div>
+          <pre><code>// ❌ BAD: too many responsibilities
+public async Task PlaceOrderAsync(OrderRequest request)
+{
+    if (request == null) throw new ArgumentNullException(nameof(request));
+    if (request.Items == null || request.Items.Count == 0) throw new Exception("No items");
+
+    // calculate total
+    decimal total = 0;
+    foreach (var item in request.Items)
+        total += item.Price * item.Quantity;
+
+    // save to database
+    await _db.SaveAsync(new Order { Total = total });
+}
+
+// ✅ GOOD: clear, testable, reusable
+public async Task PlaceOrderAsync(OrderRequest request, CancellationToken ct)
+{
+    ValidateOrderRequest(request);
+
+    var order = CreateOrderFrom(request);
+    await _orderRepository.SaveAsync(order, ct);
+}
+
+private static void ValidateOrderRequest(OrderRequest request)
+{
+    if (request is null) throw new ArgumentNullException(nameof(request));
+    if (request.Items is null || request.Items.Count == 0)
+        throw new ArgumentException("Order must have at least one item.", nameof(request.Items));
+}</code></pre>
+        </div>
+
+        <h3>4.2 Prefer guard clauses (reduce nesting)</h3>
+        <div class="example">
+          <div class="exhdr">Guard clause example</div>
+          <pre><code>// ❌ BAD: deep nesting
+if (user != null)
+{
+    if (user.IsActive)
+    {
+        if (user.EmailConfirmed)
+        {
+            // ...
+        }
+    }
+}
+
+// ✅ GOOD: early exits
+if (user is null) return;
+if (!user.IsActive) return;
+if (!user.EmailConfirmed) return;
+
+// ... main logic</code></pre>
+        </div>
+
+        <h3>4.3 Prefer nameof() in exceptions</h3>
+        <div class="example">
+          <div class="exhdr">nameof() keeps error messages safe during refactor</div>
+          <pre><code>public void SetDiscount(decimal discountRate)
+{
+    if (discountRate &lt; 0 || discountRate &gt; 1)
+        throw new ArgumentOutOfRangeException(nameof(discountRate), "Discount must be between 0 and 1.");
+}</code></pre>
+        </div>
+
+        <h3>4.4 Use “var” only when it improves readability</h3>
+        <div class="note">
+          <strong>Rule of thumb:</strong> Use <code>var</code> when the right side clearly shows the type (e.g., <code>new List&lt;int&gt;()</code>), otherwise write the explicit type.
+        </div>
+      </section>
+
+      <section id="exceptions">
+        <h2>5) Exceptions &amp; Error Handling</h2>
+
+        <h3>5.1 Do not catch exceptions you can’t handle</h3>
+        <p>Catching and ignoring errors makes bugs invisible. If you catch, do something meaningful: log, convert, retry, or return a safe result.</p>
+
+        <div class="example">
+          <div class="exhdr">Bad vs Good: exception handling</div>
+          <pre><code>// ❌ BAD: Swallows error, hides production bugs
+try
+{
+    await _paymentGateway.ChargeAsync(amount);
+}
+catch
+{
+    // do nothing
+}
+
+// ✅ GOOD: log + throw a domain-specific exception
+try
+{
+    await _paymentGateway.ChargeAsync(amount);
+}
+catch (TimeoutException ex)
+{
+    _logger.LogWarning(ex, "Payment timeout for OrderId={OrderId}", orderId);
+    throw new PaymentFailedException("Payment timed out. Please try again.", ex);
+}</code></pre>
+        </div>
+
+        <h3>5.2 Prefer specific exceptions</h3>
+        <p>Use <code>ArgumentException</code>, <code>ArgumentNullException</code>, <code>ArgumentOutOfRangeException</code>, or custom exceptions for business rules.</p>
+
+        <div class="ok">
+          <strong>Best practice:</strong> Keep exception messages user-friendly at the UI boundary, and detailed logs in the server logs.
+        </div>
+      </section>
+
+      <section id="async">
+        <h2>6) Async/Await Best Practices</h2>
+
+        <h3>6.1 Never use async void (except event handlers)</h3>
+        <div class="example">
+          <div class="exhdr">Correct async signatures</div>
+          <pre><code>// ❌ BAD
+public async void Save() { ... }
+
+// ✅ GOOD
+public async Task SaveAsync(CancellationToken ct) { ... }</code></pre>
+        </div>
+
+        <h3>6.2 Support CancellationToken in library / service methods</h3>
+        <div class="example">
+          <div class="exhdr">CancellationToken example</div>
+          <pre><code>public async Task&lt;IReadOnlyList&lt;Order&gt;&gt; SearchOrdersAsync(string query, CancellationToken ct)
+{
+    if (string.IsNullOrWhiteSpace(query))
+        return Array.Empty&lt;Order&gt;();
+
+    return await _orderRepository.SearchAsync(query, ct);
+}</code></pre>
+        </div>
+
+        <h3>6.3 Avoid blocking calls (no .Result / .Wait())</h3>
+        <div class="warn">
+          <strong>Why:</strong> Blocking async calls can cause deadlocks and performance issues, especially in UI apps and ASP.NET environments.
+        </div>
+
+        <div class="example">
+          <div class="exhdr">Bad vs Good: async usage</div>
+          <pre><code>// ❌ BAD
+var order = _repo.GetByIdAsync(orderId).Result;
+
+// ✅ GOOD
+var order = await _repo.GetByIdAsync(orderId, ct);</code></pre>
+        </div>
+
+        <h3>6.4 Use HttpClient correctly</h3>
+        <p>In real projects, prefer <code>IHttpClientFactory</code> (ASP.NET Core) or a shared, long-lived HttpClient.</p>
+      </section>
+
+      <section id="linq">
+        <h2>7) LINQ &amp; Collections</h2>
+
+        <h3>7.1 Prefer clear LINQ over complex queries</h3>
+        <div class="example">
+          <div class="exhdr">Readable LINQ (Orders)</div>
+          <pre><code>var recentHighValueOrders = orders
+    .Where(o =&gt; o.CreatedAt &gt;= DateTime.UtcNow.AddDays(-7))
+    .Where(o =&gt; o.TotalAmount &gt;= 5000)
+    .OrderByDescending(o =&gt; o.TotalAmount)
+    .Take(10)
+    .ToList();</code></pre>
+        </div>
+
+        <h3>7.2 Avoid multiple enumeration</h3>
+        <div class="note">
+          <strong>Tip:</strong> If you use the same query many times, materialize it once using <code>ToList()</code> or <code>ToArray()</code>.
+        </div>
+
+        <h3>7.3 Choose correct collection types</h3>
+        <table>
+          <thead>
+            <tr><th>Need</th><th>Use</th><th>Example</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Fast lookups by key</td><td><code>Dictionary&lt;TKey, TValue&gt;</code></td><td>ProductId → Product</td></tr>
+            <tr><td>Unique values</td><td><code>HashSet&lt;T&gt;</code></td><td>Unique emails</td></tr>
+            <tr><td>Ordered list</td><td><code>List&lt;T&gt;</code></td><td>Orders in UI</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="performance">
+        <h2>8) Performance &amp; Memory</h2>
+
+        <h3>8.1 Use using/await using for IDisposable</h3>
+        <div class="example">
+          <div class="exhdr">Dispose resources correctly</div>
+          <pre><code>// ✅ GOOD
+using var stream = File.OpenRead(path);
+using var reader = new StreamReader(stream);
+var content = await reader.ReadToEndAsync();</code></pre>
+        </div>
+
+        <h3>8.2 Prefer StringBuilder for many concatenations</h3>
+        <div class="example">
+          <div class="exhdr">StringBuilder example</div>
+          <pre><code>var sb = new StringBuilder();
+foreach (var item in items)
+{
+    sb.AppendLine(item);
+}
+var output = sb.ToString();</code></pre>
+        </div>
+
+        <h3>8.3 Avoid premature optimization</h3>
+        <div class="note">
+          <strong>Rule:</strong> Optimize after measuring. Use benchmarks/profilers before rewriting code.
+        </div>
+      </section>
+
+      <section id="security">
+        <h2>9) Security &amp; Safety</h2>
+
+        <h3>9.1 Never build SQL with string concatenation</h3>
+        <div class="example">
+          <div class="exhdr">SQL injection safety (concept)</div>
+          <pre><code>// ❌ BAD (dangerous)
+var sql = "SELECT * FROM Users WHERE Email = '" + email + "'";
+
+// ✅ GOOD: use parameters (ADO.NET / Dapper / EF Core)
+command.Parameters.AddWithValue("@Email", email);</code></pre>
+        </div>
+
+        <h3>9.2 Validate inputs at boundaries</h3>
+        <p>Validate user input at API/UI boundaries (controllers, endpoints) and validate business rules inside services.</p>
+
+        <h3>9.3 Prefer immutable data when possible</h3>
+        <div class="note">
+          <strong>Modern C#:</strong> consider <code>record</code> types for DTOs and message models to reduce accidental mutation.
+        </div>
+      </section>
+
+      <section id="testing">
+        <h2>10) Testing &amp; Maintainability</h2>
+
+        <h3>10.1 Write code that is easy to test</h3>
+        <p>Use dependency injection, small methods, and avoid static/global state.</p>
+
+        <div class="example">
+          <div class="exhdr">Test-friendly design (service + interface)</div>
+          <pre><code>public interface IClock
+{
+    DateTime UtcNow { get; }
+}
+
+public sealed class SystemClock : IClock
+{
+    public DateTime UtcNow =&gt; DateTime.UtcNow;
+}
+
+public sealed class SubscriptionService
+{
+    private readonly IClock _clock;
+
+    public SubscriptionService(IClock clock)
+    {
+        _clock = clock;
+    }
+
+    public bool IsExpired(DateTime expiresAtUtc)
+        =&gt; expiresAtUtc &lt;= _clock.UtcNow;
+}</code></pre>
+        </div>
+
+        <h3>10.2 Use Arrange-Act-Assert in unit tests</h3>
+        <div class="example">
+          <div class="exhdr">AAA test layout (illustration)</div>
+          <pre><code>// Arrange
+var clock = new FakeClock(DateTime.Parse("2025-12-19T00:00:00Z"));
+var svc = new SubscriptionService(clock);
+
+// Act
+var expired = svc.IsExpired(DateTime.Parse("2025-12-18T00:00:00Z"));
+
+// Assert
+Assert.True(expired);</code></pre>
+        </div>
+      </section>
+
+      <section id="checklist">
+        <h2>11) Quick Checklist (Daily Use)</h2>
+
+        <div class="card">
+          <h3>Before you commit code</h3>
+          <ul>
+            <li>Names are meaningful (no <code>data</code>, <code>temp</code>, <code>obj</code>).</li>
+            <li>Methods are small and do one thing.</li>
+            <li>Validation uses guard clauses.</li>
+            <li>Exceptions are specific and not swallowed.</li>
+            <li>Async methods use <code>Task</code>, not <code>async void</code>.</li>
+            <li>CancellationToken is passed where appropriate.</li>
+            <li>LINQ is readable; avoid complex one-liners.</li>
+            <li>Disposables are disposed via <code>using</code>.</li>
+            <li>No secrets in code (keys, passwords, connection strings).</li>
+            <li>Run tests + format code before push.</li>
+          </ul>
+        </div>
+
+        <div class="navbtns">
+          <a class="btn" href="#intro">⬅ Back to top</a>
+          <a class="btn primary" href="#naming">Review Naming Conventions ➜</a>
+        </div>
+
+        <p class="footer">© ItTechGenie • This page is self-contained (no external CSS/JS). You can upload it directly to your tutorial site.</p>
+      </section>
+
+    </main>
+  </div>
+</body>
+</html>

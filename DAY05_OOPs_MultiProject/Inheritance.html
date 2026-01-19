@@ -1,0 +1,899 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ItTechGenie — C# Notes — Inheritance, Abstract, Multiple Inheritance</title>
+  <style>
+    :root{
+      --green:#04AA6D;
+      --bg:#ffffff;
+      --text:#222;
+      --muted:#666;
+      --sidebar:#f1f1f1;
+      --codebg:#f5f5f5;
+      --border:#e3e3e3;
+      --shadow: 0 2px 10px rgba(0,0,0,.06);
+      --warn:#ff9800;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.55;
+    }
+    header{
+      background:var(--green);
+      color:#fff;
+      padding:14px 16px;
+      position:sticky;
+      top:0;
+      z-index:10;
+      box-shadow: var(--shadow);
+    }
+    header .brand{font-weight:800; letter-spacing:.2px}
+    header .title{opacity:.95; margin-top:4px; font-size:14px}
+    .wrap{display:flex; min-height:calc(100vh - 62px)}
+    aside{
+      width:290px;
+      background:var(--sidebar);
+      border-right:1px solid var(--border);
+      padding:14px 12px;
+    }
+    main{
+      flex:1;
+      padding:18px 16px 40px;
+      max-width:1120px;
+    }
+    @media (max-width: 980px){
+      .wrap{flex-direction:column}
+      aside{width:100%}
+    }
+    .menuTitle{font-weight:800; margin:6px 8px 10px; font-size:14px; color:#111}
+    .menu a{
+      display:block;
+      padding:10px 10px;
+      margin:6px 6px;
+      border-radius:10px;
+      text-decoration:none;
+      color:#111;
+      border:1px solid transparent;
+      background:#fff;
+    }
+    .menu a:hover{border-color:var(--border)}
+    .menu a.active{
+      border-color: rgba(4,170,109,.35);
+      background: rgba(4,170,109,.10);
+      font-weight:800;
+    }
+    h1{margin:8px 0 12px; font-size:28px}
+    h2{margin:26px 0 10px; font-size:22px}
+    h3{margin:18px 0 8px; font-size:18px}
+    p{margin:8px 0}
+    ul{margin:8px 0 8px 20px}
+    .small{color:var(--muted); font-size:13px}
+    .note{
+      border-left:5px solid var(--green);
+      background:#f6fffb;
+      padding:10px 12px;
+      border-radius:10px;
+      margin:12px 0;
+    }
+    .warn{
+      border-left:5px solid var(--warn);
+      background:#fff8f0;
+      padding:10px 12px;
+      border-radius:10px;
+      margin:12px 0;
+    }
+    .example{
+      background:var(--codebg);
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding:12px;
+      margin:12px 0;
+    }
+    .exampleHeader{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom:10px;
+    }
+    .pill{
+      display:inline-block;
+      padding:2px 10px;
+      border-radius:999px;
+      background: rgba(4,170,109,.10);
+      border: 1px solid rgba(4,170,109,.25);
+      font-weight:800;
+      font-size:12px;
+      white-space:nowrap;
+    }
+    pre{
+      margin:0;
+      overflow:auto;
+      padding:12px;
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:10px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size:13px;
+      line-height:1.45;
+    }
+    .out{margin-top:10px}
+    .outTitle{font-weight:800; margin:0 0 6px; color:#111}
+    details{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding:10px 12px;
+      margin:10px 0;
+    }
+    summary{cursor:pointer; font-weight:800}
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin:10px 0;
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:12px;
+      overflow:hidden;
+    }
+    th,td{
+      padding:10px 10px;
+      border-bottom:1px solid var(--border);
+      text-align:left;
+      vertical-align:top;
+    }
+    th{background:#fafafa; font-weight:800}
+    tr:last-child td{border-bottom:none}
+    .navBtns{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      margin-top:26px;
+      padding-top:14px;
+      border-top:1px solid var(--border);
+    }
+    .btn{
+      display:inline-block;
+      padding:10px 14px;
+      border-radius:12px;
+      text-decoration:none;
+      border:1px solid var(--border);
+      background:#fff;
+      color:#111;
+      font-weight:800;
+      min-width:140px;
+      text-align:center;
+    }
+    .btn:hover{box-shadow: var(--shadow)}
+    .btn.disabled{
+      opacity:.5;
+      pointer-events:none;
+      cursor:not-allowed;
+    }
+
+    /* Tooltips (pure HTML + CSS) */
+    .tt{
+      position:relative;
+      border-bottom:1px dashed rgba(4,170,109,.9);
+      cursor:help;
+      padding:0 1px;
+      white-space:nowrap;
+    }
+    .tt::after{
+      content:attr(data-tip);
+      position:absolute;
+      left:0;
+      bottom:135%;
+      min-width:240px;
+      max-width:360px;
+      background:#111;
+      color:#fff;
+      padding:10px 10px;
+      border-radius:10px;
+      font-size:12px;
+      line-height:1.35;
+      opacity:0;
+      pointer-events:none;
+      transform:translateY(6px);
+      transition:opacity .15s ease, transform .15s ease;
+      box-shadow: var(--shadow);
+      z-index:20;
+      white-space:normal;
+    }
+    .tt::before{
+      content:"";
+      position:absolute;
+      left:12px;
+      bottom:118%;
+      border:7px solid transparent;
+      border-top-color:#111;
+      opacity:0;
+      transition:opacity .15s ease;
+      z-index:21;
+    }
+    .tt:hover::after,
+    .tt:hover::before{
+      opacity:1;
+      transform:translateY(0);
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="brand">ItTechGenie</div>
+  <div class="title">C# Notes — Inheritance, Abstract, Multiple Inheritance</div>
+</header>
+
+<div class="wrap">
+  <aside>
+    <div class="menuTitle">C# Notes — Topics</div>
+    <nav class="menu" aria-label="Left Menu">
+      <a class="active" href="#top">Inheritance + Abstract + Multiple Inheritance</a>
+      <a href="#beginner">Beginner</a>
+      <a href="#medium">Medium</a>
+      <a href="#advanced">Advanced</a>
+      <a href="#common-errors">Common Errors & Fixes</a>
+      <a href="#practice">Practice Area</a>
+      <a href="#glossary">Glossary (Tooltips)</a>
+    </nav>
+    <p class="small" style="margin:10px 8px 0;">
+      Single topic page. Add more topics to enable Previous/Next navigation between pages.
+    </p>
+  </aside>
+
+  <main id="top">
+    <h1>C# Inheritance, Abstract, and Multiple Inheritance</h1>
+
+    <section id="learn">
+      <h2>What you will learn</h2>
+      <ul>
+        <li>How <span class="tt" data-tip="Inheritance lets a derived (child) class reuse and extend a base (parent) class. It supports code reuse and polymorphism.">inheritance</span> works in C#</li>
+        <li>How to override behavior using <span class="tt" data-tip="virtual allows a base method to be overridden; override replaces that behavior in the derived class at runtime.">virtual/override</span></li>
+        <li>What an <span class="tt" data-tip="An abstract class cannot be instantiated. It can contain abstract members that derived classes must implement.">abstract class</span> is and why we use it</li>
+        <li>Why C# does not allow multiple inheritance for classes, and how interfaces solve it</li>
+        <li>How to design clean, real-world models using base classes + interfaces</li>
+      </ul>
+    </section>
+
+    <section id="definition">
+      <h2>Quick definition</h2>
+      <p>
+        In C#, a derived class can inherit fields, methods, and properties from a base class.
+        Abstract classes define “must-implement” rules for derived classes.
+        C# does not support multiple inheritance for classes, but you can achieve similar behavior using interfaces (a class can implement multiple interfaces).
+      </p>
+    </section>
+
+    <section id="analogy">
+      <h2>Real-world analogy</h2>
+      <p>
+        Imagine a company: “Employee” is a base type. “Developer” and “Manager” are derived types.
+        Every employee has Name and Id, but Developers also have ProgrammingLanguage, and Managers have TeamSize.
+        Abstract rules are like “Every employee must have a Work() method,” but the exact work differs by role.
+      </p>
+    </section>
+
+    <section id="beginner">
+      <h2>Beginner Level</h2>
+
+      <h3>1) Base class and derived class</h3>
+      <p>
+        A derived class uses <code>:</code> to inherit from a base class.
+        C# supports <strong>single inheritance</strong> for classes (one base class only).
+      </p>
+
+      <div class="example">
+        <div class="exampleHeader">
+          <div class="pill">Try It Yourself #1</div>
+          <div class="small">Uses top-level statements (C# 9/10+)</div>
+        </div>
+        <pre><code>// Base class
+class Employee
+{
+    public int Id { get; }
+    public string Name { get; }
+
+    public Employee(int id, string name)
+    {
+        Id = id;
+        Name = name;
+    }
+
+    public void ShowBasicInfo()
+    {
+        Console.WriteLine($"Id={Id}, Name={Name}");
+    }
+}
+
+// Derived class
+class Developer : Employee
+{
+    public string PrimarySkill { get; }
+
+    public Developer(int id, string name, string primarySkill)
+        : base(id, name) // calls base constructor
+    {
+        PrimarySkill = primarySkill;
+    }
+
+    public void ShowDeveloperInfo()
+    {
+        ShowBasicInfo();
+        Console.WriteLine($"PrimarySkill={PrimarySkill}");
+    }
+}
+
+var dev = new Developer(101, "Arjun", "C#");
+dev.ShowDeveloperInfo();</code></pre>
+        <div class="out">
+          <div class="outTitle">Output</div>
+          <pre><code>Id=101, Name=Arjun
+PrimarySkill=C#</code></pre>
+        </div>
+      </div>
+
+      <h3>2) Access rules: public vs protected</h3>
+      <p>
+        <span class="tt" data-tip="protected members are accessible inside the class and its derived classes, but not from outside code.">protected</span>
+        is useful when you want derived classes to reuse behavior/data without exposing it publicly.
+      </p>
+
+      <div class="note">
+        <strong>Tip:</strong> Use <code>public</code> for what outside code should use.  
+        Use <code>protected</code> for what only child classes should use.
+      </div>
+    </section>
+
+    <section id="medium">
+      <h2>Medium Level</h2>
+
+      <h3>1) Polymorphism with virtual/override</h3>
+      <p>
+        Polymorphism means the same base reference can behave differently depending on the actual runtime object.
+      </p>
+
+      <div class="example">
+        <div class="exampleHeader">
+          <div class="pill">Try It Yourself #2</div>
+          <div class="small">virtual/override example</div>
+        </div>
+        <pre><code>class Employee
+{
+    public string Name { get; }
+    public Employee(string name) => Name = name;
+
+    public virtual void Work()
+    {
+        Console.WriteLine($"{Name} is working (generic).");
+    }
+}
+
+class Developer : Employee
+{
+    public Developer(string name) : base(name) { }
+
+    public override void Work()
+    {
+        Console.WriteLine($"{Name} is writing code.");
+    }
+}
+
+class Manager : Employee
+{
+    public Manager(string name) : base(name) { }
+
+    public override void Work()
+    {
+        Console.WriteLine($"{Name} is managing the team.");
+    }
+}
+
+Employee e1 = new Developer("Meena");
+Employee e2 = new Manager("Karthik");
+
+e1.Work();
+e2.Work();</code></pre>
+        <div class="out">
+          <div class="outTitle">Output</div>
+          <pre><code>Meena is writing code.
+Karthik is managing the team.</code></pre>
+        </div>
+      </div>
+
+      <h3>2) override vs new (method hiding)</h3>
+      <p>
+        <span class="tt" data-tip="Method overriding changes runtime behavior through virtual dispatch. Method hiding (new) hides a base method but does not participate in polymorphism the same way.">Hiding vs overriding</span>
+        is a common interview point.
+      </p>
+
+      <div class="warn">
+        <strong>Common mistake:</strong> Using <code>new</code> when you meant <code>override</code>.  
+        Result: calling through base reference will still run the base method.
+      </div>
+
+      <div class="example">
+        <div class="exampleHeader">
+          <div class="pill">Example</div>
+          <div class="small">new hides, override replaces</div>
+        </div>
+        <pre><code>class A
+{
+    public virtual void Show() => Console.WriteLine("A.Show");
+}
+
+class B : A
+{
+    public new void Show() => Console.WriteLine("B.Show (hidden)");
+}
+
+A x = new B();
+x.Show(); // calls A.Show because B didn't override</code></pre>
+        <div class="out">
+          <div class="outTitle">Output</div>
+          <pre><code>A.Show</code></pre>
+        </div>
+      </div>
+
+      <h3>3) Abstract class basics</h3>
+      <p>
+        An <span class="tt" data-tip="abstract class is like a template. You cannot create an object directly from it, but child classes must complete the missing pieces (abstract members).">abstract class</span> defines a contract + can contain shared code.
+      </p>
+
+      <div class="example">
+        <div class="exampleHeader">
+          <div class="pill">Try It Yourself #3</div>
+          <div class="small">abstract method must be implemented</div>
+        </div>
+        <pre><code>abstract class Payment
+{
+    public decimal Amount { get; }
+    protected Payment(decimal amount) => Amount = amount;
+
+    public void PrintReceipt()
+    {
+        Console.WriteLine($"Receipt: Amount={Amount}");
+    }
+
+    public abstract void Pay(); // must be implemented
+}
+
+class UpiPayment : Payment
+{
+    public string UpiId { get; }
+    public UpiPayment(decimal amount, string upiId) : base(amount) => UpiId = upiId;
+
+    public override void Pay()
+    {
+        Console.WriteLine($"Paid {Amount} via UPI ({UpiId}).");
+    }
+}
+
+Payment p = new UpiPayment(499.00m, "ittechgenie@upi");
+p.Pay();
+p.PrintReceipt();</code></pre>
+        <div class="out">
+          <div class="outTitle">Output</div>
+          <pre><code>Paid 499.00 via UPI (ittechgenie@upi).
+Receipt: Amount=499.00</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="advanced">
+      <h2>Advanced Level</h2>
+
+      <h3>1) Multiple inheritance: Why C# blocks it for classes</h3>
+      <p>
+        C# does <strong>not</strong> allow a class to inherit from two classes:
+        <span class="tt" data-tip="Multiple class inheritance can create a 'diamond problem' where two base classes provide the same member and it becomes unclear which one to use.">diamond problem</span>.
+      </p>
+
+      <div class="example">
+        <div class="exampleHeader">
+          <div class="pill">Diagram</div>
+          <div class="small">Diamond problem idea (concept)</div>
+        </div>
+        <pre><code>      Base
+     /    \
+  Left   Right
+     \    /
+     Child
+
+If Left and Right both define the same method, which one should Child use?</code></pre>
+      </div>
+
+      <h3>2) How C# supports “multiple inheritance” using interfaces</h3>
+      <p>
+        A class can implement multiple <span class="tt" data-tip="An interface defines a set of members a class must implement. A class can implement multiple interfaces, which is the main way to achieve multiple-inheritance-like behavior in C#.">interfaces</span>.
+      </p>
+
+      <div class="example">
+        <div class="exampleHeader">
+          <div class="pill">Example</div>
+          <div class="small">Multiple interfaces</div>
+        </div>
+        <pre><code>interface IPrintable
+{
+    void Print();
+}
+
+interface IExportable
+{
+    void Export(string format);
+}
+
+class Report : IPrintable, IExportable
+{
+    public string Title { get; }
+    public Report(string title) => Title = title;
+
+    public void Print()
+    {
+        Console.WriteLine($"Printing report: {Title}");
+    }
+
+    public void Export(string format)
+    {
+        Console.WriteLine($"Exporting report '{Title}' as {format}");
+    }
+}
+
+var r = new Report("Sales Summary");
+r.Print();
+r.Export("PDF");</code></pre>
+        <div class="out">
+          <div class="outTitle">Output</div>
+          <pre><code>Printing report: Sales Summary
+Exporting report 'Sales Summary' as PDF</code></pre>
+        </div>
+      </div>
+
+      <h3>3) Best real-world design: Abstract base class + multiple interfaces</h3>
+      <p>
+        Use abstract class for shared state + shared behavior, and interfaces for extra capabilities.
+      </p>
+
+      <div class="example">
+        <div class="exampleHeader">
+          <div class="pill">Example</div>
+          <div class="small">Abstract + Interfaces combined</div>
+        </div>
+        <pre><code>interface ILoggable { void Log(string message); }
+interface INotifiable { void Notify(string message); }
+
+abstract class ServiceBase
+{
+    protected string ServiceName { get; }
+    protected ServiceBase(string serviceName) => ServiceName = serviceName;
+
+    public void Start() => Console.WriteLine($"{ServiceName} started.");
+    public abstract void Execute();
+}
+
+class EmailService : ServiceBase, ILoggable, INotifiable
+{
+    public EmailService() : base("EmailService") { }
+
+    public override void Execute()
+    {
+        Log("Executing email pipeline...");
+        Notify("Email batch started");
+        Console.WriteLine("Sending emails...");
+    }
+
+    public void Log(string message) => Console.WriteLine($"[LOG] {message}");
+    public void Notify(string message) => Console.WriteLine($"[NOTIFY] {message}");
+}
+
+var svc = new EmailService();
+svc.Start();
+svc.Execute();</code></pre>
+      </div>
+
+      <div class="note">
+        <strong>Design tip:</strong> Prefer composition + interfaces over forcing inheritance everywhere.  
+        Inheritance is great for “is-a” relationships. For “has-a / can-do”, interfaces and composition are cleaner.
+      </div>
+    </section>
+
+    <section id="common-errors">
+      <h2>Common Errors &amp; Fixes</h2>
+
+      <details>
+        <summary>1) “Cannot create an instance of the abstract type …”</summary>
+        <p><strong>Cause:</strong> You tried to instantiate an abstract class.</p>
+        <p><strong>Fix:</strong> Create an instance of a derived concrete class.</p>
+        <div class="example"><pre><code>// Payment p = new Payment(100); // ❌ not allowed
+// Use:
+Payment p = new UpiPayment(100m, "demo@upi");</code></pre></div>
+      </details>
+
+      <details>
+        <summary>2) “does not implement inherited abstract member …”</summary>
+        <p><strong>Cause:</strong> Derived class forgot to implement an abstract method.</p>
+        <p><strong>Fix:</strong> Implement it with <code>override</code>.</p>
+      </details>
+
+      <details>
+        <summary>3) Wrong method called because of method hiding (new)</summary>
+        <p><strong>Cause:</strong> Used <code>new</code> instead of <code>override</code>.</p>
+        <p><strong>Fix:</strong> Mark base method as <code>virtual</code> and derived as <code>override</code>.</p>
+      </details>
+
+      <details>
+        <summary>4) Base constructor not called properly</summary>
+        <p><strong>Cause:</strong> Base class has no parameterless constructor but derived class didn't call <code>base(...)</code>.</p>
+        <p><strong>Fix:</strong> Add <code>: base(args)</code> in derived constructor.</p>
+      </details>
+    </section>
+
+    <section id="summary">
+      <h2>Summary / Key Takeaways</h2>
+      <ul>
+        <li>Inheritance helps reuse and extend base behavior (single base class per class).</li>
+        <li>Use <code>virtual</code> + <code>override</code> for true polymorphism.</li>
+        <li>Abstract classes define “must-implement” rules and shared code.</li>
+        <li>C# avoids multiple class inheritance; use multiple interfaces instead.</li>
+        <li>Use abstract base for shared state + interfaces for capabilities.</li>
+      </ul>
+    </section>
+
+    <section id="practice">
+      <h2>Practice Area</h2>
+
+      <h3>Part A — 10 Example Questions (with Answers)</h3>
+
+      <details>
+        <summary>Q1) What is inheritance in C#?</summary>
+        <p><strong>Answer:</strong> It allows a derived class to reuse and extend members of a base class (is-a relationship).</p>
+      </details>
+      <details>
+        <summary>Q2) Can a C# class inherit from two classes?</summary>
+        <p><strong>Answer:</strong> No. C# supports single inheritance for classes. Use interfaces to achieve multiple capabilities.</p>
+      </details>
+      <details>
+        <summary>Q3) What is the difference between virtual/override and new?</summary>
+        <p><strong>Answer:</strong> override participates in runtime polymorphism; new hides the base method and base-reference calls still use the base method.</p>
+      </details>
+      <details>
+        <summary>Q4) Why do we use abstract classes?</summary>
+        <p><strong>Answer:</strong> To create a reusable template with shared code and enforce mandatory members using abstract methods/properties.</p>
+      </details>
+      <details>
+        <summary>Q5) Can abstract class contain normal methods?</summary>
+        <p><strong>Answer:</strong> Yes. Abstract classes can contain both abstract members and fully implemented members.</p>
+      </details>
+      <details>
+        <summary>Q6) What does base(...) do in a derived constructor?</summary>
+        <p><strong>Answer:</strong> It calls the base class constructor to initialize base state correctly.</p>
+      </details>
+      <details>
+        <summary>Q7) What is polymorphism in simple words?</summary>
+        <p><strong>Answer:</strong> Same base reference, different behavior depending on actual derived object.</p>
+      </details>
+      <details>
+        <summary>Q8) What is the best way to implement multiple inheritance-like behavior in C#?</summary>
+        <p><strong>Answer:</strong> Implement multiple interfaces (and optionally use an abstract base class for shared code).</p>
+      </details>
+      <details>
+        <summary>Q9) Can an interface store fields?</summary>
+        <p><strong>Answer:</strong> Interfaces define members to implement (methods/properties/events). Typically no instance fields; state is stored in classes.</p>
+      </details>
+      <details>
+        <summary>Q10) Give a real-world example of inheritance.</summary>
+        <p><strong>Answer:</strong> Base: Vehicle. Derived: Car, Bike. All share Start/Stop, but each has specific features.</p>
+      </details>
+
+      <h3>Part B — 10 MCQs (4 Options)</h3>
+      <ol>
+        <li>
+          In C#, a class can inherit from:
+          <ol type="A">
+            <li>Multiple classes</li>
+            <li>Exactly one class</li>
+            <li>Only interfaces</li>
+            <li>No types at all</li>
+          </ol>
+        </li>
+        <li>
+          Which keyword is used to override a base class virtual method?
+          <ol type="A">
+            <li>new</li>
+            <li>override</li>
+            <li>sealed</li>
+            <li>static</li>
+          </ol>
+        </li>
+        <li>
+          Abstract class objects:
+          <ol type="A">
+            <li>Can be created directly</li>
+            <li>Cannot be created directly</li>
+            <li>Are always static</li>
+            <li>Must be sealed</li>
+          </ol>
+        </li>
+        <li>
+          Which is true about interfaces?
+          <ol type="A">
+            <li>A class can implement only one interface</li>
+            <li>A class can implement multiple interfaces</li>
+            <li>Interfaces are instantiated directly</li>
+            <li>Interfaces replace constructors</li>
+          </ol>
+        </li>
+        <li>
+          Polymorphism mainly depends on:
+          <ol type="A">
+            <li>virtual and override</li>
+            <li>readonly fields</li>
+            <li>static methods</li>
+            <li>private constructors</li>
+          </ol>
+        </li>
+        <li>
+          Which access modifier allows a derived class to access base members but blocks outside code?
+          <ol type="A">
+            <li>private</li>
+            <li>protected</li>
+            <li>internal</li>
+            <li>public</li>
+          </ol>
+        </li>
+        <li>
+          If you use <code>new</code> on a method in derived class, it means:
+          <ol type="A">
+            <li>It overrides base method at runtime</li>
+            <li>It hides base method</li>
+            <li>It makes method abstract</li>
+            <li>It deletes base method</li>
+          </ol>
+        </li>
+        <li>
+          Why C# avoids multiple class inheritance?
+          <ol type="A">
+            <li>To avoid diamond ambiguity</li>
+            <li>Because interfaces don’t exist</li>
+            <li>Because classes can’t have methods</li>
+            <li>Because it breaks compilation always</li>
+          </ol>
+        </li>
+        <li>
+          An abstract method must be:
+          <ol type="A">
+            <li>static</li>
+            <li>private</li>
+            <li>implemented in derived class</li>
+            <li>sealed</li>
+          </ol>
+        </li>
+        <li>
+          Best practice for “capabilities” (Print/Export/Log) is:
+          <ol type="A">
+            <li>Deep inheritance chain only</li>
+            <li>Multiple interfaces + composition</li>
+            <li>Only static helper classes</li>
+            <li>Only partial classes</li>
+          </ol>
+        </li>
+      </ol>
+
+      <details>
+        <summary>Show MCQ Answers</summary>
+        <ol>
+          <li><strong>B</strong></li>
+          <li><strong>B</strong></li>
+          <li><strong>B</strong></li>
+          <li><strong>B</strong></li>
+          <li><strong>A</strong></li>
+          <li><strong>B</strong></li>
+          <li><strong>B</strong></li>
+          <li><strong>A</strong></li>
+          <li><strong>C</strong></li>
+          <li><strong>B</strong></li>
+        </ol>
+      </details>
+
+      <h3>Part C — 10 Interview Questions &amp; Answers</h3>
+
+      <details>
+        <summary>1) What is the difference between inheritance and composition?</summary>
+        <p><strong>Answer:</strong> Inheritance models “is-a” (Developer is an Employee). Composition models “has-a/can-do” (Report has a Printer). Composition often gives flexibility and avoids tight coupling.</p>
+      </details>
+      <details>
+        <summary>2) Explain polymorphism with a simple example.</summary>
+        <p><strong>Answer:</strong> Base reference Employee can point to Developer or Manager, and calling Work() executes the derived override at runtime.</p>
+      </details>
+      <details>
+        <summary>3) Why can method hiding cause bugs?</summary>
+        <p><strong>Answer:</strong> Because a base reference calls the base method, not the hidden derived method, leading to unexpected behavior.</p>
+      </details>
+      <details>
+        <summary>4) Abstract class vs interface: when to use which?</summary>
+        <p><strong>Answer:</strong> Use abstract class for shared state and shared code + mandatory members. Use interfaces for capabilities and when multiple inheritance-like behavior is needed.</p>
+      </details>
+      <details>
+        <summary>5) Can a class inherit from abstract class and implement interfaces?</summary>
+        <p><strong>Answer:</strong> Yes. This is a common design: one base class + many interfaces.</p>
+      </details>
+      <details>
+        <summary>6) What is the role of the base keyword?</summary>
+        <p><strong>Answer:</strong> It accesses base class members and calls base constructors (base(...)) from a derived class.</p>
+      </details>
+      <details>
+        <summary>7) What is the diamond problem?</summary>
+        <p><strong>Answer:</strong> When a class inherits from two classes that both inherit from a common base and provide the same member, it becomes ambiguous which implementation should be used.</p>
+      </details>
+      <details>
+        <summary>8) What happens if you don’t override an abstract method?</summary>
+        <p><strong>Answer:</strong> The derived class must be marked abstract too, or compilation fails with “does not implement inherited abstract member”.</p>
+      </details>
+      <details>
+        <summary>9) How do you prevent further inheritance or overriding?</summary>
+        <p><strong>Answer:</strong> Use <code>sealed</code> on a class to block inheritance, or <code>sealed override</code> on a method to block further overriding.</p>
+      </details>
+      <details>
+        <summary>10) Give a real-world example where interfaces are better than inheritance.</summary>
+        <p><strong>Answer:</strong> A document can be Printable, Exportable, and Shareable. These are capabilities that can be mixed and matched using interfaces instead of creating many subclasses.</p>
+      </details>
+    </section>
+
+    <section id="glossary">
+      <h2>Glossary (Tooltips)</h2>
+      <p class="small">Tooltip terms used on this page.</p>
+      <table>
+        <thead>
+          <tr><th>Term</th><th>Tooltip Description</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>inheritance</td>
+            <td>Derived class reuses and extends a base class; supports code reuse and polymorphism.</td>
+          </tr>
+          <tr>
+            <td>virtual/override</td>
+            <td>virtual allows overriding; override replaces behavior in derived class at runtime.</td>
+          </tr>
+          <tr>
+            <td>abstract class</td>
+            <td>Cannot be instantiated; may include abstract members that derived classes must implement.</td>
+          </tr>
+          <tr>
+            <td>protected</td>
+            <td>Accessible in the class and its derived classes, but not from outside code.</td>
+          </tr>
+          <tr>
+            <td>diamond problem</td>
+            <td>Ambiguity when inheriting from two classes that share a base and define the same member.</td>
+          </tr>
+          <tr>
+            <td>interfaces</td>
+            <td>Contracts a class can implement; a class can implement multiple interfaces in C#.</td>
+          </tr>
+          <tr>
+            <td>Hiding vs overriding</td>
+            <td>Hiding (new) does not behave like polymorphic override; override changes runtime dispatch.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="navBtns">
+      <a class="btn disabled" href="#prev-subtopic" aria-disabled="true">❮ Previous</a>
+      <a class="btn disabled" href="#next-subtopic" aria-disabled="true">Next ❯</a>
+    </div>
+
+    <p class="small" style="margin-top:10px;">
+      Add more topics to enable page-to-page navigation (Previous/Next).
+    </p>
+  </main>
+</div>
+</body>
+</html>

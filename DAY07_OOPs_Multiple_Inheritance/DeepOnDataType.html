@@ -1,0 +1,1536 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ItTechGenie | Data Types and Arrays in C# (W3Schools-Style)</title>
+
+  <style>
+    :root{
+      --green:#04AA6D;
+      --bg:#ffffff;
+      --page:#f5f6f7;
+      --text:#111;
+      --muted:#555;
+      --sidebar:#f1f1f1;
+      --border:#e3e3e3;
+      --example:#e9ecef;
+      --code:#1e1e1e;
+      --codeText:#e6edf3;
+
+      --noteBg:#e7f3fe;
+      --noteBorder:#2196F3;
+
+      --tipBg:#e8f5e9;
+      --tipBorder:#2e7d32;
+
+      --warnBg:#ffebee;
+      --warnBorder:#c62828;
+
+      --radius:10px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background:var(--page);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    /* Top bar */
+    .topbar{
+      position:fixed;
+      top:0; left:0; right:0;
+      height:56px;
+      background:var(--green);
+      color:#fff;
+      display:flex;
+      align-items:center;
+      padding:0 16px;
+      z-index:1000;
+      box-shadow:0 2px 10px rgba(0,0,0,.12);
+    }
+    .brand{
+      font-weight:700;
+      letter-spacing:.2px;
+      margin-right:14px;
+      white-space:nowrap;
+    }
+    .topbar .pill{
+      font-size:12px;
+      background:rgba(255,255,255,.18);
+      padding:6px 10px;
+      border-radius:999px;
+      margin-left:auto;
+      white-space:nowrap;
+    }
+
+    /* Layout */
+    .wrap{
+      display:flex;
+      margin-top:56px;
+      min-height:calc(100vh - 56px);
+    }
+    .sidebar{
+      width:290px;
+      background:var(--sidebar);
+      border-right:1px solid var(--border);
+      position:fixed;
+      top:56px; bottom:0; left:0;
+      overflow:auto;
+      padding:14px 10px;
+    }
+    .content{
+      margin-left:290px;
+      width:calc(100% - 290px);
+      padding:20px 22px 60px;
+      background:var(--bg);
+    }
+
+    /* Sidebar links */
+    .side-title{
+      font-weight:700;
+      margin:8px 10px 10px;
+      color:#0b3d2d;
+      font-size:14px;
+      text-transform:uppercase;
+      letter-spacing:.4px;
+    }
+    .nav-group{
+      margin:0 6px 14px;
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:12px;
+      overflow:hidden;
+    }
+    .nav-group .group-h{
+      padding:10px 12px;
+      font-weight:700;
+      background:#fafafa;
+      border-bottom:1px solid var(--border);
+      font-size:14px;
+    }
+    .nav a{
+      display:block;
+      padding:9px 12px;
+      text-decoration:none;
+      color:#111;
+      border-bottom:1px solid #f0f0f0;
+      font-size:14px;
+    }
+    .nav a:hover{background:#f7fff9}
+    .nav a.active{
+      background:rgba(4,170,109,.12);
+      border-left:4px solid var(--green);
+      padding-left:8px;
+      font-weight:700;
+    }
+    .nav .sub{
+      padding-left:22px;
+      font-size:13.5px;
+      color:#222;
+    }
+    .nav .last{border-bottom:none}
+
+    /* Headings + section boxes */
+    .page-title{
+      margin-top:6px;
+      font-size:30px;
+      line-height:1.2;
+    }
+    .lead{
+      color:var(--muted);
+      max-width:980px;
+      margin-top:8px;
+    }
+
+    .section{
+      margin:18px 0 28px;
+      border:1px solid var(--border);
+      border-radius:14px;
+      overflow:hidden;
+      box-shadow:0 1px 10px rgba(0,0,0,.04);
+    }
+    .section .sec-h{
+      background:var(--green);
+      color:#fff;
+      padding:12px 14px;
+      font-weight:700;
+      font-size:18px;
+    }
+    .section .sec-b{
+      padding:16px 16px 12px;
+      background:#fff;
+    }
+
+    /* Notes */
+    .note,.tip,.warning{
+      border-left:6px solid;
+      padding:12px 12px;
+      border-radius:10px;
+      margin:12px 0;
+    }
+    .note{ background:var(--noteBg); border-color:var(--noteBorder); }
+    .tip{ background:var(--tipBg); border-color:var(--tipBorder); }
+    .warning{ background:var(--warnBg); border-color:var(--warnBorder); }
+
+    /* Example box */
+    .example{
+      background:var(--example);
+      border:1px solid #d8dde2;
+      border-radius:12px;
+      padding:12px 12px;
+      margin:12px 0;
+    }
+    .example .ex-h{
+      font-weight:800;
+      margin-bottom:8px;
+    }
+
+    /* Code */
+    pre.code{
+      background:var(--code);
+      color:var(--codeText);
+      padding:14px 14px;
+      border-radius:12px;
+      overflow:auto;
+      margin:10px 0 12px;
+      font-size:13.5px;
+      line-height:1.55;
+      border:1px solid rgba(255,255,255,.06);
+    }
+
+    /* Try button */
+    .trybtn{
+      display:inline-block;
+      background:var(--green);
+      color:#fff;
+      padding:10px 12px;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:700;
+      margin:6px 0 0;
+      box-shadow:0 2px 8px rgba(4,170,109,.22);
+    }
+    .trybtn:hover{filter:brightness(.95)}
+
+    /* Nav buttons inside page */
+    .pager{
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      margin:18px 0 6px;
+      padding-top:8px;
+      border-top:1px dashed #e8e8e8;
+    }
+    .pager a{
+      background:var(--green);
+      color:#fff;
+      padding:10px 14px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:800;
+      display:inline-block;
+    }
+    .pager a:hover{filter:brightness(.95)}
+    .pager .ghost{display:none;} /* placeholder anchors (required) */
+
+    /* Tables */
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin:10px 0 12px;
+      background:#fff;
+    }
+    th,td{
+      border:1px solid #e6e6e6;
+      padding:10px 10px;
+      text-align:left;
+      vertical-align:top;
+      font-size:14px;
+    }
+    th{background:#fafafa}
+
+    /* ASCII diagrams */
+    .ascii{
+      background:#fff;
+      border:1px dashed #d9d9d9;
+      border-radius:12px;
+      padding:12px;
+      font-family: Consolas, "Courier New", monospace;
+      white-space:pre;
+      overflow:auto;
+      margin:10px 0 12px;
+      font-size:13px;
+      color:#1d1d1d;
+    }
+
+    /* Tooltip */
+    .tt{
+      position:relative;
+      cursor:help;
+      border-bottom:1px dotted #333;
+      font-weight:700;
+    }
+    .tt:hover::after{
+      content: attr(data-tip);
+      position:absolute;
+      left:0;
+      top:130%;
+      min-width:260px;
+      max-width:360px;
+      background:#111;
+      color:#fff;
+      padding:10px 10px;
+      border-radius:10px;
+      white-space:pre-line;
+      z-index:999;
+      box-shadow:0 8px 24px rgba(0,0,0,.25);
+      font-weight:500;
+      font-size:13px;
+      line-height:1.35;
+    }
+    .tt:hover::before{
+      content:"";
+      position:absolute;
+      left:16px;
+      top:118%;
+      border:7px solid transparent;
+      border-bottom-color:#111;
+      z-index:999;
+    }
+
+    /* Anchors spacing for fixed topbar */
+    .anchor{ scroll-margin-top:72px; }
+
+    /* Footer placeholder */
+    .footer{
+      margin-top:26px;
+      color:#666;
+      font-size:13px;
+      padding-top:14px;
+      border-top:1px solid #eee;
+    }
+
+    /* Small screens */
+    @media (max-width: 980px){
+      .sidebar{position:static; width:100%; height:auto;}
+      .content{margin-left:0; width:100%;}
+      .wrap{display:block;}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="brand">ItTechGenie</div>
+    <div>Learn C# — Data Types & Arrays</div>
+    <div class="pill">W3Schools-Style • Self-Contained HTML</div>
+  </div>
+
+  <div class="wrap">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="side-title">C# Tutorial</div>
+
+      <div class="nav-group">
+        <div class="group-h">Data Types & Arrays</div>
+        <div class="nav">
+          <a class="active" href="#intro">Introduction</a>
+          <a href="#toc">Table of Contents</a>
+
+          <a href="#datatypes">Data Types in C#</a>
+          <a class="sub" href="#datatypes-built-in">Built-in Types</a>
+          <a class="sub" href="#datatypes-reference">Reference Types</a>
+
+          <a href="#value-vs-ref">Value Types vs Reference Types</a>
+          <a href="#boxing-unboxing">Boxing and Unboxing</a>
+
+          <a href="#arrays">Arrays in C#</a>
+          <a class="sub" href="#arrays-1d">Single Dimensional</a>
+          <a class="sub" href="#arrays-2d">Multi-Dimensional</a>
+          <a class="sub" href="#arrays-jagged">Jagged Arrays</a>
+
+          <a href="#nullable">Nullable Types</a>
+          <a href="#implicit">Implicitly Typed Local Variables</a>
+          <a href="#var-vs-dynamic">var vs dynamic</a>
+          <a href="#is-as">is and as Operator</a>
+
+          <a href="#best-practices">Best Practices</a>
+          <a href="#lab">Step-by-step Lab</a>
+          <a href="#mini-project">Mini Project</a>
+          <a href="#faqs">FAQs</a>
+          <a href="#interview">Interview Questions</a>
+          <a href="#mcq">MCQ Quiz</a>
+          <a href="#glossary">Glossary (Tooltips)</a>
+          <a href="#downloads">Downloadables</a>
+
+          <!-- REQUIRED SIDEBAR MENU ADDITION -->
+          <a href="#practice-coding-questions">To Become Best coder Practice this</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="content">
+      <!-- placeholder anchors required by spec -->
+      <div id="prev-subtopic"></div>
+      <div id="next-subtopic"></div>
+
+      <!-- INTRO -->
+      <h1 class="page-title anchor" id="intro">Data Types and Arrays in C#</h1>
+      <p class="lead">
+        In C#, every variable has a <span class="tt" data-tip="A data type tells the compiler what kind of data a variable can store.\nIt controls memory size, valid operations, and how values behave.\nExamples: int, double, bool, string, object.">data type</span>.
+        Understanding types and arrays helps you write code that is safer, faster, and easier to maintain.
+        This page covers beginner to advanced ideas like
+        <span class="tt" data-tip="Value types store their data directly (e.g., int, double, struct).\nThey are copied by value and typically live on the stack.\nThey cannot be null unless made nullable.">value types</span>,
+        <span class="tt" data-tip="Reference types store a reference (address) to the actual data.\nExamples: string, arrays, class objects.\nThey typically live on the heap and can be null.">reference types</span>,
+        arrays, <span class="tt" data-tip="Boxing converts a value type into an object (reference type).\nIt creates a new object on the heap, which can add overhead.\nUnboxing converts it back to the original value type.">boxing/unboxing</span>,
+        and safe type checks using <span class="tt" data-tip="The 'is' operator checks whether an object is compatible with a given type.\nIt avoids invalid casts and makes code safer.\nOften used in pattern matching with 'is'.">is</span> / <span class="tt" data-tip="The 'as' operator attempts a safe cast.\nIf the cast fails, it returns null instead of throwing an exception.\nUseful for reference types and nullable value types.">as</span>.
+      </p>
+
+      <div class="note">
+        <b>Note:</b> C# runs on the <span class="tt" data-tip="CLR (Common Language Runtime) is the execution engine of .NET.\nIt manages memory (GC), runs IL code, handles exceptions, and enforces type safety.">CLR</span>.
+        Your code is compiled into <span class="tt" data-tip="IL (Intermediate Language) is a CPU-independent code produced by the C# compiler.\nThe CLR later converts IL into machine code using JIT compilation.">IL</span> and executed by a
+        <span class="tt" data-tip="JIT (Just-In-Time) compiles IL to machine code at runtime.\nIt can optimize methods as they execute.\nIt is a key part of how .NET runs fast.">JIT</span> compiler.
+      </div>
+
+      <!-- TOC -->
+      <div class="section anchor" id="toc">
+        <div class="sec-h">Table of Contents</div>
+        <div class="sec-b">
+          <ol>
+            <li><a href="#datatypes">Data Types in C#</a></li>
+            <li><a href="#value-vs-ref">Value Types vs Reference Types</a></li>
+            <li><a href="#boxing-unboxing">Boxing and Unboxing</a></li>
+            <li><a href="#arrays">Arrays (1D, 2D, Jagged)</a></li>
+            <li><a href="#nullable">Nullable Types</a></li>
+            <li><a href="#implicit">Implicitly Typed Local Variables</a></li>
+            <li><a href="#var-vs-dynamic">var vs dynamic</a></li>
+            <li><a href="#is-as">is and as operator</a></li>
+            <li><a href="#practice-coding-questions">To Become Best coder Practice this</a></li>
+          </ol>
+
+          <div class="pager">
+            <a href="#intro">❮ Previous</a>
+            <a href="#datatypes">Next ❯</a>
+            <a class="ghost" href="#prev-subtopic">prev placeholder</a>
+            <a class="ghost" href="#next-subtopic">next placeholder</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION: DATA TYPES -->
+      <div class="section anchor" id="datatypes">
+        <div class="sec-h">1) Data Types in C#</div>
+        <div class="sec-b">
+          <p>
+            C# is a <span class="tt" data-tip="Strongly typed means variable types are known and checked by the compiler.\nIt prevents many common mistakes (like adding text to numbers).\nThis improves reliability and tooling support.">strongly typed</span> language, meaning types are checked early and consistently.
+            Data types decide <b>how much memory</b> is used and <b>what operations</b> are allowed.
+            Choosing the right type makes programs faster and avoids bugs.
+            C# types are broadly grouped into <b>value types</b> and <b>reference types</b>.
+          </p>
+
+          <div class="ascii">
+C# Types (Big Picture)
+---------------------
+            +----------------------+
+            |        Types         |
+            +----------+-----------+
+                       |
+          +------------+------------+
+          |                         |
+   Value Types                 Reference Types
+ (store value)               (store reference)
+          </div>
+
+          <div class="example" id="datatypes-built-in">
+            <div class="ex-h">Example: Built-in data types</div>
+            <p><b>Common value types:</b> int, long, float, double, decimal, bool, char, struct</p>
+            <p><b>Common reference types:</b> string, object, array, class</p>
+
+            <pre class="code">using System;
+
+class Demo
+{
+    static void Main()
+    {
+        int age = 25;
+        double price = 99.99;
+        bool isActive = true;
+        char grade = 'A';
+
+        string name = "Gopi";
+        object anything = 10; // can store any type
+
+        Console.WriteLine($"{name} | Age: {age} | Price: {price} | Active: {isActive} | Grade: {grade}");
+    }
+}</pre>
+            <a class="trybtn" href="#try-it-dummy">Try it Yourself »</a>
+          </div>
+
+          <table>
+            <tr><th>Category</th><th>Examples</th><th>Typical Use</th></tr>
+            <tr>
+              <td>Numeric</td>
+              <td>int, long, float, double, decimal</td>
+              <td>Counts, measurements, money (use decimal for money)</td>
+            </tr>
+            <tr>
+              <td>Text</td>
+              <td>char, string</td>
+              <td>Characters, names, messages</td>
+            </tr>
+            <tr>
+              <td>True/False</td>
+              <td>bool</td>
+              <td>Flags like isPaid, isValid</td>
+            </tr>
+            <tr id="datatypes-reference">
+              <td>General</td>
+              <td>object</td>
+              <td>Generic storage (use carefully)</td>
+            </tr>
+          </table>
+
+          <div class="tip">
+            <b>Beginner Tip:</b> Use <b>int</b> for whole numbers and <b>string</b> for text. Use <b>decimal</b> for currency.
+          </div>
+          <div class="note">
+            <b>Advanced Note:</b> Use the smallest appropriate numeric type for memory efficiency, but prioritize clarity.
+            Also prefer <b>explicit conversions</b> when there is a risk of data loss.
+          </div>
+
+          <div class="example">
+            <div class="ex-h">Real-world use case</div>
+            <p>
+              In a billing system: <b>decimal</b> stores money, <b>DateTime</b> stores invoice date,
+              and <b>bool</b> tracks payment status.
+            </p>
+          </div>
+
+          <div class="pager">
+            <a href="#toc">❮ Previous</a>
+            <a href="#value-vs-ref">Next ❯</a>
+            <a class="ghost" href="#prev-subtopic">prev placeholder</a>
+            <a class="ghost" href="#next-subtopic">next placeholder</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION: VALUE vs REFERENCE -->
+      <div class="section anchor" id="value-vs-ref">
+        <div class="sec-h">2) Value Types and Reference Types</div>
+        <div class="sec-b">
+          <p>
+            The biggest difference is how data is stored and copied.
+            <span class="tt" data-tip="Stack memory is fast and stores method call data and many value types.\nWhen a method ends, its stack memory is released automatically.\nThink: short-lived, quick access.">Stack</span>
+            is typically used for value-type storage (conceptually), while the
+            <span class="tt" data-tip="Heap memory stores objects created at runtime (like class instances and arrays).\nThey live until garbage collected.\nThink: long-lived objects shared across code.">heap</span>
+            stores objects for reference types.
+            When you assign a value type, the <b>value is copied</b>.
+            When you assign a reference type, the <b>reference is copied</b>, so two variables can point to the same object.
+          </p>
+
+          <div class="ascii">
+Copy Behavior
+-------------
+Value Type:
+  a = 10
+  b = a      => b gets COPY of 10 (independent)
+
+Reference Type:
+  a ---> [Object: "Hello"]
+  b = a      => b points to SAME object
+          </div>
+
+          <div class="example">
+            <div class="ex-h">Example: Copy behavior</div>
+            <pre class="code">using System;
+
+class Demo
+{
+    static void Main()
+    {
+        // Value type copy
+        int a = 10;
+        int b = a;
+        b = 99;
+        Console.WriteLine($"a={a}, b={b}"); // a=10, b=99
+
+        // Reference type copy (array is reference type)
+        int[] x = { 1, 2, 3 };
+        int[] y = x;
+        y[0] = 999;
+        Console.WriteLine($"x[0]={x[0]}, y[0]={y[0]}"); // both 999
+    }
+}</pre>
+            <a class="trybtn" href="#try-it-dummy">Try it Yourself »</a>
+          </div>
+
+          <div class="example">
+            <div class="ex-h">Real-world use case</div>
+            <p>
+              In a shopping cart app, a <b>Cart</b> object (reference type) is shared across pages.
+              If one page adds an item, other pages see it too because they reference the same cart object.
+            </p>
+          </div>
+
+          <div class="tip">
+            <b>Beginner Tip:</b> If you see unexpected changes, check if you copied a reference (arrays/classes) instead of values.
+          </div>
+          <div class="warning">
+            <b>Warning:</b> Accidentally sharing references can create bugs (e.g., modifying the same array from multiple places).
+            Use cloning when needed.
+          </div>
+          <div class="note">
+            <b>Advanced Note:</b> Passing reference types to methods still passes the reference by value.
+            Use <b>ref</b> only when you really need to reassign the caller’s variable.
+          </div>
+
+          <div class="pager">
+            <a href="#datatypes">❮ Previous</a>
+            <a href="#boxing-unboxing">Next ❯</a>
+            <a class="ghost" href="#prev-subtopic">prev placeholder</a>
+            <a class="ghost" href="#next-subtopic">next placeholder</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION: BOXING / UNBOXING -->
+      <div class="section anchor" id="boxing-unboxing">
+        <div class="sec-h">3) Boxing and Unboxing</div>
+        <div class="sec-b">
+          <p>
+            <span class="tt" data-tip="Boxing wraps a value type (like int) inside an object.\nThis allocates a new object on the heap.\nIt happens when a value type is treated like object.">Boxing</span>
+            converts a value type into an object.
+            <span class="tt" data-tip="Unboxing extracts the value type from an object.\nIt requires an explicit cast and can throw an exception if types mismatch.\nIt is slower than normal value operations.">Unboxing</span>
+            converts it back.
+            Boxing/unboxing is common when using older APIs or non-generic collections.
+            Modern C# uses generics to reduce boxing.
+          </p>
+
+          <div class="ascii">
+Boxing/Unboxing Flow
+--------------------
+int (value)  --(boxing)--> object (heap object)
+object       --(unboxing)-> int (value)
+          </div>
+
+          <div class="example">
+            <div class="ex-h">Example: Boxing and Unboxing</div>
+            <pre class="code">using System;
+
+class Demo
+{
+    static void Main()
+    {
+        int n = 42;
+
+        object boxed = n;      // boxing
+        int unboxed = (int)boxed; // unboxing (explicit cast)
+
+        Console.WriteLine($"n={n}, boxed={boxed}, unboxed={unboxed}");
+    }
+}</pre>
+            <a class="trybtn" href="#try-it-dummy">Try it Yourself »</a>
+          </div>
+
+          <div class="warning">
+            <b>Warning:</b> Unboxing the wrong type throws an exception.
+            Example: <b>(int)boxed</b> fails if boxed actually contains a <b>double</b>.
+          </div>
+
+          <div class="example">
+            <div class="ex-h">Real-world use case</div>
+            <p>
+              In logging frameworks, values may be stored as <b>object</b> for flexibility.
+              Boxing can occur if you pass value types frequently—use structured logging and generics where possible.
+            </p>
+          </div>
+
+          <div class="tip">
+            <b>Beginner Tip:</b> Prefer <b>List&lt;int&gt;</b> over older collections like <b>ArrayList</b> to avoid boxing.
+          </div>
+          <div class="note">
+            <b>Advanced Note:</b> Boxing creates allocations and can increase GC pressure.
+            In high-performance systems, avoid boxing in hot loops.
+          </div>
+
+          <div class="pager">
+            <a href="#value-vs-ref">❮ Previous</a>
+            <a href="#arrays">Next ❯</a>
+            <a class="ghost" href="#prev-subtopic">prev placeholder</a>
+            <a class="ghost" href="#next-subtopic">next placeholder</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION: ARRAYS -->
+      <div class="section anchor" id="arrays">
+        <div class="sec-h">4) Arrays in C# (1D, 2D, Jagged)</div>
+        <div class="sec-b">
+          <p>
+            An <span class="tt" data-tip="An array is a fixed-size collection of same-type elements.\nIt stores items in contiguous memory-like structure.\nIndex starts from 0 and access is fast (O(1)).">array</span>
+            stores multiple values of the same type under one variable name.
+            Arrays are <b>fixed-size</b>, so you decide the length when creating them.
+            Use arrays when the size is known and fast indexing is required.
+            For dynamic sizing, prefer List&lt;T&gt; (covered in Collections topics).
+          </p>
+
+          <div class="ascii">
+Array Index View (1D)
+---------------------
+scores: [ 85 ][ 90 ][ 72 ][ 88 ]
+index :   0     1     2     3
+          </div>
+
+          <!-- 1D -->
+          <div class="example anchor" id="arrays-1d">
+            <div class="ex-h">Example: Single Dimensional Array (1D)</div>
+            <pre class="code">using System;
+
+class Demo
+{
+    static void Main()
+    {
+        int[] scores = { 85, 90, 72, 88 };
+
+        Console.WriteLine("All Scores:");
+        for (int i = 0; i &lt; scores.Length; i++)
+            Console.WriteLine($"scores[{i}] = {scores[i]}");
+
+        // Average
+        int sum = 0;
+        foreach (var s in scores) sum += s;
+        Console.WriteLine("Average = " + (sum / (double)scores.Length));
+    }
+}</pre>
+            <a class="trybtn" href="#try-it-dummy">Try it Yourself »</a>
+          </div>
+
+          <!-- 2D -->
+          <div class="example anchor" id="arrays-2d">
+            <div class="ex-h">Example: Multi-Dimensional Array (2D)</div>
+            <div class="ascii">
+2D Array (Matrix)
+-----------------
+marks[rows, cols]
+
+[ 78  81  90 ]
+[ 65  70  72 ]
+            </div>
+            <pre class="code">using System;
+
+class Demo
+{
+    static void Main()
+    {
+        int[,] marks = {
+            { 78, 81, 90 },
+            { 65, 70, 72 }
+        };
+
+        Console.WriteLine("Matrix:");
+        for (int r = 0; r &lt; marks.GetLength(0); r++)
+        {
+            for (int c = 0; c &lt; marks.GetLength(1); c++)
+                Console.Write(marks[r, c] + " ");
+            Console.WriteLine();
+        }
+    }
+}</pre>
+            <a class="trybtn" href="#try-it-dummy">Try it Yourself »</a>
+          </div>
+
+          <!-- Jagged -->
+          <div class="example anchor" id="arrays-jagged">
+            <div class="ex-h">Example: Jagged Array (array of arrays)</div>
+            <p>
+              A <span class="tt" data-tip="A jagged array is an array of arrays.\nEach inner array can have different lengths.\nUseful for variable-sized rows (like monthly days).">jagged array</span>
+              is flexible because each row can have different size.
+            </p>
+            <div class="ascii">
+Jagged Array
+------------
+days[0] -> [31 items]
+days[1] -> [28 items]
+days[2] -> [31 items]
+            </div>
+            <pre class="code">using System;
+
+class Demo
+{
+    static void Main()
+    {
+        int[][] data = new int[3][];
+        data[0] = new int[] { 1, 2, 3 };
+        data[1] = new int[] { 10, 20 };
+        data[2] = new int[] { 7, 8, 9, 10 };
+
+        for (int i = 0; i &lt; data.Length; i++)
+        {
+            Console.Write("Row " + i + ": ");
+            foreach (var v in data[i]) Console.Write(v + " ");
+            Console.WriteLine();
+        }
+    }
+}</pre>
+            <a class="trybtn" href="#try-it-dummy">Try it Yourself »</a>
+          </div>
+
+          <div class="example">
+            <div class="ex-h">Real-world use case</div>
+            <ul>
+              <li><b>1D:</b> Daily sales for 30 days</li>
+              <li><b>2D:</b> Seating chart (rows × columns)</li>
+              <li><b>Jagged:</b> Monthly calendar (different days per month)</li>
+            </ul>
+          </div>
+
+          <div class="tip">
+            <b>Beginner Tip:</b> Use 1D arrays first. Move to 2D/Jagged only when the problem truly needs rows/columns.
+          </div>
+          <div class="note">
+            <b>Advanced Note:</b> 2D arrays are rectangular and memory-contiguous-ish; jagged arrays are arrays of references.
+            Choose based on access patterns and memory layout needs.
+          </div>
+
+          <div class="pager">
+            <a href="#boxing-unboxing">❮ Previous</a>
+            <a href="#nullable">Next ❯</a>
+            <a class="ghost" href="#prev-subtopic">prev placeholder</a>
+            <a class="ghost" href="#next-subtopic">next placeholder</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION: NULLABLE -->
+      <div class="section anchor" id="nullable">
+        <div class="sec-h">5) Nullable Types</div>
+        <div class="sec-b">
+          <p>
+            Some value types (like int, double, bool) cannot hold <b>null</b>.
+            A <span class="tt" data-tip="Nullable types allow value types to represent 'no value'.\nSyntax: int? or Nullable&lt;int&gt;.\nCommon in database fields where values can be missing.">nullable type</span>
+            solves this by allowing <b>missing/unknown</b> values.
+            This is extremely common in database-driven applications where columns can be empty.
+            Use `T?` for nullable value types and handle them safely using `??` and `HasValue`.
+          </p>
+
+          <div class="ascii">
+Nullable Concept
+----------------
+int age = 25       -> always has a number
+int? age = null    -> can be missing (unknown)
+          </div>
+
+          <div class="example">
+            <div class="ex-h">Example: Nullable int + Null-Coalescing</div>
+            <pre class="code">using System;
+
+class Demo
+{
+    static void Main()
+    {
+        int? discount = null;  // might come from DB
+
+        // If discount is null, use 0
+        int finalDiscount = discount ?? 0;
+
+        Console.WriteLine("Final Discount = " + finalDiscount);
+
+        if (discount.HasValue)
+            Console.WriteLine("Discount is " + discount.Value);
+        else
+            Console.WriteLine("No discount available");
+    }
+}</pre>
+            <a class="trybtn" href="#try-it-dummy">Try it Yourself »</a>
+          </div>
+
+          <div class="example">
+            <div class="ex-h">Real-world use case</div>
+            <p>
+              In a user profile system, <b>MiddleName</b> can be missing (null), and <b>Age</b> might be unknown.
+              Nullable types let you represent missing values without fake defaults.
+            </p>
+          </div>
+
+          <div class="tip">
+            <b>Beginner Tip:</b> Use `??` to set a default when data is missing: <b>value ?? defaultValue</b>.
+          </div>
+          <div class="note">
+            <b>Advanced Note:</b> In modern C#, nullable reference types (NRT) help you reduce NullReferenceException.
+            But `T?` for value types is still the classic nullable mechanism.
+          </div>
+
+          <div class="pager">
+            <a href="#arrays">❮ Previous</a>
+            <a href="#implicit">Next ❯</a>
+            <a class="ghost" href="#prev-subtopic">prev placeholder</a>
+            <a class="ghost" href="#next-subtopic">next placeholder</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION: IMPLICIT (var) -->
+      <div class="section anchor" id="implicit">
+        <div class="sec-h">6) Implicitly Typed Local Variables (var)</div>
+        <div class="sec-b">
+          <p>
+            `var` allows the compiler to infer the variable’s type from the assigned value.
+            This is called <span class="tt" data-tip="Type inference means the compiler figures out a variable's type from the expression.\nIt still becomes a fixed type at compile time.\nIt does NOT make C# dynamically typed.">type inference</span>.
+            `var` is useful for readability when the type is obvious or very long (like LINQ queries).
+            However, the type is still determined at <span class="tt" data-tip="Compile-time is when the C# compiler checks your code before running.\nTypes are validated, errors are found, and IL is generated.\nThis is earlier than runtime execution.">compile-time</span>, not at runtime.
+          </p>
+
+          <div class="ascii">
+var Rule (Simple)
+-----------------
+var x = 10;   // x becomes int (fixed)
+x = "hi";     // ❌ not allowed (still int)
+          </div>
+
+          <div class="example">
+            <div class="ex-h">Example: var in action</div>
+            <pre class="code">using System;
+
+class Demo
+{
+    static void Main()
+    {
+        var count = 10;          // inferred as int
+        var price = 99.5;        // inferred as double
+        var name = "ItTechGenie"; // inferred as string
+
+        Console.WriteLine($"{count} | {price} | {name}");
+    }
+}</pre>
+            <a class="trybtn" href="#try-it-dummy">Try it Yourself »</a>
+          </div>
+
+          <div class="example">
+            <div class="ex-h">Real-world use case</div>
+            <p>
+              In LINQ queries, `var` keeps code readable:
+              the result type might be an anonymous type, which you cannot name directly.
+            </p>
+          </div>
+
+          <div class="tip">
+            <b>Beginner Tip:</b> Use `var` only when the right-hand side clearly shows the type.
+          </div>
+          <div class="note">
+            <b>Advanced Note:</b> `var` can improve maintainability—if you change the right side type, the left updates automatically.
+            But overusing it can reduce clarity.
+          </div>
+
+          <div class="pager">
+            <a href="#nullable">❮ Previous</a>
+            <a href="#var-vs-dynamic">Next ❯</a>
+            <a class="ghost" href="#prev-subtopic">prev placeholder</a>
+            <a class="ghost" href="#next-subtopic">next placeholder</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION: var vs dynamic -->
+      <div class="section anchor" id="var-vs-dynamic">
+        <div class="sec-h">7) var vs dynamic</div>
+        <div class="sec-b">
+          <p>
+            `var` is resolved at compile-time (fixed type).
+            `dynamic` is resolved at <span class="tt" data-tip="Runtime is when your program actually executes.\nDynamic behavior and many errors may appear only when running.\nThis is later than compile-time checks.">runtime</span> (type checking happens during execution).
+            `dynamic` can be useful for COM interop, reflection-heavy code, or dynamic JSON objects,
+            but it can also introduce runtime errors if misused.
+          </p>
+
+          <div class="ascii">
+var vs dynamic
+--------------
+var     -> compile-time type (safe)
+dynamic -> runtime type (flexible, but risky)
+          </div>
+
+          <div class="example">
+            <div class="ex-h">Example: var vs dynamic</div>
+            <pre class="code">using System;
+
+class Demo
+{
+    static void Main()
+    {
+        var a = 10;        // int
+        // a = "hi";       // ❌ compile-time error
+
+        dynamic b = 10;    // can change at runtime
+        b = "hi";          // ✅ allowed
+        Console.WriteLine(b);
+
+        // Risk: runtime error if method doesn't exist
+        // Console.WriteLine(b.NotARealMethod()); // would fail at runtime
+    }
+}</pre>
+            <a class="trybtn" href="#try-it-dummy">Try it Yourself »</a>
+          </div>
+
+          <div class="example">
+            <div class="ex-h">Real-world use case</div>
+            <p>
+              When consuming a dynamic JSON payload (unknown schema), `dynamic` may reduce boilerplate.
+              In enterprise code, prefer strongly typed models for reliability.
+            </p>
+          </div>
+
+          <div class="warning">
+            <b>Warning:</b> `dynamic` hides compile-time safety and can cause runtime crashes.
+            Use it only when you truly need dynamic behavior.
+          </div>
+          <div class="note">
+            <b>Advanced Note:</b> Many `dynamic` operations use the Dynamic Language Runtime (DLR) under the hood,
+            which adds overhead. In performance-critical code, avoid it.
+          </div>
+
+          <div class="pager">
+            <a href="#implicit">❮ Previous</a>
+            <a href="#is-as">Next ❯</a>
+            <a class="ghost" href="#prev-subtopic">prev placeholder</a>
+            <a class="ghost" href="#next-subtopic">next placeholder</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION: is/as -->
+      <div class="section anchor" id="is-as">
+        <div class="sec-h">8) is and as Operator</div>
+        <div class="sec-b">
+          <p>
+            In OOP, you often work with base types and derived types.
+            The <span class="tt" data-tip="The 'is' operator checks type compatibility.\nIt returns true/false and never throws for type mismatch.\nOften used for safe branching and pattern matching.">is operator</span>
+            checks if an object can be treated as a particular type.
+            The <span class="tt" data-tip="The 'as' operator performs a safe cast.\nIf it fails, it returns null (no exception).\nThen you check for null before using it.">as operator</span>
+            attempts a cast and returns null if it fails (for reference types / nullable value types).
+            This helps you avoid invalid cast exceptions.
+          </p>
+
+          <div class="ascii">
+Safe Type Handling
+------------------
+obj -> check with 'is'
+obj -> try cast with 'as' -> null check -> use
+          </div>
+
+          <div class="example">
+            <div class="ex-h">Example: is and as</div>
+            <pre class="code">using System;
+
+class Animal { public virtual void Speak(){ Console.WriteLine("..."); } }
+class Dog : Animal { public override void Speak(){ Console.WriteLine("Woof"); } }
+
+class Demo
+{
+    static void Main()
+    {
+        Animal a = new Dog();
+
+        // is check
+        if (a is Dog)
+            Console.WriteLine("a is a Dog");
+
+        // as cast
+        Dog d = a as Dog;
+        if (d != null)
+            d.Speak(); // Woof
+    }
+}</pre>
+            <a class="trybtn" href="#try-it-dummy">Try it Yourself »</a>
+          </div>
+
+          <div class="example">
+            <div class="ex-h">Real-world use case</div>
+            <p>
+              In a payment system, you might have <b>Payment</b> base class with derived types like <b>CardPayment</b> and <b>UPIPayment</b>.
+              Use <b>is</b>/<b>as</b> to safely handle type-specific fields without runtime crashes.
+            </p>
+          </div>
+
+          <div class="tip">
+            <b>Beginner Tip:</b> Prefer `is` for checking and branching; use `as` only when you want null instead of exception.
+          </div>
+          <div class="note">
+            <b>Advanced Note:</b> In modern C#, pattern matching (`if (a is Dog dog)`) is cleaner and safer than separate `is` + cast.
+          </div>
+
+          <div class="pager">
+            <a href="#var-vs-dynamic">❮ Previous</a>
+            <a href="#best-practices">Next ❯</a>
+            <a class="ghost" href="#prev-subtopic">prev placeholder</a>
+            <a class="ghost" href="#next-subtopic">next placeholder</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- BEST PRACTICES -->
+      <div class="section anchor" id="best-practices">
+        <div class="sec-h">Best Practices</div>
+        <div class="sec-b">
+          <ul>
+            <li>Prefer <b>decimal</b> for currency and financial calculations.</li>
+            <li>Use <b>nullable types</b> when data can be missing (DB fields, optional input).</li>
+            <li>Avoid boxing in performance-critical code; prefer generics (e.g., List&lt;int&gt;).</li>
+            <li>Use arrays when size is fixed; use List&lt;T&gt; when size changes.</li>
+            <li>Use `var` for readability, not to hide type meaning.</li>
+            <li>Use `dynamic` carefully—keep it isolated and validated.</li>
+            <li>Prefer safe checks using `is` and pattern matching to avoid invalid cast exceptions.</li>
+          </ul>
+
+          <div class="pager">
+            <a href="#is-as">❮ Previous</a>
+            <a href="#lab">Next ❯</a>
+            <a class="ghost" href="#prev-subtopic">prev placeholder</a>
+            <a class="ghost" href="#next-subtopic">next placeholder</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- LAB -->
+      <div class="section anchor" id="lab">
+        <div class="sec-h">Step-by-step Lab (Hands-on)</div>
+        <div class="sec-b">
+          <p>
+            Build a small console flow that stores weekly hours, handles missing data, and prints a summary.
+            This lab connects multiple subtopics together (types + arrays + nullable + var).
+          </p>
+
+          <div class="example">
+            <div class="ex-h">Steps</div>
+            <ol>
+              <li>Create a `double[]` with 4 weeks of hours.</li>
+              <li>Allow one week to be missing using `double?`.</li>
+              <li>Compute total and average safely using `?? 0`.</li>
+              <li>Print a report.</li>
+            </ol>
+          </div>
+
+          <pre class="code">using System;
+
+class Lab
+{
+    static void Main()
+    {
+        double[] hours = { 40, 42, 38, 45 };
+        double? week2BonusHours = null; // missing data example
+
+        double total = 0;
+        foreach (var h in hours) total += h;
+
+        total += (week2BonusHours ?? 0);
+
+        double avg = total / hours.Length;
+
+        Console.WriteLine("Total Hours = " + total);
+        Console.WriteLine("Average Hours/Week = " + avg);
+    }
+}</pre>
+
+          <div class="tip">
+            <b>Beginner Tip:</b> Print values after each step to understand what your program is doing.
+          </div>
+          <div class="note">
+            <b>Advanced Note:</b> In real apps, this data often comes from DB/API; null handling prevents crashes.
+          </div>
+
+          <div class="pager">
+            <a href="#best-practices">❮ Previous</a>
+            <a href="#mini-project">Next ❯</a>
+            <a class="ghost" href="#prev-subtopic">prev placeholder</a>
+            <a class="ghost" href="#next-subtopic">next placeholder</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- MINI PROJECT -->
+      <div class="section anchor" id="mini-project">
+        <div class="sec-h">Mini Project (Sample Project Idea)</div>
+        <div class="sec-b">
+          <p>
+            <b>Project:</b> “Student Marks Analyzer” — store marks for multiple subjects and print a performance report.
+            Use 1D arrays for single student, 2D arrays for class marks matrix, and jagged arrays when subjects differ per student.
+          </p>
+
+          <div class="ascii">
+Project Data Shapes
+-------------------
+Single student marks      -> int[] marks
+Class marks table         -> int[,] marks
+Different subjects/student-> int[][] marks
+          </div>
+
+          <div class="example">
+            <div class="ex-h">Deliverables</div>
+            <ul>
+              <li>Input marks for 4 subjects (int[])</li>
+              <li>Calculate total, average, grade</li>
+              <li>Find highest and lowest marks</li>
+              <li>Handle optional sports score using int?</li>
+            </ul>
+          </div>
+
+          <div class="pager">
+            <a href="#lab">❮ Previous</a>
+            <a href="#faqs">Next ❯</a>
+            <a class="ghost" href="#prev-subtopic">prev placeholder</a>
+            <a class="ghost" href="#next-subtopic">next placeholder</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQs -->
+      <div class="section anchor" id="faqs">
+        <div class="sec-h">FAQs</div>
+        <div class="sec-b">
+          <details class="example">
+            <summary><b>Is string a value type or reference type?</b></summary>
+            <p>string is a reference type, but it behaves like immutable value in many scenarios because it is immutable.</p>
+          </details>
+          <details class="example">
+            <summary><b>Should I use arrays or List&lt;T&gt;?</b></summary>
+            <p>Use arrays for fixed size and fast indexing. Use List&lt;T&gt; when size grows/shrinks.</p>
+          </details>
+          <details class="example">
+            <summary><b>Does var mean dynamic?</b></summary>
+            <p>No. var is compile-time inferred. dynamic is runtime resolved.</p>
+          </details>
+          <details class="example">
+            <summary><b>When does boxing happen?</b></summary>
+            <p>When a value type is converted to object/interface type, especially with non-generic APIs.</p>
+          </details>
+          <details class="example">
+            <summary><b>Can nullable type be used with all value types?</b></summary>
+            <p>Yes. You can use T? for most value types (int?, double?, bool?, DateTime?).</p>
+          </details>
+
+          <div class="pager">
+            <a href="#mini-project">❮ Previous</a>
+            <a href="#interview">Next ❯</a>
+            <a class="ghost" href="#prev-subtopic">prev placeholder</a>
+            <a class="ghost" href="#next-subtopic">next placeholder</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interview Questions -->
+      <div class="section anchor" id="interview">
+        <div class="sec-h">Interview Questions (with short answers)</div>
+        <div class="sec-b">
+          <ol>
+            <li><b>What is the difference between value type and reference type?</b><br/>Value types store actual value; reference types store reference to an object.</li>
+            <li><b>What is boxing and why is it expensive?</b><br/>It allocates a new object on heap and adds GC overhead.</li>
+            <li><b>What is a jagged array?</b><br/>An array of arrays where each row can have different length.</li>
+            <li><b>When to use decimal?</b><br/>For money/currency calculations to reduce rounding errors.</li>
+            <li><b>What is nullable type?</b><br/>Allows value types to represent “no value” using T?.</li>
+            <li><b>var vs dynamic?</b><br/>var is compile-time typed; dynamic is runtime typed.</li>
+            <li><b>How do you safely cast in C#?</b><br/>Use `is` / pattern matching or `as` with null check.</li>
+            <li><b>What is the default value of int and int??</b><br/>int default is 0; int? default is null.</li>
+            <li><b>How to get length of 2D array?</b><br/>Use GetLength(dimensionIndex).</li>
+            <li><b>Why avoid object for numeric data?</b><br/>It can cause boxing/unboxing and lose compile-time safety.</li>
+          </ol>
+
+          <div class="pager">
+            <a href="#faqs">❮ Previous</a>
+            <a href="#mcq">Next ❯</a>
+            <a class="ghost" href="#prev-subtopic">prev placeholder</a>
+            <a class="ghost" href="#next-subtopic">next placeholder</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- MCQ -->
+      <div class="section anchor" id="mcq">
+        <div class="sec-h">MCQ Quiz (5–10 Questions)</div>
+        <div class="sec-b">
+          <p>Select the correct answer. Expand “Answer” to check.</p>
+
+          <div class="example">
+            <div class="ex-h">1) Which is a value type?</div>
+            a) string &nbsp;&nbsp; b) int &nbsp;&nbsp; c) array &nbsp;&nbsp; d) class<br/>
+            <details><summary><b>Answer</b></summary><p><b>b) int</b></p></details>
+          </div>
+
+          <div class="example">
+            <div class="ex-h">2) What does boxing do?</div>
+            a) object → int &nbsp;&nbsp; b) int → object &nbsp;&nbsp; c) string → char &nbsp;&nbsp; d) int → double<br/>
+            <details><summary><b>Answer</b></summary><p><b>b) int → object</b></p></details>
+          </div>
+
+          <div class="example">
+            <div class="ex-h">3) Arrays in C# are:</div>
+            a) dynamic size &nbsp;&nbsp; b) fixed size &nbsp;&nbsp; c) always 2D &nbsp;&nbsp; d) always jagged<br/>
+            <details><summary><b>Answer</b></summary><p><b>b) fixed size</b></p></details>
+          </div>
+
+          <div class="example">
+            <div class="ex-h">4) `var x = 10;` means x is:</div>
+            a) dynamic &nbsp;&nbsp; b) object &nbsp;&nbsp; c) int &nbsp;&nbsp; d) string<br/>
+            <details><summary><b>Answer</b></summary><p><b>c) int</b></p></details>
+          </div>
+
+          <div class="example">
+            <div class="ex-h">5) `as` operator returns:</div>
+            a) exception on failure &nbsp;&nbsp; b) null on failure &nbsp;&nbsp; c) 0 on failure &nbsp;&nbsp; d) false on failure<br/>
+            <details><summary><b>Answer</b></summary><p><b>b) null on failure</b></p></details>
+          </div>
+
+          <div class="example">
+            <div class="ex-h">6) A jagged array is:</div>
+            a) array of arrays &nbsp;&nbsp; b) rectangular matrix only &nbsp;&nbsp; c) value type &nbsp;&nbsp; d) fixed rows and cols always<br/>
+            <details><summary><b>Answer</b></summary><p><b>a) array of arrays</b></p></details>
+          </div>
+
+          <div class="pager">
+            <a href="#interview">❮ Previous</a>
+            <a href="#glossary">Next ❯</a>
+            <a class="ghost" href="#prev-subtopic">prev placeholder</a>
+            <a class="ghost" href="#next-subtopic">next placeholder</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Glossary -->
+      <div class="section anchor" id="glossary">
+        <div class="sec-h">Glossary (Tooltips)</div>
+        <div class="sec-b">
+          <p>This table lists the tooltip terms used on this page.</p>
+
+          <table>
+            <tr><th>Term</th><th>Tooltip Description</th></tr>
+            <tr><td>Data type</td><td>A label that defines what a variable can store, how much memory it uses, and allowed operations.</td></tr>
+            <tr><td>Value type</td><td>Stores the actual value directly (e.g., int, struct). Copying duplicates the value.</td></tr>
+            <tr><td>Reference type</td><td>Stores a reference to data on the heap (e.g., class, string, arrays). Copying duplicates the reference.</td></tr>
+            <tr><td>Stack</td><td>Fast memory for method execution data; released automatically when method ends.</td></tr>
+            <tr><td>Heap</td><td>Memory for objects created at runtime; managed by garbage collector.</td></tr>
+            <tr><td>Boxing</td><td>Converts a value type into object (heap allocation).</td></tr>
+            <tr><td>Unboxing</td><td>Extracts value type from object using explicit cast.</td></tr>
+            <tr><td>Array</td><td>Fixed-size collection of same-type elements accessed by index.</td></tr>
+            <tr><td>Jagged array</td><td>An array of arrays where each inner array can have different length.</td></tr>
+            <tr><td>Nullable type</td><td>Allows value types to hold null (e.g., int?).</td></tr>
+            <tr><td>Type inference</td><td>Compiler figures out the type from the assigned expression (used with var).</td></tr>
+            <tr><td>Compile-time</td><td>When code is checked and compiled before running.</td></tr>
+            <tr><td>Runtime</td><td>When program executes; dynamic binding happens here.</td></tr>
+            <tr><td>is operator</td><td>Checks if an object is compatible with a type, returning true/false.</td></tr>
+            <tr><td>as operator</td><td>Safe cast that returns null if it fails.</td></tr>
+            <tr><td>CLR</td><td>.NET runtime engine handling memory, execution, and type safety.</td></tr>
+            <tr><td>IL</td><td>Intermediate code produced by compiler, executed by CLR.</td></tr>
+            <tr><td>JIT</td><td>Compiles IL into machine code during execution.</td></tr>
+          </table>
+
+          <div class="pager">
+            <a href="#mcq">❮ Previous</a>
+            <a href="#downloads">Next ❯</a>
+            <a class="ghost" href="#prev-subtopic">prev placeholder</a>
+            <a class="ghost" href="#next-subtopic">next placeholder</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Downloadables -->
+      <div class="section anchor" id="downloads">
+        <div class="sec-h">Downloadables (Placeholder)</div>
+        <div class="sec-b">
+          <div class="example">
+            <div class="ex-h">Downloads</div>
+            <ul>
+              <li>✅ Source Code ZIP (placeholder)</li>
+              <li>✅ PPT Slides (placeholder)</li>
+              <li>✅ DOC Notes (placeholder)</li>
+            </ul>
+            <a class="trybtn" href="#downloads">Download ZIP (Coming Soon) »</a>
+            &nbsp;
+            <a class="trybtn" href="#downloads">Download PPT (Coming Soon) »</a>
+            &nbsp;
+            <a class="trybtn" href="#downloads">Download DOC (Coming Soon) »</a>
+          </div>
+
+          <div class="pager">
+            <a href="#glossary">❮ Previous</a>
+            <a href="#practice-coding-questions">Next ❯</a>
+            <a class="ghost" href="#prev-subtopic">prev placeholder</a>
+            <a class="ghost" href="#next-subtopic">next placeholder</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRACTICE SECTION (REQUIRED TITLE + ID) -->
+      <div class="section anchor" id="practice-coding-questions">
+        <div class="sec-h">To Become Best coder Practice this</div>
+        <div class="sec-b">
+          <p>
+            Practice makes you strong in interviews. Below are 15 coding questions (Easy → Hard) focused on
+            <b>data types, arrays, nullable, var/dynamic, boxing/unboxing, and is/as</b>.
+          </p>
+
+          <!-- EASY (5) -->
+          <h3>Easy (5)</h3>
+
+          <details class="example">
+            <summary><b>E1) Count positives and negatives</b></summary>
+            <p><b>Problem:</b> Given N integers, count how many are positive and how many are negative.</p>
+            <p><b>Input:</b> N, then N integers<br/><b>Output:</b> positivesCount negativesCount</p>
+            <p><b>Example Input:</b> 5 → 2 -1 0 7 -3<br/><b>Example Output:</b> 2 2</p>
+            <p><b>Constraints:</b> 1 ≤ N ≤ 10^5</p>
+            <p><b>Hint:</b> Loop through array; update two counters.</p>
+          </details>
+
+          <details class="example">
+            <summary><b>E2) Find maximum in an array</b></summary>
+            <p><b>Problem:</b> Read N numbers and print the maximum.</p>
+            <p><b>Input:</b> N, then N integers<br/><b>Output:</b> maxValue</p>
+            <p><b>Example Input:</b> 4 → 10 90 45 12<br/><b>Example Output:</b> 90</p>
+            <p><b>Constraints:</b> N ≥ 1</p>
+            <p><b>Hint:</b> Initialize max = first element.</p>
+          </details>
+
+          <details class="example">
+            <summary><b>E3) Convert Celsius to Fahrenheit</b></summary>
+            <p><b>Problem:</b> Read a double Celsius and print Fahrenheit (F = C*9/5 + 32).</p>
+            <p><b>Input:</b> C (double)<br/><b>Output:</b> F (double)</p>
+            <p><b>Example Input:</b> 0<br/><b>Example Output:</b> 32</p>
+            <p><b>Constraints:</b> -1000 ≤ C ≤ 1000</p>
+            <p><b>Hint:</b> Use double for precision.</p>
+          </details>
+
+          <details class="example">
+            <summary><b>E4) Nullable discount</b></summary>
+            <p><b>Problem:</b> Read a price and an optional discount (may be blank). If discount missing, treat as 0.</p>
+            <p><b>Input:</b> price, discountOrBlank<br/><b>Output:</b> finalPrice</p>
+            <p><b>Example Input:</b> 100, blank<br/><b>Example Output:</b> 100</p>
+            <p><b>Constraints:</b> price ≥ 0</p>
+            <p><b>Hint:</b> Use nullable double? and null-coalescing.</p>
+          </details>
+
+          <details class="example">
+            <summary><b>E5) Reverse an array</b></summary>
+            <p><b>Problem:</b> Reverse N integers and print them.</p>
+            <p><b>Input:</b> N then N ints<br/><b>Output:</b> reversed array</p>
+            <p><b>Example Input:</b> 3 → 5 6 7<br/><b>Example Output:</b> 7 6 5</p>
+            <p><b>Constraints:</b> N up to 10^5</p>
+            <p><b>Hint:</b> Swap i and n-1-i.</p>
+          </details>
+
+          <!-- MEDIUM (5) -->
+          <h3>Medium (5)</h3>
+
+          <details class="example">
+            <summary><b>M1) Weekly sales average (1D)</b></summary>
+            <p><b>Problem:</b> Store 7 days sales and print total + average (double).</p>
+            <p><b>Input:</b> 7 integers<br/><b>Output:</b> total average</p>
+            <p><b>Example Input:</b> 10 20 30 40 50 60 70<br/><b>Example Output:</b> 280 40</p>
+            <p><b>Constraints:</b> sales ≥ 0</p>
+            <p><b>Hint:</b> total/7.0 for average.</p>
+          </details>
+
+          <details class="example">
+            <summary><b>M2) Student marks table (2D)</b></summary>
+            <p><b>Problem:</b> Read R students and C subjects, print each student total.</p>
+            <p><b>Input:</b> R, C, then R×C marks<br/><b>Output:</b> totals per row</p>
+            <p><b>Example Input:</b> R=2 C=3 → 10 20 30  5 5 5<br/><b>Example Output:</b> 60 15</p>
+            <p><b>Constraints:</b> 1≤R,C≤50</p>
+            <p><b>Hint:</b> Nested loops, sum each row.</p>
+          </details>
+
+          <details class="example">
+            <summary><b>M3) Jagged monthly attendance</b></summary>
+            <p><b>Problem:</b> Month has weeks with different working days. Store attendance per week (jagged array) and print total days present.</p>
+            <p><b>Input:</b> W, then each week length and values<br/><b>Output:</b> totalPresent</p>
+            <p><b>Example Input:</b> W=2; week1:3(1 1 0), week2:2(1 1)<br/><b>Example Output:</b> 4</p>
+            <p><b>Constraints:</b> values are 0/1</p>
+            <p><b>Hint:</b> Sum all inner arrays.</p>
+          </details>
+
+          <details class="example">
+            <summary><b>M4) Avoid boxing in mixed inputs</b></summary>
+            <p><b>Problem:</b> You receive numbers as strings. Convert safely to int and store in int[] (no object array).</p>
+            <p><b>Input:</b> N then N strings<br/><b>Output:</b> validSum (ignore invalid)</p>
+            <p><b>Example Input:</b> 4 → 10 abc 20 -5<br/><b>Example Output:</b> 25</p>
+            <p><b>Constraints:</b> N up to 10^5</p>
+            <p><b>Hint:</b> Use int.TryParse.</p>
+          </details>
+
+          <details class="example">
+            <summary><b>M5) Type filter using is/as</b></summary>
+            <p><b>Problem:</b> Given a list of objects representing messages, print only string messages.</p>
+            <p><b>Input:</b> N then N values (some strings, some numbers)<br/><b>Output:</b> only strings</p>
+            <p><b>Example Input:</b> 4 → "hi" 10 "ok" 2.5<br/><b>Example Output:</b> hi ok</p>
+            <p><b>Constraints:</b> N ≤ 10^4</p>
+            <p><b>Hint:</b> Use `is string` or `as string` with null-check.</p>
+          </details>
+
+          <!-- HARD (5) -->
+          <h3>Hard (5)</h3>
+
+          <details class="example">
+            <summary><b>H1) Rotate array K times</b></summary>
+            <p><b>Problem:</b> Rotate an array right by K positions and print final array.</p>
+            <p><b>Input:</b> N, K, then N ints<br/><b>Output:</b> rotated array</p>
+            <p><b>Example Input:</b> N=5 K=2 → 1 2 3 4 5<br/><b>Example Output:</b> 4 5 1 2 3</p>
+            <p><b>Constraints:</b> N up to 10^5</p>
+            <p><b>Hint:</b> K %= N; use extra array or reverse method.</p>
+          </details>
+
+          <details class="example">
+            <summary><b>H2) Missing values report (nullable + arrays)</b></summary>
+            <p><b>Problem:</b> Read N sensor readings where -1 means missing. Convert to int?[] and print count of missing + average of valid.</p>
+            <p><b>Input:</b> N then N ints<br/><b>Output:</b> missingCount validAverage</p>
+            <p><b>Example Input:</b> 5 → 10 -1 20 -1 30<br/><b>Example Output:</b> 2 20</p>
+            <p><b>Constraints:</b> N up to 10^5</p>
+            <p><b>Hint:</b> Convert -1 to null, sum only non-null.</p>
+          </details>
+
+          <details class="example">
+            <summary><b>H3) Matrix diagonal analysis (2D)</b></summary>
+            <p><b>Problem:</b> For an NxN matrix, print main diagonal sum, secondary diagonal sum, and their difference.</p>
+            <p><b>Input:</b> N then N×N ints<br/><b>Output:</b> d1 d2 absDiff</p>
+            <p><b>Example Input:</b> N=3 → 1 2 3 4 5 6 7 8 9<br/><b>Example Output:</b> 15 15 0</p>
+            <p><b>Constraints:</b> N ≤ 500</p>
+            <p><b>Hint:</b> d1 += a[i,i], d2 += a[i,n-1-i].</p>
+          </details>
+
+          <details class="example">
+            <summary><b>H4) Jagged salary bands</b></summary>
+            <p><b>Problem:</b> Departments have different employee counts. Store salaries in jagged array and print department-wise max salary.</p>
+            <p><b>Input:</b> D, then each dept size + salaries<br/><b>Output:</b> max per dept</p>
+            <p><b>Example Input:</b> D=2; dept1:3(10 20 15), dept2:2(50 40)<br/><b>Example Output:</b> 20 50</p>
+            <p><b>Constraints:</b> D ≤ 50, each dept ≤ 10^4</p>
+            <p><b>Hint:</b> For each inner array, scan for max.</p>
+          </details>
+
+          <details class="example">
+            <summary><b>H5) Detect boxing hotspots</b></summary>
+            <p><b>Problem:</b> You have a legacy object[] storing numbers. Convert it to int[] safely and report how many invalid items existed.</p>
+            <p><b>Input:</b> N then N items (some not ints)<br/><b>Output:</b> convertedSum invalidCount</p>
+            <p><b>Example Input:</b> 5 → 10 "x" 20 30 2.5<br/><b>Example Output:</b> 60 2</p>
+            <p><b>Constraints:</b> N ≤ 10^5</p>
+            <p><b>Hint:</b> Use `is int` to filter; unbox only when compatible.</p>
+          </details>
+
+          <div class="pager">
+            <a href="#downloads">❮ Previous</a>
+            <a href="#intro">Back to Top ❯</a>
+            <a class="ghost" href="#prev-subtopic">prev placeholder</a>
+            <a class="ghost" href="#next-subtopic">next placeholder</a>
+          </div>
+
+          <div class="footer">
+            <b>Summary:</b> You learned C# data types, value vs reference behavior, boxing/unboxing,
+            arrays (1D/2D/jagged), nullable types, var vs dynamic, and safe type checks using is/as.
+          </div>
+        </div>
+      </div>
+
+      <div id="try-it-dummy"></div>
+    </main>
+  </div>
+</body>
+</html>

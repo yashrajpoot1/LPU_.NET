@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>ItTechGenie • Evaluating Regular Expressions in C#</title>
+
+  <style>
+    :root{
+      --brand:#04AA6D;
+      --brand-dark:#038857;
+      --bg:#f5f7fb;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --card:#ffffff;
+      --border:#e5e7eb;
+      --code:#282A35;
+      --shadow:0 8px 20px rgba(2, 6, 23, .08);
+      --sidebar-w:290px;
+      --topbar-h:56px;
+      --radius:14px;
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:var(--bg);
+    }
+
+    /* Top bar */
+    .topbar{
+      position:fixed;
+      top:0; left:0; right:0;
+      height:var(--topbar-h);
+      background:var(--brand);
+      color:#fff;
+      display:flex;
+      align-items:center;
+      padding:0 16px;
+      z-index:1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,.12);
+    }
+    .brand{
+      font-weight:800;
+      letter-spacing:.2px;
+      margin-right:12px;
+      white-space:nowrap;
+    }
+    .topbar .title{
+      font-weight:600;
+      opacity:.95;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+    }
+    .topbar .spacer{ flex:1; }
+    .topbar .chip{
+      background: rgba(255,255,255,.16);
+      border:1px solid rgba(255,255,255,.22);
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:12px;
+      white-space:nowrap;
+    }
+
+    /* Layout */
+    .sidebar{
+      position:fixed;
+      top:var(--topbar-h);
+      left:0;
+      width:var(--sidebar-w);
+      height:calc(100vh - var(--topbar-h));
+      background:#fff;
+      border-right:1px solid var(--border);
+      overflow:auto;
+      padding:14px 10px 18px 10px;
+      z-index:900;
+    }
+    .main{
+      margin-left:var(--sidebar-w);
+      padding: calc(var(--topbar-h) + 18px) 18px 40px 18px;
+    }
+
+    /* Sidebar nav */
+    .side-title{
+      font-weight:800;
+      font-size:14px;
+      color:#0f172a;
+      padding:10px 12px;
+      margin:4px 6px 10px;
+      background:linear-gradient(180deg, #f0fdf6, #ffffff);
+      border:1px solid var(--border);
+      border-radius:12px;
+    }
+    .nav{
+      list-style:none;
+      padding:0;
+      margin:0 6px 14px;
+    }
+    .nav li{ margin:2px 0; }
+    .nav a{
+      display:block;
+      color:#111827;
+      text-decoration:none;
+      padding:9px 12px;
+      border-radius:10px;
+      font-size:14px;
+      border:1px solid transparent;
+    }
+    .nav a:hover{
+      background:#f2fdf8;
+      border-color:#d7f3e6;
+    }
+    .nav .group{
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.06em;
+      color:var(--muted);
+      padding:10px 12px 6px;
+      margin-top:8px;
+    }
+    .nav .sub{
+      margin-left:10px;
+      border-left:2px solid #ecfdf5;
+      padding-left:8px;
+    }
+    .nav .sub a{
+      font-size:13px;
+      padding:8px 10px;
+    }
+    .nav .practice-link a{
+      background: #ecfdf5;
+      border:1px solid #b7efd7;
+      font-weight:700;
+    }
+
+    /* Cards & sections */
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      margin: 14px 0;
+      overflow:hidden;
+    }
+    .card .hdr{
+      background:var(--brand);
+      color:#fff;
+      padding:14px 16px;
+      font-weight:800;
+      font-size:18px;
+      line-height:1.2;
+    }
+    .card .body{
+      padding:16px;
+    }
+    .lead{
+      color:var(--muted);
+      margin:8px 0 0 0;
+      line-height:1.6;
+    }
+
+    .toc{
+      background:#f8fafc;
+      border:1px dashed #cbd5e1;
+      border-radius:12px;
+      padding:12px 14px;
+      margin-top:10px;
+    }
+    .toc h3{ margin:0 0 8px; font-size:16px; }
+    .toc ol{
+      margin:0;
+      padding-left:18px;
+      line-height:1.8;
+    }
+    .toc a{ color:var(--brand-dark); text-decoration:none; }
+    .toc a:hover{ text-decoration:underline; }
+
+    .kpi{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-top:12px;
+    }
+    .kpi .pill{
+      background:#f1f5f9;
+      border:1px solid #e2e8f0;
+      border-radius:999px;
+      padding:7px 10px;
+      font-size:12px;
+      color:#0f172a;
+    }
+
+    /* Notes */
+    .note, .tip, .warn{
+      border-radius:12px;
+      padding:12px 14px;
+      margin:12px 0;
+      border:1px solid var(--border);
+      line-height:1.55;
+    }
+    .note{ background:#eff6ff; border-left:6px solid #2563eb; }
+    .tip { background:#ecfdf5; border-left:6px solid #16a34a; }
+    .warn{ background:#fef2f2; border-left:6px solid #dc2626; }
+
+    /* Example box + code */
+    .example{
+      background:#f1f1f1;
+      border:1px solid #e6e6e6;
+      border-left:6px solid var(--brand);
+      border-radius:12px;
+      padding:12px 14px;
+      margin:12px 0;
+    }
+    .example h4{
+      margin:0 0 8px;
+      font-size:15px;
+    }
+    pre{
+      background:var(--code);
+      color:#fff;
+      padding:14px;
+      border-radius:12px;
+      overflow:auto;
+      margin:10px 0 0;
+      border:1px solid rgba(255,255,255,.08);
+      line-height:1.55;
+      font-size:13px;
+    }
+    code{ font-family: Consolas, "Courier New", monospace; }
+
+    .trybtn{
+      display:inline-block;
+      margin-top:10px;
+      background:var(--brand);
+      color:#fff;
+      text-decoration:none;
+      padding:10px 14px;
+      border-radius:10px;
+      font-weight:700;
+      border:1px solid rgba(0,0,0,.04);
+    }
+    .trybtn:hover{ background:var(--brand-dark); }
+
+    /* Section navigation buttons */
+    .sec-nav{
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      margin-top:16px;
+      flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-block;
+      text-decoration:none;
+      background:var(--brand);
+      color:#fff;
+      padding:10px 14px;
+      border-radius:10px;
+      font-weight:800;
+      border:1px solid rgba(0,0,0,.06);
+    }
+    .btn:hover{ background:var(--brand-dark); }
+    .btn.secondary{
+      background:#ffffff;
+      color:var(--brand-dark);
+      border:2px solid #b7efd7;
+    }
+    .btn.secondary:hover{
+      background:#ecfdf5;
+    }
+
+    /* ASCII diagram */
+    .ascii{
+      background:#0b1220;
+      color:#dbeafe;
+      border-radius:12px;
+      border:1px solid rgba(2,6,23,.12);
+      padding:12px 14px;
+      font-family: Consolas, "Courier New", monospace;
+      white-space:pre;
+      overflow:auto;
+      margin:12px 0;
+      font-size:13px;
+    }
+
+    /* Tables */
+    table{
+      width:100%;
+      border-collapse:separate;
+      border-spacing:0;
+      border:1px solid var(--border);
+      border-radius:12px;
+      overflow:hidden;
+      background:#fff;
+      margin:12px 0;
+    }
+    th, td{
+      text-align:left;
+      padding:10px 12px;
+      border-bottom:1px solid var(--border);
+      vertical-align:top;
+      font-size:14px;
+      line-height:1.45;
+    }
+    th{
+      background:#f8fafc;
+      font-weight:800;
+      color:#0f172a;
+    }
+    tr:last-child td{ border-bottom:none; }
+
+    /* Tooltip (self-contained CSS only) */
+    .tt{
+      position:relative;
+      border-bottom: 2px dotted #94a3b8;
+      cursor:help;
+      padding-bottom:1px;
+    }
+    .tt:hover::after{
+      content: attr(data-tip);
+      position:absolute;
+      left:0;
+      top: 135%;
+      min-width: 260px;
+      max-width: 360px;
+      background:#0b1220;
+      color:#e5e7eb;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:12px;
+      padding:10px 12px;
+      box-shadow: 0 12px 26px rgba(0,0,0,.22);
+      z-index:2000;
+      white-space: pre-line;
+      font-size:12.5px;
+      line-height:1.35;
+    }
+    .tt:hover::before{
+      content:"";
+      position:absolute;
+      left:14px;
+      top: 120%;
+      border:8px solid transparent;
+      border-bottom-color:#0b1220;
+      z-index:2001;
+    }
+
+    /* Quiz */
+    .quiz-q{
+      padding:12px 14px;
+      border:1px solid var(--border);
+      border-radius:12px;
+      margin:10px 0;
+      background:#fff;
+    }
+    .quiz-q h4{ margin:0 0 8px; font-size:15px; }
+    .quiz-q label{ display:block; margin:6px 0; cursor:pointer; }
+    .quiz-actions{ display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; }
+    .out{
+      margin-top:10px;
+      padding:12px 14px;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background:#f8fafc;
+      color:#0f172a;
+      font-weight:700;
+    }
+
+    /* Practice questions */
+    .qcard{
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding:12px 14px;
+      background:#fff;
+      margin:10px 0;
+    }
+    .qtag{
+      display:inline-block;
+      font-size:12px;
+      padding:4px 10px;
+      border-radius:999px;
+      background:#f1f5f9;
+      border:1px solid #e2e8f0;
+      margin-bottom:8px;
+      font-weight:800;
+    }
+    .muted{ color:var(--muted); }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .sidebar{
+        position:static;
+        width:auto;
+        height:auto;
+        top:auto;
+        border-right:none;
+        border-bottom:1px solid var(--border);
+      }
+      .main{
+        margin-left:0;
+        padding-top: calc(var(--topbar-h) + 12px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Placeholder anchors required -->
+  <a id="prev-subtopic"></a>
+
+  <div class="topbar">
+    <div class="brand">ItTechGenie</div>
+    <div class="title">C# Tutorial • Evaluating Regular Expressions (Regex)</div>
+    <div class="spacer"></div>
+    <div class="chip">W3Schools-style • Self-contained HTML</div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="side-title">C# Regex • Tutorial Menu</div>
+    <ul class="nav">
+      <li class="group">Getting Started</li>
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#how-regex-works">How Regex Works</a></li>
+
+      <li class="group">Core Topics</li>
+      <li><a href="#regex-class">RegEx Class</a></li>
+      <li class="sub">
+        <a href="#regex-class-setup">Namespace & Setup</a>
+        <a href="#regex-options-timeouts">Options & Timeouts</a>
+      </li>
+
+      <li><a href="#forming-regex">Forming Regular Expression</a></li>
+      <li class="sub">
+        <a href="#forming-escaping">Escaping & Verbatim Strings</a>
+        <a href="#forming-classes">Character Classes</a>
+        <a href="#forming-quantifiers">Quantifiers</a>
+        <a href="#forming-groups">Groups & Alternation</a>
+        <a href="#forming-lookarounds">Lookarounds</a>
+      </li>
+
+      <li><a href="#regex-methods">Methods for Regular Expression</a></li>
+      <li class="sub">
+        <a href="#m-ismatch">IsMatch()</a>
+        <a href="#m-match-matches">Match() / Matches()</a>
+        <a href="#m-replace">Replace()</a>
+        <a href="#m-split">Split()</a>
+      </li>
+
+      <li class="group">Build Confidence</li>
+      <li><a href="#best-practices">Best Practices</a></li>
+      <li><a href="#lab">Step-by-step Lab</a></li>
+      <li><a href="#sample-project">Sample Project</a></li>
+      <li><a href="#faqs">FAQs</a></li>
+      <li><a href="#interview">Interview Questions</a></li>
+      <li><a href="#summary">Summary</a></li>
+      <li><a href="#mcq">MCQ Quiz</a></li>
+      <li><a href="#downloads">Downloadables</a></li>
+      <li><a href="#glossary">Glossary (Tooltips)</a></li>
+
+      <!-- REQUIRED SIDEBAR MENU ADDITION (EXACT NAME) -->
+      <li class="practice-link"><a href="#practice-coding-questions">To Become Best coder Practice this</a></li>
+    </ul>
+  </aside>
+
+  <main class="main">
+
+    <!-- INTRO -->
+    <section id="intro" class="card">
+      <div class="hdr">Evaluating Regular Expressions in C#</div>
+      <div class="body">
+        <p class="lead">
+          A <span class="tt" data-tip="A pattern language used to search, match, extract, replace, or validate text.
+You describe the rule (pattern), and the engine applies it to strings.">Regular Expression (Regex)</span>
+          helps you solve text problems like validation, extraction, and transformation with a single pattern.
+          In C#, the <span class="tt" data-tip="The .NET class that provides regex features like IsMatch, Match, Replace, Split.
+It is found in System.Text.RegularExpressions namespace.">Regex</span> engine runs inside the
+          <span class="tt" data-tip="Common Language Runtime: the execution engine for .NET.
+It manages memory (GC), runs IL code, and provides runtime services.">CLR</span>
+          and can be configured for performance and safety.
+        </p>
+
+        <div class="kpi">
+          <span class="pill">Use case: Email/Phone validation</span>
+          <span class="pill">Use case: Log parsing</span>
+          <span class="pill">Use case: Data masking</span>
+          <span class="pill">Skill: Named groups & extraction</span>
+        </div>
+
+        <div class="toc">
+          <h3>Table of Contents</h3>
+          <ol>
+            <li><a href="#how-regex-works">How Regex Works</a></li>
+            <li><a href="#regex-class">RegEx Class in C#</a></li>
+            <li><a href="#forming-regex">Forming Regular Expression</a></li>
+            <li><a href="#regex-methods">Methods for Regular Expression</a></li>
+            <li><a href="#best-practices">Best Practices</a></li>
+            <li><a href="#lab">Step-by-step Lab</a></li>
+            <li><a href="#sample-project">Sample Project</a></li>
+            <li><a href="#faqs">FAQs</a></li>
+            <li><a href="#interview">Interview Questions</a></li>
+            <li><a href="#mcq">MCQ Quiz</a></li>
+            <li><a href="#glossary">Glossary (Tooltips)</a></li>
+            <li><a href="#practice-coding-questions">To Become Best coder Practice this</a></li>
+          </ol>
+        </div>
+
+        <div class="note">
+          <b>Note:</b> The regex engine may use <span class="tt" data-tip="A strategy where the engine tries different paths when a match fails.
+Some patterns can cause heavy backtracking and become slow.">backtracking</span>. In production, always add
+          timeouts to prevent slow or “stuck” patterns.
+        </div>
+
+        <div class="sec-nav">
+          <a class="btn secondary" href="#prev-subtopic">❮ Previous Page</a>
+          <a class="btn" href="#how-regex-works">Next Page ❯</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW REGEX WORKS -->
+    <section id="how-regex-works" class="card">
+      <div class="hdr">How Regex Works (Engine Thinking)</div>
+      <div class="body">
+        <p>
+          Regex works by applying a <span class="tt" data-tip="The rule you write using metacharacters like \d, +, * and groups.
+The engine reads it left-to-right and attempts to match input text.">pattern</span> to an input string.
+          The engine tries to match each part of the pattern, and if something fails, it may step back and retry (backtracking).
+          Understanding this helps you write faster patterns and avoid performance issues.
+          In C#, the regex engine is mature and supports advanced features like named groups and lookarounds.
+        </p>
+
+        <div class="ascii">Pattern + Input → Match Engine
+--------------------------------------
+[Start]
+  |
+  v
+Read pattern token → try match at current position
+  |
+  +--> success → move forward
+  |
+  +--> fail → backtrack (try alternative path)
+  |
+  v
+If all tokens matched → MATCH FOUND
+Else → shift start position → try again</div>
+
+        <div class="example">
+          <h4>Example: Simple match idea</h4>
+          You want to find an order id like <b>ORD-1029</b> inside a message.
+          A pattern like <b>ORD-\d+</b> means: “ORD- then one or more digits”.
+          <a class="trybtn" href="#">Try it Yourself</a>
+          <pre><code>Input:  "Payment received for ORD-1029 at 10:30 AM"
+Pattern: "ORD-\d+"
+Result:  "ORD-1029"</code></pre>
+        </div>
+
+        <div class="tip">
+          <b>Beginner Tip:</b> Start with a small pattern, test it, then add more rules step-by-step.
+        </div>
+        <div class="note">
+          <b>Advanced Note:</b> Some patterns can cause “catastrophic backtracking” (huge retries).
+          Add match timeouts and avoid nested “.*” with repeating groups.
+        </div>
+
+        <div class="sec-nav">
+          <a class="btn secondary" href="#intro">❮ Previous Page</a>
+          <a class="btn" href="#regex-class">Next Page ❯</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- REGEX CLASS -->
+    <section id="regex-class" class="card">
+      <div class="hdr"><span class="tt" data-tip="The C#/.NET class that implements regex operations like IsMatch, Match, Replace and Split.
+It supports options, timeouts, and compiled patterns for performance tuning.">RegEx Class</span> in C#</div>
+      <div class="body">
+        <p>
+          In C#, regex features are provided by the <span class="tt" data-tip="A .NET namespace that contains Regex, Match, Group, Capture and related types.
+You include it with: using System.Text.RegularExpressions;">System.Text.RegularExpressions</span> namespace.
+          You can use <b>static</b> convenience methods (like Regex.IsMatch) or create a Regex object to reuse a pattern.
+          Reusing a Regex instance is helpful when the same pattern is applied repeatedly (like validating many inputs).
+          You can also control behavior using <span class="tt" data-tip="Flags that modify how the engine matches: IgnoreCase, Multiline, Singleline, Compiled, CultureInvariant.
+They can change how ^ and $ behave, and how '.' matches newline, etc.">RegexOptions</span>
+          and improve safety with timeouts.
+        </p>
+
+        <div class="ascii">Using Regex in C#
+---------------------------
+Option A: Static call
+  Regex.IsMatch(input, pattern)
+
+Option B: Reusable instance
+  var rx = new Regex(pattern, options, timeout);
+  rx.IsMatch(input);</div>
+
+        <div class="example" id="regex-class-setup">
+          <h4>Example: Namespace & first Regex usage</h4>
+          Real-world: Validate if a username is 3–12 chars and only letters/digits/underscore.
+          <a class="trybtn" href="#">Try it Yourself</a>
+          <pre><code>using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        string username = "gopi_123";
+        string pattern = @"^[A-Za-z0-9_]{3,12}$";
+
+        bool ok = Regex.IsMatch(username, pattern);
+        Console.WriteLine(ok ? "Valid" : "Invalid");
+    }
+}</code></pre>
+        </div>
+
+        <table>
+          <tr><th>Approach</th><th>When to use</th></tr>
+          <tr>
+            <td><b>Static methods</b> (Regex.IsMatch, Regex.Replace)</td>
+            <td>Quick one-off checks, simple scripts, small inputs.</td>
+          </tr>
+          <tr>
+            <td><b>Regex instance</b> (new Regex(...))</td>
+            <td>Repeated checks in loops, better control (options, timeouts), cleaner code.</td>
+          </tr>
+        </table>
+
+        <div class="example" id="regex-options-timeouts">
+          <h4>Example: Options & Timeouts (production safety)</h4>
+          Real-world: Case-insensitive search + timeout to avoid slow patterns.
+          <a class="trybtn" href="#">Try it Yourself</a>
+          <pre><code>using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        string input = "Error: TIMEOUT while calling API";
+        string pattern = @"timeout";
+
+        var rx = new Regex(
+            pattern,
+            RegexOptions.IgnoreCase,
+            TimeSpan.FromMilliseconds(150) // match timeout
+        );
+
+        Console.WriteLine(rx.IsMatch(input) ? "Found" : "Not Found");
+    }
+}</code></pre>
+        </div>
+
+        <div class="tip">
+          <b>Beginner Tip:</b> Prefer verbatim strings like <b>@""</b> for regex patterns in C# to reduce escaping confusion.
+        </div>
+        <div class="note">
+          <b>Advanced Note:</b> <b>RegexOptions.Compiled</b> can speed up repeated use, but it increases startup cost and memory.
+          Use it only for hot-path patterns used many times.
+        </div>
+
+        <div class="sec-nav">
+          <a class="btn secondary" href="#how-regex-works">❮ Previous Page</a>
+          <a class="btn" href="#forming-regex">Next Page ❯</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMING REGEX -->
+    <section id="forming-regex" class="card">
+      <div class="hdr">Forming Regular Expression (Building Patterns)</div>
+      <div class="body">
+        <p>
+          A regex pattern is built from <span class="tt" data-tip="Special characters that carry meaning in regex, like . * + ? ^ $ ( ) [ ] { } | \ .
+They help describe flexible matching rules beyond literal text.">metacharacters</span>,
+          character classes, quantifiers, anchors, and groups.
+          The key skill is to convert a requirement (“phone number format”) into small pattern pieces and combine them safely.
+          In C#, you typically write patterns using verbatim strings and test them with representative inputs.
+        </p>
+
+        <div class="note" id="forming-escaping">
+          <b>Escaping & Verbatim Strings:</b> In C# normal strings, backslash is also an escape character, so regex needs double escaping.
+          With verbatim strings (<b>@""</b>), you write patterns more naturally.
+        </div>
+
+        <div class="ascii">String Escaping in C#
+-----------------------------
+Normal string: "\\d+"   means regex \d+
+Verbatim:      @"\d+"   means regex \d+
+
+Goal: write patterns clearly and maintainably.</div>
+
+        <div class="example">
+          <h4>Example: Phone number (India) - simplified</h4>
+          Requirement: Start with +91 optional, then 10 digits.
+          <a class="trybtn" href="#">Try it Yourself</a>
+          <pre><code>using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        string[] phones = { "+91 9876543210", "9876543210", "+91-12345", "0091 9876543210" };
+        string pattern = @"^(?:\+91[\s-]?)?\d{10}$";
+
+        foreach (var p in phones)
+            Console.WriteLine($"{p} => {Regex.IsMatch(p, pattern)}");
+    }
+}</code></pre>
+        </div>
+
+        <div class="tip" id="forming-classes">
+          <b>Character Classes:</b> Use <b>\d</b> for digits, <b>\w</b> for word characters, <b>[A-Z]</b> for ranges,
+          and <b>[^...]</b> for “not these”.
+        </div>
+
+        <table>
+          <tr><th>Piece</th><th>Meaning</th><th>Example</th></tr>
+          <tr><td><b>\d</b></td><td>Digit (0–9)</td><td>\d{4} matches 2025</td></tr>
+          <tr><td><b>\w</b></td><td>Word char (letters/digits/_)</td><td>\w+ matches gopi_123</td></tr>
+          <tr><td><b>[A-Z]</b></td><td>Uppercase letters</td><td>[A-Z]{2} matches IN</td></tr>
+          <tr><td><b>[^0-9]</b></td><td>Not a digit</td><td>[^0-9]+ matches ABC</td></tr>
+        </table>
+
+        <div class="note" id="forming-quantifiers">
+          <b>Quantifiers:</b> <b>*</b> (0+), <b>+</b> (1+), <b>?</b> (0/1), <b>{m,n}</b> (range).
+          They decide “how many times” a piece repeats.
+        </div>
+
+        <div class="ascii">Greedy vs Lazy
+----------------
+Greedy:  ".*"  takes as much as possible
+Lazy:    ".*?" takes as little as possible
+
+Use lazy when extracting between markers: start ... end</div>
+
+        <div class="example" id="forming-groups">
+          <h4>Example: Extract OrderId and Amount using named groups</h4>
+          Input: "Order: ORD-1029 Amount: 1499"
+          <a class="trybtn" href="#">Try it Yourself</a>
+          <pre><code>using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        string text = "Order: ORD-1029 Amount: 1499";
+        string pattern = @"Order:\s(?&lt;order&gt;ORD-\d+)\sAmount:\s(?&lt;amount&gt;\d+)";
+
+        var m = Regex.Match(text, pattern);
+        if (m.Success)
+        {
+            Console.WriteLine("OrderId: " + m.Groups["order"].Value);
+            Console.WriteLine("Amount : " + m.Groups["amount"].Value);
+        }
+    }
+}</code></pre>
+        </div>
+
+        <div class="warn" id="forming-lookarounds">
+          <b>Warning (Lookarounds):</b> Lookahead/lookbehind are powerful, but can become hard to read.
+          Use them when you need “match X only if it is followed/preceded by Y” without consuming Y.
+        </div>
+
+        <div class="example">
+          <h4>Example: Mask only the card digits except last 4 (concept demo)</h4>
+          <span class="muted">Idea:</span> Replace digits that have 4 digits ahead.
+          <a class="trybtn" href="#">Try it Yourself</a>
+          <pre><code>using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        string card = "4111-2222-3333-4444";
+        // Replace digits that have 4 digits remaining (ignoring hyphens in this simple demo)
+        string masked = Regex.Replace(card, @"\d(?=\d{4})", "X");
+        Console.WriteLine(masked);
+    }
+}</code></pre>
+        </div>
+
+        <div class="tip">
+          <b>Beginner Tip:</b> Break patterns into “small meaning blocks”: anchor → prefix → core → suffix → anchor.
+        </div>
+        <div class="note">
+          <b>Advanced Note:</b> Prefer explicit patterns over “match anything” constructs like <b>.*</b> in the middle.
+          This reduces backtracking and unexpected matches.
+        </div>
+
+        <div class="sec-nav">
+          <a class="btn secondary" href="#regex-class">❮ Previous Page</a>
+          <a class="btn" href="#regex-methods">Next Page ❯</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- METHODS -->
+    <section id="regex-methods" class="card">
+      <div class="hdr">Methods for Regular Expression (IsMatch, Match, Replace, Split)</div>
+      <div class="body">
+        <p>
+          After forming a pattern, you “evaluate” it using methods from the Regex class.
+          Use <span class="tt" data-tip="Returns true/false if the pattern matches anywhere in the input.
+Best for validation and quick checks.">IsMatch</span> for validation,
+          <span class="tt" data-tip="Returns detailed match information: matched text, index, length, and captured groups.
+Use it when you want to extract values from text.">Match/Matches</span> for extraction,
+          <span class="tt" data-tip="Rewrites text by replacing matched parts with new text.
+Often used for masking, cleanup, and formatting.">Replace</span> for transformation,
+          and <span class="tt" data-tip="Splits text into parts using a regex delimiter.
+Useful when delimiters vary (spaces, commas, tabs, multiple separators).">Split</span> for parsing.
+          Choosing the right method makes your code both faster and simpler.
+        </p>
+
+        <div class="ascii">Which method should I use?
+--------------------------
+Validation?        -> IsMatch
+Extract one item?  -> Match
+Extract many?      -> Matches
+Transform text?    -> Replace
+Break into parts?  -> Split</div>
+
+        <!-- IsMatch -->
+        <div class="example" id="m-ismatch">
+          <h4>IsMatch(): Fast validation</h4>
+          Real-world: Validate a company email domain.
+          <a class="trybtn" href="#">Try it Yourself</a>
+          <pre><code>using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        string email = "user@company.com";
+        string pattern = @"^[A-Za-z0-9._%+-]+@company\.com$";
+
+        Console.WriteLine(Regex.IsMatch(email, pattern) ? "Allowed" : "Blocked");
+    }
+}</code></pre>
+        </div>
+
+        <div class="tip">
+          <b>Beginner Tip:</b> Keep validation patterns anchored using <b>^</b> and <b>$</b> so partial matches don’t pass.
+        </div>
+
+        <!-- Match/Matches -->
+        <div class="example" id="m-match-matches">
+          <h4>Match() / Matches(): Extract data</h4>
+          Real-world: Extract all ticket IDs like TCK-1001 from a message.
+          <a class="trybtn" href="#">Try it Yourself</a>
+          <pre><code>using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        string msg = "Closed TCK-1001, reopened TCK-1002, linked to TCK-1099.";
+        string pattern = @"TCK-\d{4}";
+
+        var matches = Regex.Matches(msg, pattern);
+        foreach (Match m in matches)
+            Console.WriteLine(m.Value);
+    }
+}</code></pre>
+        </div>
+
+        <div class="note">
+          <b>Advanced Note:</b> Use named groups when you need structured extraction (orderId, amount, date).
+          It improves readability and reduces bugs.
+        </div>
+
+        <!-- Replace -->
+        <div class="example" id="m-replace">
+          <h4>Replace(): Mask sensitive information</h4>
+          Real-world: Hide OTPs (one-time passwords) in logs.
+          <a class="trybtn" href="#">Try it Yourself</a>
+          <pre><code>using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        string log = "User login OTP=482913 for mobile 9876543210";
+        string masked = Regex.Replace(log, @"OTP=\d{6}", "OTP=******");
+        Console.WriteLine(masked);
+    }
+}</code></pre>
+        </div>
+
+        <div class="warn">
+          <b>Warning:</b> Be careful with Replace patterns that are too broad (like <b>\d+</b>),
+          because you might accidentally mask important numbers (order amounts, dates).
+        </div>
+
+        <!-- Split -->
+        <div class="example" id="m-split">
+          <h4>Split(): Parse with flexible separators</h4>
+          Real-world: Split CSV-like values where separators may be comma/space/semicolon.
+          <a class="trybtn" href="#">Try it Yourself</a>
+          <pre><code>using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        string tags = "azure, devops; csharp   regex,  dotnet";
+        string[] parts = Regex.Split(tags, @"[\s,;]+");
+
+        foreach (var p in parts)
+            Console.WriteLine(p);
+    }
+}</code></pre>
+        </div>
+
+        <div class="tip">
+          <b>Beginner Tip:</b> For extraction problems, start with <b>Matches()</b> and print results to verify quickly.
+        </div>
+        <div class="note">
+          <b>Advanced Note:</b> Always set timeouts for untrusted inputs (user input, logs, external data) to prevent regex DoS.
+        </div>
+
+        <div class="sec-nav">
+          <a class="btn secondary" href="#forming-regex">❮ Previous Page</a>
+          <a class="btn" href="#best-practices">Next Page ❯</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- BEST PRACTICES -->
+    <section id="best-practices" class="card">
+      <div class="hdr">Best Practices (Write Fast, Safe, Maintainable Regex)</div>
+      <div class="body">
+        <ul style="line-height:1.8; margin-top:0;">
+          <li><b>Use timeouts</b> for production patterns (especially with user input).</li>
+          <li><b>Avoid nested wildcards</b> like <b>.*</b> inside repeating groups.</li>
+          <li><b>Anchor validation</b> patterns with <b>^</b> and <b>$</b>.</li>
+          <li><b>Prefer verbatim strings</b> in C# for readability.</li>
+          <li><b>Document patterns</b> and create helper methods for reuse.</li>
+        </ul>
+
+        <div class="example">
+          <h4>Example: A reusable helper with timeout</h4>
+          <a class="trybtn" href="#">Try it Yourself</a>
+          <pre><code>using System;
+using System.Text.RegularExpressions;
+
+static class RegexHelper
+{
+    public static bool SafeIsMatch(string input, string pattern)
+    {
+        var rx = new Regex(pattern, RegexOptions.None, TimeSpan.FromMilliseconds(200));
+        return rx.IsMatch(input);
+    }
+}</code></pre>
+        </div>
+
+        <div class="sec-nav">
+          <a class="btn secondary" href="#regex-methods">❮ Previous Page</a>
+          <a class="btn" href="#lab">Next Page ❯</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- LAB -->
+    <section id="lab" class="card">
+      <div class="hdr">Step-by-step Lab: Build a Validator + Extractor Console App</div>
+      <div class="body">
+        <p>
+          In this lab, you will create a small C# console program that:
+          (1) validates email/phone, (2) extracts order ids, and (3) masks OTP values in logs.
+          This mirrors real-world tasks in support systems, HR tools, and payment logging pipelines.
+        </p>
+
+        <div class="ascii">Lab Flow
+--------
+Input text
+  |
+  +--> Validate (email/phone)
+  |
+  +--> Extract (OrderId list)
+  |
+  +--> Mask (OTP)
+  |
+Output report</div>
+
+        <ol style="line-height:1.9;">
+          <li>Create a Console App in Visual Studio: <b>RegexLab</b></li>
+          <li>Add: <b>using System.Text.RegularExpressions;</b></li>
+          <li>Create patterns for email, phone, order id, otp</li>
+          <li>Run IsMatch for validation</li>
+          <li>Run Matches for extraction</li>
+          <li>Run Replace for masking</li>
+        </ol>
+
+        <div class="example">
+          <h4>Starter Code (single file)</h4>
+          <a class="trybtn" href="#">Try it Yourself</a>
+          <pre><code>using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        string email = "user@company.com";
+        string phone = "+91 9876543210";
+        string message = "Paid for ORD-1029. OTP=482913. Ref ORD-1030.";
+
+        string emailPattern = @"^[A-Za-z0-9._%+-]+@company\.com$";
+        string phonePattern = @"^(?:\+91[\s-]?)?\d{10}$";
+        string orderPattern = @"ORD-\d+";
+        string otpPattern = @"OTP=\d{6}";
+
+        Console.WriteLine("Email valid: " + Regex.IsMatch(email, emailPattern));
+        Console.WriteLine("Phone valid: " + Regex.IsMatch(phone, phonePattern));
+
+        Console.WriteLine("\nOrders found:");
+        foreach (Match m in Regex.Matches(message, orderPattern))
+            Console.WriteLine("- " + m.Value);
+
+        string masked = Regex.Replace(message, otpPattern, "OTP=******");
+        Console.WriteLine("\nMasked message:\n" + masked);
+    }
+}</code></pre>
+        </div>
+
+        <div class="sec-nav">
+          <a class="btn secondary" href="#best-practices">❮ Previous Page</a>
+          <a class="btn" href="#sample-project">Next Page ❯</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SAMPLE PROJECT -->
+    <section id="sample-project" class="card">
+      <div class="hdr">Sample Mini Project: Log Sanitizer + Extractor</div>
+      <div class="body">
+        <p>
+          Build a mini tool that reads log lines (copy/paste), extracts useful identifiers (ticket ids, order ids),
+          and sanitizes sensitive values (OTPs, partial phone numbers). This is common in production support and analytics.
+        </p>
+
+        <table>
+          <tr><th>Feature</th><th>Regex method</th><th>Output</th></tr>
+          <tr><td>Extract Order IDs</td><td>Matches()</td><td>List of order ids</td></tr>
+          <tr><td>Mask OTPs</td><td>Replace()</td><td>Safe logs</td></tr>
+          <tr><td>Split tags/fields</td><td>Split()</td><td>Normalized tokens</td></tr>
+        </table>
+
+        <div class="tip"><b>Beginner Tip:</b> Keep all patterns in one place (constants or config) so future changes are easy.</div>
+        <div class="note"><b>Advanced Note:</b> Add timeouts and consider compiled regex for very large log batches.</div>
+
+        <div class="sec-nav">
+          <a class="btn secondary" href="#lab">❮ Previous Page</a>
+          <a class="btn" href="#faqs">Next Page ❯</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faqs" class="card">
+      <div class="hdr">FAQs</div>
+      <div class="body">
+        <div class="qcard">
+          <b>Q1. What is the difference between Match and Matches?</b><br/>
+          <span class="muted">Match returns the first match; Matches returns all matches as a collection.</span>
+        </div>
+        <div class="qcard">
+          <b>Q2. Should I always use RegexOptions.Compiled?</b><br/>
+          <span class="muted">No. Use it for patterns used frequently; otherwise startup/memory overhead may not be worth it.</span>
+        </div>
+        <div class="qcard">
+          <b>Q3. Why is my regex slow?</b><br/>
+          <span class="muted">Often due to heavy backtracking. Add a timeout and simplify nested repeating patterns.</span>
+        </div>
+
+        <div class="sec-nav">
+          <a class="btn secondary" href="#sample-project">❮ Previous Page</a>
+          <a class="btn" href="#interview">Next Page ❯</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERVIEW -->
+    <section id="interview" class="card">
+      <div class="hdr">Interview Questions (Regex in C#)</div>
+      <div class="body">
+        <ol style="line-height:1.9; margin-top:0;">
+          <li>When would you choose IsMatch vs Match vs Matches?</li>
+          <li>Explain greedy vs lazy quantifiers with an example.</li>
+          <li>What is catastrophic backtracking and how do you prevent it in .NET?</li>
+          <li>What are named groups and why are they useful?</li>
+          <li>What does RegexOptions.Multiline change in behavior?</li>
+          <li>How would you mask sensitive data like OTPs or PAN in logs?</li>
+          <li>Why should production regex use timeouts?</li>
+          <li>Explain anchors ^ and $ and word boundary \b.</li>
+        </ol>
+
+        <div class="sec-nav">
+          <a class="btn secondary" href="#faqs">❮ Previous Page</a>
+          <a class="btn" href="#summary">Next Page ❯</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUMMARY -->
+    <section id="summary" class="card">
+      <div class="hdr">Summary of Key Points</div>
+      <div class="body">
+        <ul style="line-height:1.9; margin-top:0;">
+          <li>Regex is a pattern language for matching and transforming strings.</li>
+          <li>In C#, Regex lives in System.Text.RegularExpressions and supports powerful features.</li>
+          <li>Form patterns using escaping, classes, quantifiers, anchors, groups, and lookarounds.</li>
+          <li>Pick the right method: IsMatch (validate), Match/Matches (extract), Replace (transform), Split (parse).</li>
+          <li>Use timeouts and avoid patterns that trigger heavy backtracking.</li>
+        </ul>
+
+        <div class="sec-nav">
+          <a class="btn secondary" href="#interview">❮ Previous Page</a>
+          <a class="btn" href="#mcq">Next Page ❯</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MCQ -->
+    <section id="mcq" class="card">
+      <div class="hdr">MCQ Quiz (Regex in C#)</div>
+      <div class="body">
+        <p class="muted" style="margin-top:0;">Select one option for each question, then click “Check Score”.</p>
+
+        <form id="quiz">
+          <div class="quiz-q">
+            <h4>1) Which method is best for quick validation?</h4>
+            <label><input type="radio" name="q1" value="a"> Match()</label>
+            <label><input type="radio" name="q1" value="b"> IsMatch()</label>
+            <label><input type="radio" name="q1" value="c"> Split()</label>
+            <label><input type="radio" name="q1" value="d"> Groups</label>
+          </div>
+
+          <div class="quiz-q">
+            <h4>2) What does ^ mean in regex?</h4>
+            <label><input type="radio" name="q2" value="a"> End of string</label>
+            <label><input type="radio" name="q2" value="b"> Start of string (or line in multiline)</label>
+            <label><input type="radio" name="q2" value="c"> Any digit</label>
+            <label><input type="radio" name="q2" value="d"> Optional</label>
+          </div>
+
+          <div class="quiz-q">
+            <h4>3) Which quantifier means “one or more”?</h4>
+            <label><input type="radio" name="q3" value="a"> *</label>
+            <label><input type="radio" name="q3" value="b"> ?</label>
+            <label><input type="radio" name="q3" value="c"> +</label>
+            <label><input type="radio" name="q3" value="d"> {0}</label>
+          </div>
+
+          <div class="quiz-q">
+            <h4>4) Which is a safe production practice?</h4>
+            <label><input type="radio" name="q4" value="a"> Never use timeouts</label>
+            <label><input type="radio" name="q4" value="b"> Use timeouts for untrusted input</label>
+            <label><input type="radio" name="q4" value="c"> Always use .* everywhere</label>
+            <label><input type="radio" name="q4" value="d"> Avoid anchors</label>
+          </div>
+
+          <div class="quiz-q">
+            <h4>5) What is the benefit of named groups?</h4>
+            <label><input type="radio" name="q5" value="a"> They make patterns longer only</label>
+            <label><input type="radio" name="q5" value="b"> They improve readability and structured extraction</label>
+            <label><input type="radio" name="q5" value="c"> They disable backtracking</label>
+            <label><input type="radio" name="q5" value="d"> They remove the need for options</label>
+          </div>
+
+          <div class="quiz-actions">
+            <button type="button" class="btn" onclick="checkQuiz()">Check Score</button>
+            <button type="reset" class="btn secondary">Reset</button>
+          </div>
+
+          <div id="quizOut" class="out" style="display:none;"></div>
+        </form>
+
+        <script>
+          function checkQuiz(){
+            const answers = { q1:"b", q2:"b", q3:"c", q4:"b", q5:"b" };
+            let score = 0, total = Object.keys(answers).length;
+
+            for (const q in answers){
+              const picked = document.querySelector('input[name="'+q+'"]:checked');
+              if (picked && picked.value === answers[q]) score++;
+            }
+
+            const out = document.getElementById("quizOut");
+            out.style.display = "block";
+            out.textContent = "Your Score: " + score + " / " + total + "  •  " +
+                              (score === total ? "Excellent!" : "Review sections and try again.");
+          }
+        </script>
+
+        <div class="sec-nav">
+          <a class="btn secondary" href="#summary">❮ Previous Page</a>
+          <a class="btn" href="#downloads">Next Page ❯</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOWNLOADS -->
+    <section id="downloads" class="card">
+      <div class="hdr">Downloadables (Placeholders)</div>
+      <div class="body">
+        <div class="example">
+          <h4>Coming Soon</h4>
+          <ul style="line-height:1.9; margin:0;">
+            <li>📦 Project ZIP (RegexLab + Sample Project)</li>
+            <li>📊 PPT (Slides for training)</li>
+            <li>📄 DOC (Printable notes)</li>
+          </ul>
+        </div>
+
+        <div class="sec-nav">
+          <a class="btn secondary" href="#mcq">❮ Previous Page</a>
+          <a class="btn" href="#glossary">Next Page ❯</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- GLOSSARY -->
+    <section id="glossary" class="card">
+      <div class="hdr">Glossary (Tooltips)</div>
+      <div class="body">
+        <p class="muted" style="margin-top:0;">
+          These are the tooltip terms used on this page. Hover the dotted terms in the tutorial to see the same explanations.
+        </p>
+
+        <table>
+          <tr><th>Term</th><th>Tooltip Description</th></tr>
+          <tr><td>Regex</td><td>A pattern language to match/extract/replace/validate text using rules instead of manual loops.</td></tr>
+          <tr><td>CLR</td><td>.NET runtime engine that executes code, manages memory, and provides runtime services.</td></tr>
+          <tr><td>pattern</td><td>The rule you write (like \d{10} or ^...$) that the engine applies to input strings.</td></tr>
+          <tr><td>metacharacters</td><td>Special regex symbols such as ., *, +, ?, ^, $, (), [] that create flexible matching rules.</td></tr>
+          <tr><td>RegexOptions</td><td>Flags that change matching behavior (IgnoreCase, Multiline, Singleline, Compiled, etc.).</td></tr>
+          <tr><td>backtracking</td><td>Engine retries alternate paths when a match fails; can become expensive for some patterns.</td></tr>
+          <tr><td>IsMatch</td><td>Returns true/false if a pattern is found—best for validation checks.</td></tr>
+          <tr><td>Match/Matches</td><td>Returns detailed match results and captures; use for extracting values from text.</td></tr>
+          <tr><td>Replace</td><td>Transforms text by replacing matches—useful for masking and cleanup.</td></tr>
+          <tr><td>Split</td><td>Breaks text into parts using a regex delimiter when separators are flexible.</td></tr>
+        </table>
+
+        <div class="sec-nav">
+          <a class="btn secondary" href="#downloads">❮ Previous Page</a>
+          <a class="btn" href="#practice-coding-questions">Next Page ❯</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRACTICE SECTION (REQUIRED) -->
+    <section id="practice-coding-questions" class="card">
+      <div class="hdr">To Become Best coder Practice this</div>
+      <div class="body">
+        <p class="lead" style="margin-top:0;">
+          Practice these Regex-in-C# questions (Easy → Medium → Hard). Each includes a clear task, I/O, example, constraints, and a hint.
+        </p>
+
+        <!-- EASY (5) -->
+        <div class="qcard">
+          <div class="qtag">Easy 1</div>
+          <b>Problem:</b> Validate a 10-digit mobile number (digits only).<br/>
+          <b>Input:</b> A string <span class="muted">(mobile)</span><br/>
+          <b>Output:</b> Print <span class="muted">Valid</span> or <span class="muted">Invalid</span><br/>
+          <b>Example Input:</b> 9876543210<br/>
+          <b>Example Output:</b> Valid<br/>
+          <b>Constraints:</b> Length up to 50<br/>
+          <b>Hint:</b> Use anchors and <span class="muted">\d{10}</span>.
+        </div>
+
+        <div class="qcard">
+          <div class="qtag">Easy 2</div>
+          <b>Problem:</b> Check if a string contains any digit.<br/>
+          <b>Input:</b> A string (sentence)<br/>
+          <b>Output:</b> True/False<br/>
+          <b>Example Input:</b> Room 12 is ready<br/>
+          <b>Example Output:</b> True<br/>
+          <b>Constraints:</b> Length up to 2000<br/>
+          <b>Hint:</b> Use IsMatch with <span class="muted">\d</span>.
+        </div>
+
+        <div class="qcard">
+          <div class="qtag">Easy 3</div>
+          <b>Problem:</b> Extract the first order id of the form ORD-1234 from text.<br/>
+          <b>Input:</b> A string (message)<br/>
+          <b>Output:</b> OrderId or <span class="muted">NOT_FOUND</span><br/>
+          <b>Example Input:</b> Paid for ORD-1029 today<br/>
+          <b>Example Output:</b> ORD-1029<br/>
+          <b>Constraints:</b> Message length up to 5000<br/>
+          <b>Hint:</b> Use Match with <span class="muted">ORD-\d+</span>.
+        </div>
+
+        <div class="qcard">
+          <div class="qtag">Easy 4</div>
+          <b>Problem:</b> Replace multiple spaces in a sentence with a single space.<br/>
+          <b>Input:</b> A string (sentence)<br/>
+          <b>Output:</b> Normalized sentence<br/>
+          <b>Example Input:</b> Hello&nbsp;&nbsp;&nbsp;World<br/>
+          <b>Example Output:</b> Hello World<br/>
+          <b>Constraints:</b> Length up to 20000<br/>
+          <b>Hint:</b> Replace pattern <span class="muted">\s+</span> with one space.
+        </div>
+
+        <div class="qcard">
+          <div class="qtag">Easy 5</div>
+          <b>Problem:</b> Split a tag string by comma/semicolon/space (one or more separators).<br/>
+          <b>Input:</b> A string (tags)<br/>
+          <b>Output:</b> Print each token on a new line<br/>
+          <b>Example Input:</b> azure, devops; csharp  regex<br/>
+          <b>Example Output:</b> azure<br/>devops<br/>csharp<br/>regex<br/>
+          <b>Constraints:</b> Length up to 10000<br/>
+          <b>Hint:</b> Use Split with character class like <span class="muted">[\s,;]+</span>.
+        </div>
+
+        <!-- MEDIUM (5) -->
+        <div class="qcard">
+          <div class="qtag">Medium 1</div>
+          <b>Problem:</b> Validate a password: 8–16 chars, at least 1 uppercase, 1 lowercase, 1 digit.<br/>
+          <b>Input:</b> A string (password)<br/>
+          <b>Output:</b> Valid/Invalid<br/>
+          <b>Example Input:</b> Abcdef12<br/>
+          <b>Example Output:</b> Valid<br/>
+          <b>Constraints:</b> Only ASCII letters/digits allowed<br/>
+          <b>Hint:</b> Use lookaheads for each requirement + length constraint.
+        </div>
+
+        <div class="qcard">
+          <div class="qtag">Medium 2</div>
+          <b>Problem:</b> Extract all emails from a text and print unique emails.<br/>
+          <b>Input:</b> A string (paragraph)<br/>
+          <b>Output:</b> Unique emails, one per line<br/>
+          <b>Example Input:</b> Contact a@x.com and b@x.com and a@x.com<br/>
+          <b>Example Output:</b> a@x.com<br/>b@x.com<br/>
+          <b>Constraints:</b> Up to 50000 chars<br/>
+          <b>Hint:</b> Use Matches + a HashSet for uniqueness.
+        </div>
+
+        <div class="qcard">
+          <div class="qtag">Medium 3</div>
+          <b>Problem:</b> Mask OTP values in logs: replace OTP=123456 with OTP=******.<br/>
+          <b>Input:</b> A log line string<br/>
+          <b>Output:</b> Sanitized log line<br/>
+          <b>Example Input:</b> User OTP=482913 for login<br/>
+          <b>Example Output:</b> User OTP=****** for login<br/>
+          <b>Constraints:</b> OTP is always 6 digits if present<br/>
+          <b>Hint:</b> Replace pattern <span class="muted">OTP=\d{6}</span>.
+        </div>
+
+        <div class="qcard">
+          <div class="qtag">Medium 4</div>
+          <b>Problem:</b> From a date string, validate format YYYY-MM-DD and extract year, month, day.<br/>
+          <b>Input:</b> A string (date)<br/>
+          <b>Output:</b> Print Year, Month, Day or INVALID<br/>
+          <b>Example Input:</b> 2025-12-30<br/>
+          <b>Example Output:</b> Year=2025 Month=12 Day=30<br/>
+          <b>Constraints:</b> Do not validate calendar correctness (only format/range 01-12, 01-31)<br/>
+          <b>Hint:</b> Use named groups and simple ranges.
+        </div>
+
+        <div class="qcard">
+          <div class="qtag">Medium 5</div>
+          <b>Problem:</b> Extract ticket ids like TCK-1234 and also count how many are present.<br/>
+          <b>Input:</b> A string (message)<br/>
+          <b>Output:</b> Print IDs and final count<br/>
+          <b>Example Input:</b> Linked TCK-1001, TCK-1002, closed TCK-1001<br/>
+          <b>Example Output:</b> TCK-1001<br/>TCK-1002<br/>TCK-1001<br/>Count=3<br/>
+          <b>Constraints:</b> ID always 4 digits<br/>
+          <b>Hint:</b> Use Matches and iterate.
+        </div>
+
+        <!-- HARD (5) -->
+        <div class="qcard">
+          <div class="qtag">Hard 1</div>
+          <b>Problem:</b> Validate IPv4 addresses (0.0.0.0 to 255.255.255.255).<br/>
+          <b>Input:</b> A string (ip)<br/>
+          <b>Output:</b> Valid/Invalid<br/>
+          <b>Example Input:</b> 192.168.1.10<br/>
+          <b>Example Output:</b> Valid<br/>
+          <b>Constraints:</b> No leading/trailing spaces<br/>
+          <b>Hint:</b> Build an octet pattern for 0–255 and repeat 4 times with dots.
+        </div>
+
+        <div class="qcard">
+          <div class="qtag">Hard 2</div>
+          <b>Problem:</b> Parse key-value pairs from a config line: "user=gopi;role=admin;active=true".<br/>
+          <b>Input:</b> A string (line)<br/>
+          <b>Output:</b> Print each key and value on separate lines<br/>
+          <b>Example Input:</b> user=gopi;role=admin;active=true<br/>
+          <b>Example Output:</b> user -> gopi<br/>role -> admin<br/>active -> true<br/>
+          <b>Constraints:</b> Keys: letters only; values: letters/digits/underscore<br/>
+          <b>Hint:</b> Use named groups and Matches: (?&lt;k&gt;...)= (?&lt;v&gt;...)
+        </div>
+
+        <div class="qcard">
+          <div class="qtag">Hard 3</div>
+          <b>Problem:</b> Extract amounts with currency: "₹1499", "INR 2,499", "$19.99" and normalize to decimal number.<br/>
+          <b>Input:</b> A string (text)<br/>
+          <b>Output:</b> Print normalized numeric values only (no currency symbol)<br/>
+          <b>Example Input:</b> Paid ₹1,499 and $19.99<br/>
+          <b>Example Output:</b> 1499<br/>19.99<br/>
+          <b>Constraints:</b> Commas may appear; decimals optional<br/>
+          <b>Hint:</b> Capture digits/commas and optional decimal part; remove commas after match.
+        </div>
+
+        <div class="qcard">
+          <div class="qtag">Hard 4</div>
+          <b>Problem:</b> Find duplicate consecutive words in a sentence (e.g., "the the") and remove duplicates.<br/>
+          <b>Input:</b> A string (sentence)<br/>
+          <b>Output:</b> Cleaned sentence<br/>
+          <b>Example Input:</b> This is is a test test<br/>
+          <b>Example Output:</b> This is a test<br/>
+          <b>Constraints:</b> Words separated by spaces; case-insensitive comparison<br/>
+          <b>Hint:</b> Use backreference with groups and RegexOptions.IgnoreCase.
+        </div>
+
+        <div class="qcard">
+          <div class="qtag">Hard 5</div>
+          <b>Problem:</b> Implement a “safe regex evaluator” that prevents long execution by enforcing a timeout for any user-entered pattern.<br/>
+          <b>Input:</b> Pattern string + input string<br/>
+          <b>Output:</b> MATCH / NO_MATCH / TIMEOUT<br/>
+          <b>Example Input:</b> Pattern=(a+)+$ , Input=aaaa....(long)<br/>
+          <b>Example Output:</b> TIMEOUT<br/>
+          <b>Constraints:</b> Timeout must be &lt;= 200ms<br/>
+          <b>Hint:</b> Create Regex with a TimeSpan timeout and catch RegexMatchTimeoutException.
+        </div>
+
+        <div class="sec-nav">
+          <a class="btn secondary" href="#glossary">❮ Previous Page</a>
+          <a class="btn" href="#next-subtopic">Next Page ❯</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Placeholder anchor required -->
+    <a id="next-subtopic"></a>
+
+  </main>
+</body>
+</html>

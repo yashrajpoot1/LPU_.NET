@@ -1,0 +1,1606 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ItTechGenie | Course Fundamentals & .NET Overview</title>
+  <style>
+    :root{
+      --green:#04AA6D;
+      --bg:#ffffff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --border:#e5e7eb;
+      --sidebar:#f3f4f6;
+      --example:#f7f7f7;
+      --code:#0b1020;
+      --codeText:#e6edf3;
+      --note:#e8f2ff;
+      --tip:#eaf7ef;
+      --warn:#ffeceb;
+      --shadow: 0 8px 20px rgba(0,0,0,.06);
+      --radius: 14px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+    a{color:var(--green); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .topbar{
+      position:sticky; top:0; z-index:10;
+      background:var(--green);
+      color:white;
+      display:flex; align-items:center; justify-content:space-between;
+      padding:10px 16px;
+    }
+    .brand{
+      display:flex; gap:10px; align-items:center;
+      font-weight:700;
+      letter-spacing:.2px;
+    }
+    .badge{
+      background:rgba(255,255,255,.18);
+      border:1px solid rgba(255,255,255,.28);
+      padding:4px 10px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:600;
+    }
+    .layout{
+      display:grid;
+      grid-template-columns: 290px 1fr;
+      min-height:calc(100vh - 52px);
+    }
+    .sidebar{
+      background:var(--sidebar);
+      border-right:1px solid var(--border);
+      padding:14px 10px 18px;
+      position:sticky;
+      top:52px;
+      height:calc(100vh - 52px);
+      overflow:auto;
+    }
+    .sidebar h3{
+      margin:8px 10px 10px;
+      font-size:14px;
+      color:#111827;
+      letter-spacing:.2px;
+    }
+    .nav{
+      list-style:none; padding:0; margin:0;
+    }
+    .nav li{margin:2px 0}
+    .nav a{
+      display:block;
+      padding:10px 10px;
+      border-radius:10px;
+      color:#111827;
+      font-size:14px;
+    }
+    .nav a:hover{background:#e9ecef; text-decoration:none}
+    .nav a small{color:var(--muted)}
+    .content{
+      padding:22px 18px 60px;
+      max-width:1100px;
+      margin:0 auto;
+    }
+    .hero{
+      background:linear-gradient(180deg, rgba(4,170,109,.14), rgba(4,170,109,0));
+      border:1px solid rgba(4,170,109,.25);
+      border-radius:var(--radius);
+      padding:22px 18px;
+      box-shadow:var(--shadow);
+    }
+    .hero h1{margin:0 0 8px; font-size:28px}
+    .hero p{margin:0; color:#111827}
+    .meta{
+      margin-top:10px; display:flex; flex-wrap:wrap; gap:10px;
+      color:var(--muted); font-size:13px;
+    }
+    .toc-card, .card{
+      margin-top:16px;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      background:white;
+      box-shadow:var(--shadow);
+    }
+    .card-header{
+      padding:12px 14px;
+      border-bottom:1px solid var(--border);
+      display:flex; justify-content:space-between; align-items:center;
+      gap:10px;
+    }
+    .card-header h2{
+      margin:0;
+      font-size:18px;
+    }
+    .card-body{padding:14px}
+    .toc-grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:8px;
+    }
+    .toc-grid a{
+      border:1px solid var(--border);
+      background:#fbfbfb;
+      padding:10px 12px;
+      border-radius:12px;
+      display:flex; justify-content:space-between; gap:10px;
+      align-items:center;
+      font-size:14px;
+    }
+    .toc-grid a span{color:var(--muted); font-size:12px}
+    .callout{
+      border-radius:14px;
+      padding:12px 12px;
+      border:1px solid var(--border);
+      margin:12px 0;
+    }
+    .note{background:var(--note); border-color:#b7d6ff}
+    .tip{background:var(--tip); border-color:#bfe7cd}
+    .warning{background:var(--warn); border-color:#ffc6c2}
+    .callout strong{display:block; margin-bottom:4px}
+    .two-col{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+    }
+    @media (max-width: 960px){
+      .layout{grid-template-columns: 1fr}
+      .sidebar{position:relative; top:0; height:auto}
+      .two-col{grid-template-columns:1fr}
+    }
+    .example{
+      background:var(--example);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:12px;
+      margin:12px 0;
+    }
+    .example .ex-title{
+      font-weight:700;
+      color:#111827;
+      margin-bottom:8px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+    }
+    .btn{
+      display:inline-block;
+      background:#111827;
+      color:white;
+      padding:8px 12px;
+      border-radius:10px;
+      font-size:13px;
+      font-weight:650;
+      border:1px solid rgba(0,0,0,.08);
+      text-decoration:none;
+      cursor:pointer;
+    }
+    .btn:hover{opacity:.9; text-decoration:none}
+    pre{
+      margin:0;
+      background:var(--code);
+      color:var(--codeText);
+      padding:12px;
+      border-radius:12px;
+      overflow:auto;
+      border:1px solid rgba(255,255,255,.08);
+    }
+    code{font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace; font-size:13px}
+    .kvs{
+      display:grid;
+      grid-template-columns: 180px 1fr;
+      gap:8px 12px;
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:12px;
+      background:#fbfbfb;
+    }
+    .kvs div:nth-child(odd){color:#111827; font-weight:650}
+    .kvs div:nth-child(even){color:#111827}
+    .nav-bottom{
+      display:flex; justify-content:space-between; gap:10px;
+      margin-top:14px;
+    }
+    .nav-bottom a{
+      border:1px solid var(--border);
+      background:#fbfbfb;
+      padding:10px 12px;
+      border-radius:12px;
+      display:inline-flex; align-items:center; gap:8px;
+      color:#111827;
+      font-weight:650;
+    }
+    .nav-bottom a:hover{background:#f1f5f9; text-decoration:none}
+    .muted{color:var(--muted)}
+    .pill{
+      display:inline-flex; align-items:center; gap:6px;
+      border:1px solid var(--border);
+      padding:5px 10px; border-radius:999px;
+      background:white;
+      font-size:12px;
+      color:#111827;
+    }
+    .hr{height:1px; background:var(--border); margin:14px 0}
+    .qa{
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:12px;
+      background:#fff;
+      margin:10px 0;
+    }
+    .qa .q{font-weight:800}
+    .qa .a{margin-top:6px}
+    .mcq{
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:12px;
+      background:#fff;
+      margin:10px 0;
+    }
+    .footer{
+      margin-top:18px;
+      color:var(--muted);
+      font-size:13px;
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span>ItTechGenie</span>
+      <span class="badge">W3‑style Notes</span>
+    </div>
+    <div class="badge">.NET + C# Fundamentals</div>
+  </header>
+
+  <div class="layout">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <h3>Course Fundamentals &amp; .NET Overview</h3>
+      <ul class="nav">
+        <li><a href="#toc">📌 Table of Contents <small>jump to sections</small></a></li>
+        <li><a href="#s1">1) .NET, CLI, CLR, Architecture</a></li>
+        <li><a href="#s2">2) Introducing Visual Studio</a></li>
+        <li><a href="#s3">3) C# Language Introduction</a></li>
+        <li><a href="#s4">4) Tokens, Versions, Syntax</a></li>
+        <li><a href="#s5">5) First C# App (Console)</a></li>
+        <li><a href="#s6">6) Basic Programming Concepts</a></li>
+        <li><a href="#s7">7) Variables, Types, Operators</a></li>
+        <li><a href="#s8">8) Simple Programs (3 labs)</a></li>
+        <li><a href="#faqs">💬 FAQs</a></li>
+        <li><a href="#interview">🧠 Interview Q&amp;A</a></li>
+        <li><a href="#quiz">✅ Mini Quiz (10 MCQs)</a></li>
+        <li><a href="#answerkey">🔑 Answer Key</a></li>
+      </ul>
+      <div class="hr"></div>
+      <div class="muted" style="padding:0 10px 10px;">
+        Tip: Open this file in a browser. Use the left menu to jump between topics.
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="content">
+      <!-- HERO -->
+      <section class="hero" id="top">
+        <h1>Course Fundamentals &amp; .NET Overview</h1>
+        <p>
+          These notes teach the <b>basics of .NET and C#</b> step‑by‑step, starting from “What is .NET?”
+          and ending with <b>3 mini programs</b> you can run in a Console App.
+        </p>
+        <div class="meta">
+          <span class="pill">📘 Beginner-friendly</span>
+          <span class="pill">🧩 Real-world examples</span>
+          <span class="pill">🧪 Hands-on labs</span>
+          <span class="pill">🧠 Interview ready</span>
+        </div>
+
+        <div class="callout note">
+          <strong>What you will learn</strong>
+          .NET basics (CLI/CLR), Visual Studio setup, C# language building blocks, and writing your first working programs.
+        </div>
+      </section>
+
+      <!-- TOC -->
+      <section class="toc-card card" id="toc">
+        <div class="card-header">
+          <h2>Table of Contents</h2>
+          <span class="muted">Auto-generated from sections</span>
+        </div>
+        <div class="card-body">
+          <div class="toc-grid">
+            <a href="#s1"><b>1) Introduction to .NET, CLI, CLR, Framework Architecture</b><span>definitions + flow + example</span></a>
+            <a href="#s2"><b>2) Introducing Visual Studio</b><span>IDE, projects, debugging</span></a>
+            <a href="#s3"><b>3) C# Language Introduction</b><span>why C# + where used</span></a>
+            <a href="#s4"><b>4) C# Tokens, Versions, Syntax Structure</b><span>keywords, identifiers, grammar</span></a>
+            <a href="#s5"><b>5) First C# Application</b><span>step-by-step setup + output</span></a>
+            <a href="#s6"><b>6) Basic Programming Concepts</b><span>input, output, logic, loops</span></a>
+            <a href="#s7"><b>7) Variables, Primitive Types, Operators</b><span>types + operators + examples</span></a>
+            <a href="#s8"><b>8) Simple Programs (3 labs)</b><span>full code + sample run</span></a>
+            <a href="#faqs"><b>FAQs</b><span>common beginner doubts</span></a>
+            <a href="#interview"><b>Interview Questions &amp; Answers</b><span>scenario-based</span></a>
+            <a href="#quiz"><b>Mini Quiz (10 MCQs)</b><span>with answer key</span></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 1 -->
+      <section class="card" id="s1">
+        <div class="card-header">
+          <h2>1) Introduction to .NET, CLI, CLR, Framework Architecture</h2>
+          <span class="pill">Core concepts</span>
+        </div>
+        <div class="card-body">
+          <div class="kvs">
+            <div>What is it?</div>
+            <div>
+              <b>.NET</b> is a developer platform to build apps (web, desktop, mobile, cloud, APIs) using languages like <b>C#</b>.
+              It provides libraries, tools, and a runtime to execute your code.
+            </div>
+            <div>Why do we need it?</div>
+            <div>
+              You write code once and run it reliably with strong tooling, fast performance, rich libraries, and easier deployment.
+              It’s widely used for enterprise apps and cloud services.
+            </div>
+          </div>
+
+          <div class="callout tip">
+            <strong>Beginner Tip</strong>
+            Think of .NET as a “full kit”: <b>SDK/tools</b> to build + <b>runtime</b> to run + <b>libraries</b> to avoid writing everything from scratch.
+          </div>
+
+          <h3>How it works (simple flow)</h3>
+          <div class="example">
+            <div class="ex-title">
+              Build &amp; Run flow
+              <a class="btn" href="#top" title="dummy">Try It Yourself</a>
+            </div>
+<pre><code>ASCII FLOW (high-level):
+
+C# Source Code (.cs)
+        |
+        |  (compile)
+        v
+IL (Intermediate Language) + Metadata  --->  Assembly (.dll / .exe)
+        |
+        |  (execute)
+        v
+CLR (Common Language Runtime)
+  - JIT compiles IL to machine code
+  - manages memory (GC), exceptions, security
+        |
+        v
+Your App Runs on OS (Windows/Linux/macOS)</code></pre>
+          </div>
+
+          <h3>Key terms you must know</h3>
+          <div class="two-col">
+            <div class="example">
+              <div class="ex-title">CLR (Common Language Runtime)</div>
+              <p class="muted">The runtime engine that runs .NET code.</p>
+<pre><code>Responsibilities:
+- JIT compilation (IL ➜ Machine code)
+- Garbage Collection (automatic memory management)
+- Exception handling
+- Type safety and security checks</code></pre>
+            </div>
+            <div class="example">
+              <div class="ex-title">CLI (Common Language Infrastructure)</div>
+              <p class="muted">The standard/specification behind .NET execution.</p>
+<pre><code>Think of CLI as the "rules + blueprint" for:
+- IL format
+- Metadata
+- Runtime behavior
+
+CLR is Microsoft's runtime implementation of the CLI ideas.</code></pre>
+            </div>
+          </div>
+
+          <div class="example">
+            <div class="ex-title">Framework Architecture (practical view)</div>
+<pre><code>+-------------------------+
+| Your App (C#)           |
++-------------------------+
+| .NET Libraries (BCL)    |  e.g., System.Console, System.IO, System.Net.Http
++-------------------------+
+| .NET Runtime (CLR)      |  JIT + GC + runtime services
++-------------------------+
+| OS + Hardware           |
++-------------------------+</code></pre>
+          </div>
+
+          <h3>When to use / when not to use</h3>
+          <div class="two-col">
+            <div class="callout note">
+              <strong>When to use .NET</strong>
+              <ul>
+                <li>APIs and microservices (ASP.NET Core)</li>
+                <li>Enterprise apps (web + backend)</li>
+                <li>Cloud-native systems (Azure integration)</li>
+                <li>Cross-platform console tools</li>
+              </ul>
+            </div>
+            <div class="callout warning">
+              <strong>When not to choose .NET (or think twice)</strong>
+              <ul>
+                <li>Very tiny scripts where shell/Python is simpler</li>
+                <li>Projects where team is heavily invested in another ecosystem</li>
+                <li>Extremely resource-limited embedded environments</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3>Alternatives / related concepts</h3>
+          <ul>
+            <li><b>Java/JVM</b> (similar idea: bytecode + runtime)</li>
+            <li><b>Node.js</b> (JavaScript runtime ecosystem)</li>
+            <li><b>Python</b> (interpreted, fast to write scripts)</li>
+            <li><b>NuGet</b> (package manager) is to .NET what npm is to Node, pip is to Python.</li>
+          </ul>
+
+          <div class="example">
+            <div class="ex-title">Quick Example (Console write)</div>
+<pre><code>using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Hello from .NET!");
+    }
+}</code></pre>
+            <p class="muted">Expected output: <b>Hello from .NET!</b></p>
+          </div>
+
+          <div class="callout note">
+            <strong>Advanced Note</strong>
+            In real projects, your app usually depends on NuGet packages, config files, logging, and deployment pipelines.
+            The runtime + libraries make these production concerns easier to standardize.
+          </div>
+
+          <div class="nav-bottom">
+            <a href="#toc">⬅ Back to TOC</a>
+            <a href="#s2">Next ➜ Visual Studio</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2 -->
+      <section class="card" id="s2">
+        <div class="card-header">
+          <h2>2) Introducing Visual Studio</h2>
+          <span class="pill">IDE basics</span>
+        </div>
+        <div class="card-body">
+          <div class="kvs">
+            <div>What is it?</div>
+            <div>
+              <b>Visual Studio</b> is an IDE (Integrated Development Environment) for building .NET applications.
+              It provides code editor, templates, debugging, Git tools, and project management.
+            </div>
+            <div>Why do we need it?</div>
+            <div>
+              It saves time: creates projects quickly, shows errors while typing, supports debugging, and helps manage dependencies.
+            </div>
+          </div>
+
+          <h3>How it works (simple flow)</h3>
+          <div class="example">
+<pre><code>ASCII FLOW:
+
+You create a project (template)
+        |
+You write code (.cs files)
+        |
+Build (compiles to IL/assemblies)
+        |
+Run + Debug (breakpoints, watch variables)
+        |
+Publish (deploy / create executable / container)</code></pre>
+          </div>
+
+          <h3>Step-by-step: Install and configure (beginner)</h3>
+          <div class="example">
+            <div class="ex-title">Setup checklist</div>
+            <ol>
+              <li>Install <b>Visual Studio</b> (Community edition is fine for learning).</li>
+              <li>During installation, select workload: <b>.NET desktop development</b> (for Console apps) and optionally <b>ASP.NET and web development</b>.</li>
+              <li>Make sure <b>.NET SDK</b> is installed (VS usually installs it).</li>
+              <li>Open Visual Studio ➜ Sign in (optional) ➜ Choose theme.</li>
+            </ol>
+          </div>
+
+          <h3>When to use / when not to use</h3>
+          <div class="two-col">
+            <div class="callout tip">
+              <strong>When to use Visual Studio</strong>
+              <ul>
+                <li>You want full debugging + IDE support</li>
+                <li>Large solution with multiple projects</li>
+                <li>Windows desktop apps / enterprise development</li>
+              </ul>
+            </div>
+            <div class="callout note">
+              <strong>When VS Code may be enough</strong>
+              <ul>
+                <li>Small projects and quick edits</li>
+                <li>Cross-platform lightweight setup</li>
+                <li>You prefer terminal + dotnet CLI workflow</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3>Alternatives / related concepts</h3>
+          <ul>
+            <li><b>Visual Studio Code</b> (lightweight editor + extensions)</li>
+            <li><b>Rider</b> (JetBrains IDE for .NET)</li>
+            <li><b>dotnet CLI</b> (command-line tool to create/build/run)</li>
+          </ul>
+
+          <div class="example">
+            <div class="ex-title">Example: dotnet CLI equivalent</div>
+<pre><code># Create a new console app
+dotnet new console -n HelloDotNet
+
+# Run it
+cd HelloDotNet
+dotnet run</code></pre>
+          </div>
+
+          <div class="callout tip">
+            <strong>Beginner Tip</strong>
+            If Visual Studio feels heavy, start with it for learning, then explore VS Code later.
+            The language and runtime concepts remain the same.
+          </div>
+
+          <div class="callout note">
+            <strong>Advanced Note</strong>
+            In real teams, Visual Studio integrates with Git, CI/CD, code analyzers, and test runners (xUnit/NUnit),
+            making it useful for production workflows.
+          </div>
+
+          <div class="nav-bottom">
+            <a href="#s1">⬅ Previous ➜ .NET basics</a>
+            <a href="#s3">Next ➜ C# Introduction</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3 -->
+      <section class="card" id="s3">
+        <div class="card-header">
+          <h2>3) C# Language Introduction</h2>
+          <span class="pill">Language basics</span>
+        </div>
+        <div class="card-body">
+          <div class="kvs">
+            <div>What is it?</div>
+            <div>
+              <b>C# (C-Sharp)</b> is a modern, strongly-typed programming language used to build .NET applications.
+              It supports OOP, async programming, and modern features like LINQ and pattern matching.
+            </div>
+            <div>Why do we need it?</div>
+            <div>
+              C# helps you write clean, safe code with great tooling and performance, commonly used in APIs, enterprise apps, and cloud services.
+            </div>
+          </div>
+
+          <h3>How it works (simple flow)</h3>
+          <div class="example">
+<pre><code>ASCII FLOW:
+
+Write C# code (.cs)
+   |
+Compiler (Roslyn) converts to IL + metadata
+   |
+CLR runs it (JIT + GC)
+   |
+App interacts with libraries + OS</code></pre>
+          </div>
+
+          <h3>When to use / when not to use</h3>
+          <div class="two-col">
+            <div class="callout tip">
+              <strong>When to use C#</strong>
+              <ul>
+                <li>Building Web APIs (ASP.NET Core)</li>
+                <li>Enterprise applications</li>
+                <li>Cloud services (Azure-friendly ecosystem)</li>
+                <li>Desktop apps (Windows) and cross-platform tools</li>
+              </ul>
+            </div>
+            <div class="callout warning">
+              <strong>When not to use (or consider other options)</strong>
+              <ul>
+                <li>Short automation scripts where Python/bash is faster</li>
+                <li>Very niche ecosystems dominated by another language</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3>Alternatives / related concepts</h3>
+          <ul>
+            <li><b>Java</b> (similar typed language + runtime)</li>
+            <li><b>TypeScript</b> (typed JS; great for frontend/backend JS)</li>
+            <li><b>F#</b> (functional-first .NET language)</li>
+          </ul>
+
+          <div class="example">
+            <div class="ex-title">Example: Basic C# syntax</div>
+<pre><code>using System;
+
+class Program
+{
+    static void Main()
+    {
+        int age = 25;
+        Console.WriteLine("Age = " + age);
+    }
+}</code></pre>
+            <p class="muted">Expected output: <b>Age = 25</b></p>
+          </div>
+
+          <div class="callout tip">
+            <strong>Beginner Tip</strong>
+            Don’t memorize everything. Focus on: variables, types, if/else, loops, functions, and basic input/output first.
+          </div>
+
+          <div class="callout note">
+            <strong>Advanced Note</strong>
+            In real APIs, you’ll use C# features like <b>async/await</b>, dependency injection, and LINQ to write scalable server code.
+          </div>
+
+          <div class="nav-bottom">
+            <a href="#s2">⬅ Previous ➜ Visual Studio</a>
+            <a href="#s4">Next ➜ Tokens &amp; Syntax</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4 -->
+      <section class="card" id="s4">
+        <div class="card-header">
+          <h2>4) C# Language Tokens, Versions, Syntax Structure</h2>
+          <span class="pill">Foundations</span>
+        </div>
+        <div class="card-body">
+          <div class="kvs">
+            <div>What is it?</div>
+            <div>
+              <b>Tokens</b> are the smallest meaningful parts of code (keywords, identifiers, literals, operators, separators).
+              <b>Syntax</b> is the grammar/rules that define how tokens form valid statements and programs.
+            </div>
+            <div>Why do we need it?</div>
+            <div>
+              Understanding tokens and syntax helps you read code confidently, fix errors, and write correct programs faster.
+            </div>
+          </div>
+
+          <h3>Visual aid: Token categories</h3>
+          <div class="example">
+<pre><code>Tokens in C#:
+
+1) Keywords:     int, class, if, for, return, using
+2) Identifiers:  age, totalPrice, Program, Calculate
+3) Literals:     10, 3.14, "hello", true
+4) Operators:    +, -, *, /, ==, &&, =
+5) Separators:   ; , ( ) { } [ ]</code></pre>
+          </div>
+
+          <h3>How it works (simple flow)</h3>
+          <div class="example">
+<pre><code>ASCII FLOW:
+
+Source Code
+  |
+Tokenizer/Lexer (splits into tokens)
+  |
+Parser (checks syntax rules)
+  |
+Compiler (builds IL, reports errors)</code></pre>
+          </div>
+
+          <h3>C# Versions (simple understanding)</h3>
+          <div class="callout note">
+            <strong>Practical view</strong>
+            C# keeps adding features. You don’t need to memorize version numbers at start.
+            Just know: newer versions improve readability (e.g., pattern matching, records, top-level statements).
+          </div>
+
+          <h3>Syntax structure (a typical C# program)</h3>
+          <div class="example">
+            <div class="ex-title">Skeleton</div>
+<pre><code>using System;
+
+class Program
+{
+    static void Main()
+    {
+        // statements end with ;
+        Console.WriteLine("Hello");
+    }
+}</code></pre>
+          </div>
+
+          <h3>Examples: tokens inside a line</h3>
+          <div class="example">
+<pre><code>int age = 25;
+
+Tokens:
+- int      (keyword)
+- age      (identifier)
+- =        (operator)
+- 25       (literal)
+- ;        (separator)</code></pre>
+          </div>
+
+          <h3>When to use / when not to use</h3>
+          <div class="two-col">
+            <div class="callout tip">
+              <strong>When to focus on tokens/syntax</strong>
+              <ul>
+                <li>When you face compilation errors and don’t understand them</li>
+                <li>When learning basics of any language</li>
+                <li>When reading someone else’s code</li>
+              </ul>
+            </div>
+            <div class="callout warning">
+              <strong>When not to over-focus</strong>
+              <ul>
+                <li>Don’t get stuck on version features early</li>
+                <li>Learn by writing small programs and improving gradually</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="callout tip">
+            <strong>Beginner Tip</strong>
+            Most errors come from missing <code>;</code>, mismatched braces <code>{ }</code>, or wrong parentheses <code>( )</code>. Fix these first.
+          </div>
+
+          <div class="callout note">
+            <strong>Advanced Note</strong>
+            Modern C# supports “top-level statements” for small apps, but companies still often use the classic class + Main structure in many codebases.
+          </div>
+
+          <div class="nav-bottom">
+            <a href="#s3">⬅ Previous ➜ C# Intro</a>
+            <a href="#s5">Next ➜ First C# App</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5 -->
+      <section class="card" id="s5">
+        <div class="card-header">
+          <h2>5) First C# Application (Visual Studio setup, Console class)</h2>
+          <span class="pill">Hands-on</span>
+        </div>
+        <div class="card-body">
+          <div class="kvs">
+            <div>What is it?</div>
+            <div>
+              A <b>Console Application</b> is a simple program that runs in a terminal window.
+              It’s perfect to learn input/output and basic programming without UI complexity.
+            </div>
+            <div>Why do we need it?</div>
+            <div>
+              Console apps help you focus on logic. Once your logic is strong, you can build bigger apps (web, desktop, microservices).
+            </div>
+          </div>
+
+          <h3>How it works (simple flow)</h3>
+          <div class="example">
+<pre><code>ASCII FLOW:
+
+Create Console App project
+   |
+Write code in Program.cs
+   |
+Build (Ctrl+Shift+B)
+   |
+Run (Ctrl+F5) or Debug (F5)</code></pre>
+          </div>
+
+          <h3>Step-by-step: Create your first console app in Visual Studio</h3>
+          <div class="example">
+            <div class="ex-title">Steps</div>
+            <ol>
+              <li>Open <b>Visual Studio</b>.</li>
+              <li>Click <b>Create a new project</b>.</li>
+              <li>Select <b>Console App</b> (C#). Click <b>Next</b>.</li>
+              <li>Project name: <b>HelloWorldApp</b>. Choose location. Click <b>Next</b>.</li>
+              <li>Select .NET version (latest LTS is fine). Click <b>Create</b>.</li>
+              <li>Open <b>Program.cs</b> and replace content with the code below.</li>
+              <li>Run:
+                <ul>
+                  <li><b>Ctrl+F5</b> = Run without debugging</li>
+                  <li><b>F5</b> = Run with debugging (you can use breakpoints)</li>
+                </ul>
+              </li>
+            </ol>
+          </div>
+
+          <div class="callout note">
+            <strong>Console class (important)</strong>
+            <code>Console.WriteLine()</code> prints output. <code>Console.ReadLine()</code> reads user input as text.
+          </div>
+
+          <div class="example">
+            <div class="ex-title">Your first working program</div>
+<pre><code>using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Enter your name:");
+        string? name = Console.ReadLine();
+
+        Console.WriteLine("Hello, " + name + "!");
+    }
+}</code></pre>
+            <p class="muted"><b>Expected output</b> (sample):</p>
+<pre><code>Enter your name:
+Gopi
+Hello, Gopi!</code></pre>
+          </div>
+
+          <h3>Common mistakes (and quick fixes)</h3>
+          <div class="callout warning">
+            <strong>Common mistakes</strong>
+            <ul>
+              <li><b>Program closes instantly</b>: run with <b>Ctrl+F5</b> or add <code>Console.ReadLine()</code> at end.</li>
+              <li><b>Null input</b>: use <code>string?</code> and handle empty input.</li>
+              <li><b>Typing errors</b>: watch red underline suggestions; build to see exact error.</li>
+            </ul>
+          </div>
+
+          <div class="callout tip">
+            <strong>Beginner Tip</strong>
+            Start with <b>Ctrl+F5</b> to avoid debug complexity in day 1. Use <b>F5</b> when you want to pause at breakpoints.
+          </div>
+
+          <div class="callout note">
+            <strong>Advanced Note</strong>
+            The same console app can later be packaged and deployed. In real systems, you often build “worker services” (background jobs) that behave like long-running console apps.
+          </div>
+
+          <div class="nav-bottom">
+            <a href="#s4">⬅ Previous ➜ Tokens &amp; Syntax</a>
+            <a href="#s6">Next ➜ Programming Concepts</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 6 -->
+      <section class="card" id="s6">
+        <div class="card-header">
+          <h2>6) Basic Programming Concepts</h2>
+          <span class="pill">Thinking like a developer</span>
+        </div>
+        <div class="card-body">
+          <div class="kvs">
+            <div>What is it?</div>
+            <div>
+              Basic programming concepts are the building blocks: <b>input/output</b>, <b>variables</b>,
+              <b>conditions</b>, <b>loops</b>, and <b>functions</b>.
+            </div>
+            <div>Why do we need it?</div>
+            <div>
+              Every real software problem becomes easier when you break it into steps using these building blocks.
+            </div>
+          </div>
+
+          <h3>How it works (simple flow)</h3>
+          <div class="example">
+<pre><code>ASCII FLOW (problem solving):
+
+Understand the problem
+   |
+Identify inputs and outputs
+   |
+Write step-by-step logic (algorithm)
+   |
+Convert logic into code
+   |
+Test with sample inputs
+   |
+Fix and improve (edge cases)</code></pre>
+          </div>
+
+          <h3>Core concepts (quick but clear)</h3>
+          <div class="two-col">
+            <div class="example">
+              <div class="ex-title">Condition (if/else)</div>
+<pre><code>int age = 20;
+
+if (age >= 18)
+{
+    Console.WriteLine("Eligible");
+}
+else
+{
+    Console.WriteLine("Not eligible");
+}</code></pre>
+            </div>
+            <div class="example">
+              <div class="ex-title">Loop (for)</div>
+<pre><code>for (int i = 1; i <= 5; i++)
+{
+    Console.WriteLine(i);
+}</code></pre>
+            </div>
+          </div>
+
+          <h3>When to use / when not to use</h3>
+          <div class="two-col">
+            <div class="callout tip">
+              <strong>Use conditions when</strong>
+              <ul>
+                <li>Decision is needed (pass/fail, eligible/not)</li>
+                <li>Validation of input</li>
+              </ul>
+            </div>
+            <div class="callout tip">
+              <strong>Use loops when</strong>
+              <ul>
+                <li>Repeated work is needed (iterate items, repeat until correct input)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="callout note">
+            <strong>Real-world use case</strong>
+            In a shopping app: input = cart items, logic = apply discount rules, output = final payable amount.
+            You’ll use variables, conditions, loops, and functions.
+          </div>
+
+          <div class="callout tip">
+            <strong>Beginner Tip</strong>
+            Always write the logic in plain English first, then convert to code line-by-line.
+          </div>
+
+          <div class="callout note">
+            <strong>Advanced Note</strong>
+            “Clean code” and “clean architecture” are just structured ways of applying these basics at scale:
+            separate input, business rules, and output layers.
+          </div>
+
+          <div class="nav-bottom">
+            <a href="#s5">⬅ Previous ➜ First app</a>
+            <a href="#s7">Next ➜ Variables &amp; Operators</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 7 -->
+      <section class="card" id="s7">
+        <div class="card-header">
+          <h2>7) Variables, Primitive Types, Operators</h2>
+          <span class="pill">Core coding</span>
+        </div>
+        <div class="card-body">
+          <div class="kvs">
+            <div>What is it?</div>
+            <div>
+              A <b>variable</b> stores data. A <b>type</b> defines what data can be stored (int, double, bool, char, string).
+              <b>Operators</b> let you compute and compare values.
+            </div>
+            <div>Why do we need it?</div>
+            <div>
+              Programs work with data. Without variables/types/operators, you cannot calculate, validate, or make decisions.
+            </div>
+          </div>
+
+          <h3>Visual aid: types &amp; examples</h3>
+          <div class="example">
+<pre><code>Primitive-ish types (most common in beginner programs):
+
+int     -> whole numbers        (e.g., 10, -5)
+double  -> decimals             (e.g., 3.14, -0.5)
+bool    -> true/false           (e.g., isActive = true)
+char    -> single character     (e.g., 'A')
+string  -> text                 (e.g., "Hello")</code></pre>
+          </div>
+
+          <h3>How it works (simple flow)</h3>
+          <div class="example">
+<pre><code>ASCII FLOW:
+
+Read input (string)
+   |
+Convert to required type (int/double)
+   |
+Use operators to compute results
+   |
+Print output</code></pre>
+          </div>
+
+          <h3>Operators (must-know list)</h3>
+          <div class="two-col">
+            <div class="example">
+              <div class="ex-title">Arithmetic</div>
+<pre><code>+  -  *  /  %  (modulus)</code></pre>
+            </div>
+            <div class="example">
+              <div class="ex-title">Comparison</div>
+<pre><code>==  !=  &gt;  &lt;  &gt;=  &lt;=</code></pre>
+            </div>
+            <div class="example">
+              <div class="ex-title">Logical</div>
+<pre><code>&& (AND)    || (OR)    ! (NOT)</code></pre>
+            </div>
+            <div class="example">
+              <div class="ex-title">Assignment</div>
+<pre><code>=  +=  -=  *=  /=</code></pre>
+            </div>
+          </div>
+
+          <h3>Examples</h3>
+          <div class="example">
+            <div class="ex-title">Example: reading number + TryParse (recommended)</div>
+<pre><code>using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter age: ");
+        string? input = Console.ReadLine();
+
+        if (int.TryParse(input, out int age))
+        {
+            bool isAdult = age &gt;= 18;
+            Console.WriteLine("Adult? " + isAdult);
+        }
+        else
+        {
+            Console.WriteLine("Invalid age. Please enter a whole number.");
+        }
+    }
+}</code></pre>
+          </div>
+
+          <h3>When to use / when not to use</h3>
+          <div class="two-col">
+            <div class="callout tip">
+              <strong>When to use primitive types</strong>
+              <ul>
+                <li>Simple values: counts, prices, flags</li>
+                <li>Input/output in small programs</li>
+              </ul>
+            </div>
+            <div class="callout note">
+              <strong>When primitives are not enough</strong>
+              <ul>
+                <li>Complex data (Customer, Order) ➜ use classes</li>
+                <li>Collections of items ➜ arrays/lists</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="callout tip">
+            <strong>Beginner Tip</strong>
+            Use <code>int.TryParse</code> / <code>double.TryParse</code> instead of direct conversion to avoid runtime errors.
+          </div>
+
+          <div class="callout note">
+            <strong>Advanced Note</strong>
+            In real applications you also handle culture-specific decimals (comma vs dot), validation rules, and you often use <b>decimal</b> for money calculations.
+          </div>
+
+          <div class="nav-bottom">
+            <a href="#s6">⬅ Previous ➜ Programming Concepts</a>
+            <a href="#s8">Next ➜ Simple Programs (Labs)</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 8 -->
+      <section class="card" id="s8">
+        <div class="card-header">
+          <h2>8) Simple Programs (Area of Circle, Feet to Centimeters, Seconds to Minutes)</h2>
+          <span class="pill">3 Labs</span>
+        </div>
+        <div class="card-body">
+
+          <div class="callout note">
+            <strong>Lab style</strong>
+            Each program includes: problem statement, I/O format, approach, full code, sample run, edge cases, and a small enhancement.
+          </div>
+
+          <!-- LAB 1 -->
+          <h3 id="lab1">Lab 1: Area of a Circle</h3>
+
+          <div class="example">
+            <div class="ex-title">A) Problem statement</div>
+            <p>Given the radius of a circle, calculate the area using: <b>Area = π × r × r</b></p>
+          </div>
+
+          <div class="example">
+            <div class="ex-title">B) Input / Output format</div>
+<pre><code>Input:  radius (number, can be decimal)
+Output: area (decimal)</code></pre>
+          </div>
+
+          <div class="example">
+            <div class="ex-title">C) Approach (step-by-step)</div>
+            <ol>
+              <li>Read radius as string.</li>
+              <li>Validate using <code>double.TryParse</code>.</li>
+              <li>If radius &lt; 0 ➜ show message and stop.</li>
+              <li>Compute: <code>area = Math.PI * radius * radius</code>.</li>
+              <li>Print area (formatted).</li>
+            </ol>
+          </div>
+
+          <div class="example">
+            <div class="ex-title">D) Full C# code (Console App)</div>
+<pre><code>using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter radius: ");
+        string? input = Console.ReadLine();
+
+        if (!double.TryParse(input, out double radius))
+        {
+            Console.WriteLine("Invalid input. Please enter a number.");
+            return;
+        }
+
+        if (radius &lt; 0)
+        {
+            Console.WriteLine("Radius cannot be negative.");
+            return;
+        }
+
+        double area = Math.PI * radius * radius;
+        Console.WriteLine($"Area of circle = {area:F2}");
+    }
+}</code></pre>
+          </div>
+
+          <div class="example">
+            <div class="ex-title">E) Sample run</div>
+<pre><code>Enter radius: 5
+Area of circle = 78.54</code></pre>
+          </div>
+
+          <div class="example">
+            <div class="ex-title">F) Edge cases</div>
+            <ul>
+              <li>Radius = 0 ➜ Area = 0</li>
+              <li>Radius negative ➜ show message</li>
+              <li>Non-numeric ➜ show message</li>
+            </ul>
+          </div>
+
+          <div class="callout tip">
+            <strong>G) Small enhancement</strong>
+            You already used <code>TryParse</code> and <code>Math.PI</code>. Next improvement: allow repeating until valid input (loop).
+          </div>
+
+          <div class="hr"></div>
+
+          <!-- LAB 2 -->
+          <h3 id="lab2">Lab 2: Feet to Centimeters</h3>
+
+          <div class="example">
+            <div class="ex-title">A) Problem statement</div>
+            <p>Convert a length from feet to centimeters using: <b>1 foot = 30.48 cm</b></p>
+          </div>
+
+          <div class="example">
+            <div class="ex-title">B) Input / Output format</div>
+<pre><code>Input:  feet (number, can be decimal)
+Output: centimeters (decimal)</code></pre>
+          </div>
+
+          <div class="example">
+            <div class="ex-title">C) Approach (step-by-step)</div>
+            <ol>
+              <li>Read feet value.</li>
+              <li>Validate with <code>double.TryParse</code>.</li>
+              <li>Use constant conversion factor 30.48.</li>
+              <li>Compute: <code>cm = feet * 30.48</code>.</li>
+              <li>Print result.</li>
+            </ol>
+          </div>
+
+          <div class="example">
+            <div class="ex-title">D) Full C# code (Console App)</div>
+<pre><code>using System;
+
+class Program
+{
+    static void Main()
+    {
+        const double CmPerFoot = 30.48;
+
+        Console.Write("Enter feet: ");
+        string? input = Console.ReadLine();
+
+        if (!double.TryParse(input, out double feet))
+        {
+            Console.WriteLine("Invalid input. Please enter a number.");
+            return;
+        }
+
+        if (feet &lt; 0)
+        {
+            Console.WriteLine("Feet cannot be negative.");
+            return;
+        }
+
+        double cm = feet * CmPerFoot;
+        Console.WriteLine($"{feet} feet = {cm:F2} cm");
+    }
+}</code></pre>
+          </div>
+
+          <div class="example">
+            <div class="ex-title">E) Sample run</div>
+<pre><code>Enter feet: 6
+6 feet = 182.88 cm</code></pre>
+          </div>
+
+          <div class="example">
+            <div class="ex-title">F) Edge cases</div>
+            <ul>
+              <li>Feet = 0 ➜ 0 cm</li>
+              <li>Feet negative ➜ show message</li>
+              <li>Non-numeric ➜ show message</li>
+            </ul>
+          </div>
+
+          <div class="callout tip">
+            <strong>G) Small enhancement</strong>
+            Keep conversion factor in a <b>constant</b> (done). Next: ask user if they want cm-to-feet as reverse conversion.
+          </div>
+
+          <div class="hr"></div>
+
+          <!-- LAB 3 -->
+          <h3 id="lab3">Lab 3: Convert Seconds to Minutes (and remaining seconds)</h3>
+
+          <div class="example">
+            <div class="ex-title">A) Problem statement</div>
+            <p>Given total seconds, convert into minutes and seconds.</p>
+          </div>
+
+          <div class="example">
+            <div class="ex-title">B) Input / Output format</div>
+<pre><code>Input:  totalSeconds (whole number)
+Output: minutes and remainingSeconds</code></pre>
+          </div>
+
+          <div class="example">
+            <div class="ex-title">C) Approach (step-by-step)</div>
+            <ol>
+              <li>Read total seconds as string.</li>
+              <li>Validate using <code>int.TryParse</code>.</li>
+              <li>If value &lt; 0 ➜ show message.</li>
+              <li>Compute:
+                <ul>
+                  <li><code>minutes = totalSeconds / 60</code></li>
+                  <li><code>remaining = totalSeconds % 60</code></li>
+                </ul>
+              </li>
+              <li>Print result.</li>
+            </ol>
+          </div>
+
+          <div class="example">
+            <div class="ex-title">D) Full C# code (Console App)</div>
+<pre><code>using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter total seconds: ");
+        string? input = Console.ReadLine();
+
+        if (!int.TryParse(input, out int totalSeconds))
+        {
+            Console.WriteLine("Invalid input. Please enter a whole number.");
+            return;
+        }
+
+        if (totalSeconds &lt; 0)
+        {
+            Console.WriteLine("Seconds cannot be negative.");
+            return;
+        }
+
+        int minutes = totalSeconds / 60;
+        int remainingSeconds = totalSeconds % 60;
+
+        Console.WriteLine($"{totalSeconds} seconds = {minutes} minute(s) and {remainingSeconds} second(s)");
+    }
+}</code></pre>
+          </div>
+
+          <div class="example">
+            <div class="ex-title">E) Sample run</div>
+<pre><code>Enter total seconds: 125
+125 seconds = 2 minute(s) and 5 second(s)</code></pre>
+          </div>
+
+          <div class="example">
+            <div class="ex-title">F) Edge cases</div>
+            <ul>
+              <li>Seconds = 0 ➜ 0 minutes, 0 seconds</li>
+              <li>Seconds less than 60 ➜ 0 minutes, same seconds</li>
+              <li>Very large input ➜ still works (within int range)</li>
+              <li>Non-numeric ➜ show message</li>
+            </ul>
+          </div>
+
+          <div class="callout tip">
+            <strong>G) Small enhancement</strong>
+            Next improvement: convert to hours + minutes + seconds using division/modulus (real-world time formatting).
+          </div>
+
+          <div class="callout tip">
+            <strong>Beginner Tip</strong>
+            Always separate “reading input” and “computing output”. If input is wrong, stop early to keep code clean.
+          </div>
+
+          <div class="callout note">
+            <strong>Advanced Note</strong>
+            These programs look small, but the same validation style (TryParse, guard clauses, constants) is used in real APIs
+            to prevent bad data from crashing services.
+          </div>
+
+          <div class="nav-bottom">
+            <a href="#s7">⬅ Previous ➜ Variables &amp; Operators</a>
+            <a href="#faqs">Next ➜ FAQs</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQs -->
+      <section class="card" id="faqs">
+        <div class="card-header">
+          <h2>FAQs</h2>
+          <span class="pill">Common doubts</span>
+        </div>
+        <div class="card-body">
+          <div class="qa">
+            <div class="q">Q1) Is .NET only for Windows?</div>
+            <div class="a">No. Modern .NET is cross-platform and runs on Windows, Linux, and macOS. Your C# code can run across OSes if you avoid OS-specific APIs.</div>
+          </div>
+          <div class="qa">
+            <div class="q">Q2) What’s the difference between .NET SDK and .NET Runtime?</div>
+            <div class="a"><b>SDK</b> is for building (compiler + tools). <b>Runtime</b> is for running already-built apps. Developers typically install SDK.</div>
+          </div>
+          <div class="qa">
+            <div class="q">Q3) Why is C# called “compiled” if it runs on CLR?</div>
+            <div class="a">C# compiles to IL first (compile-time), then CLR JIT-compiles IL to machine code at runtime.</div>
+          </div>
+          <div class="qa">
+            <div class="q">Q4) Why use TryParse instead of Convert.ToInt32?</div>
+            <div class="a">TryParse prevents crashes. If input is invalid, it returns false instead of throwing an exception.</div>
+          </div>
+
+          <div class="nav-bottom">
+            <a href="#s8">⬅ Previous ➜ Labs</a>
+            <a href="#interview">Next ➜ Interview Q&amp;A</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- INTERVIEW -->
+      <section class="card" id="interview">
+        <div class="card-header">
+          <h2>Interview Questions &amp; Answers (Real-world, Scenario-based)</h2>
+          <span class="pill">Practice</span>
+        </div>
+        <div class="card-body">
+          <div class="qa">
+            <div class="q">Q1) Explain CLR in one minute. What does it do in production?</div>
+            <div class="a">
+              <b>Answer:</b> CLR is the runtime that executes .NET code. It JIT-compiles IL into machine code and manages memory using garbage collection.
+              <br><b>Explanation:</b> In production, CLR improves performance and stability by managing memory, handling exceptions, and enforcing type safety.
+            </div>
+          </div>
+
+          <div class="qa">
+            <div class="q">Q2) Scenario: Your console app crashes when user types text instead of a number. How will you fix it?</div>
+            <div class="a">
+              <b>Answer:</b> Use <code>int.TryParse</code> / <code>double.TryParse</code> to validate input before calculations.
+              <br><b>Explanation:</b> It prevents runtime exceptions and allows you to show a friendly message and retry.
+            </div>
+          </div>
+
+          <div class="qa">
+            <div class="q">Q3) What is the difference between CLI and CLR?</div>
+            <div class="a">
+              <b>Answer:</b> CLI is the specification/standard for .NET execution, IL, and metadata. CLR is Microsoft’s runtime implementation that follows those ideas.
+              <br><b>Explanation:</b> CLI defines “what should exist”; CLR is “the actual engine” doing the work.
+            </div>
+          </div>
+
+          <div class="qa">
+            <div class="q">Q4) Scenario: In a real API, why does input validation matter?</div>
+            <div class="a">
+              <b>Answer:</b> Invalid input can crash the service or create wrong data in the database.
+              <br><b>Explanation:</b> Using guard clauses and validation rules improves reliability and prevents incidents.
+            </div>
+          </div>
+
+          <div class="qa">
+            <div class="q">Q5) What is BCL and why is it important?</div>
+            <div class="a">
+              <b>Answer:</b> BCL (Base Class Library) is the standard library in .NET.
+              <br><b>Explanation:</b> It gives ready-made features like collections, files, networking, and console I/O so you don’t reinvent the wheel.
+            </div>
+          </div>
+
+          <div class="nav-bottom">
+            <a href="#faqs">⬅ Previous ➜ FAQs</a>
+            <a href="#quiz">Next ➜ Mini Quiz</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- QUIZ -->
+      <section class="card" id="quiz">
+        <div class="card-header">
+          <h2>Mini Quiz (10 MCQs)</h2>
+          <span class="pill">Check your understanding</span>
+        </div>
+        <div class="card-body">
+          <div class="mcq">
+            <div class="q">1) CLR primarily provides:</div>
+            <div class="a">
+              A) HTML rendering<br>
+              B) Runtime execution services (JIT, GC)<br>
+              C) Only UI components<br>
+              D) Database engine
+            </div>
+          </div>
+
+          <div class="mcq">
+            <div class="q">2) In .NET, C# code is first compiled into:</div>
+            <div class="a">
+              A) Machine code<br>
+              B) IL (Intermediate Language)<br>
+              C) Java bytecode<br>
+              D) Python bytecode
+            </div>
+          </div>
+
+          <div class="mcq">
+            <div class="q">3) Which is safer for user input conversion?</div>
+            <div class="a">
+              A) int.Parse<br>
+              B) Convert.ToInt32<br>
+              C) int.TryParse<br>
+              D) Random()
+            </div>
+          </div>
+
+          <div class="mcq">
+            <div class="q">4) Which is a C# token type?</div>
+            <div class="a">
+              A) Keyword<br>
+              B) Identifier<br>
+              C) Operator<br>
+              D) All of the above
+            </div>
+          </div>
+
+          <div class="mcq">
+            <div class="q">5) Which operator gives the remainder?</div>
+            <div class="a">
+              A) /<br>
+              B) *<br>
+              C) %<br>
+              D) ==
+            </div>
+          </div>
+
+          <div class="mcq">
+            <div class="q">6) 125 seconds equals:</div>
+            <div class="a">
+              A) 1 minute 65 seconds<br>
+              B) 2 minutes 5 seconds<br>
+              C) 2 minutes 60 seconds<br>
+              D) 3 minutes 5 seconds
+            </div>
+          </div>
+
+          <div class="mcq">
+            <div class="q">7) Visual Studio is mainly used for:</div>
+            <div class="a">
+              A) Writing, building, debugging code<br>
+              B) Only running code<br>
+              C) Only printing documents<br>
+              D) Only web browsing
+            </div>
+          </div>
+
+          <div class="mcq">
+            <div class="q">8) Which is best type for decimal values like radius?</div>
+            <div class="a">
+              A) int<br>
+              B) double<br>
+              C) bool<br>
+              D) char
+            </div>
+          </div>
+
+          <div class="mcq">
+            <div class="q">9) The conversion 1 foot = 30.48 cm is best stored as:</div>
+            <div class="a">
+              A) A variable that changes often<br>
+              B) A constant<br>
+              C) A loop counter<br>
+              D) A boolean
+            </div>
+          </div>
+
+          <div class="mcq">
+            <div class="q">10) What does the compiler check first?</div>
+            <div class="a">
+              A) Tokenization and syntax rules<br>
+              B) Internet connection<br>
+              C) Printer settings<br>
+              D) GPU temperature
+            </div>
+          </div>
+
+          <div class="nav-bottom">
+            <a href="#interview">⬅ Previous ➜ Interview Q&amp;A</a>
+            <a href="#answerkey">Next ➜ Answer Key</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ANSWER KEY -->
+      <section class="card" id="answerkey">
+        <div class="card-header">
+          <h2>Answer Key</h2>
+          <span class="pill">MCQ Solutions</span>
+        </div>
+        <div class="card-body">
+          <div class="example">
+<pre><code>1) B
+2) B
+3) C
+4) D
+5) C
+6) B
+7) A
+8) B
+9) B
+10) A</code></pre>
+          </div>
+
+          <div class="footer">
+            End of document. You can now continue with the next chapter (Control Statements, Loops, Methods) using the same structure.
+          </div>
+
+          <div class="nav-bottom">
+            <a href="#quiz">⬅ Previous ➜ Quiz</a>
+            <a href="#top">Back to Top ⬆</a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

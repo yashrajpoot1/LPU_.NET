@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extension Methods Tutorial</title>
+    <style>
+        /* W3Schools Style CSS (Self-contained) */
+        body {
+            font-family: Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f1f1;
+        }
+        .w3-top {
+            position: fixed;
+            width: 100%;
+            z-index: 1;
+        }
+        .w3-bar {
+            background-color: #04AA6D;
+            color: white;
+            padding: 10px;
+            overflow: hidden;
+        }
+        .w3-bar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 12px 16px;
+            text-decoration: none;
+        }
+        .w3-bar a:hover {
+            background-color: #00875A;
+        }
+        .w3-sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            z-index: 1;
+            top: 50px;
+            left: 0;
+            background-color: #fff;
+            overflow-x: hidden;
+            padding-top: 20px;
+            border-right: 1px solid #ddd;
+        }
+        .w3-sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #444;
+            display: block;
+            border-bottom: 1px solid #f1f1f1;
+        }
+        .w3-sidebar a:hover {
+            color: #000;
+            background-color: #f1f1f1;
+        }
+        .w3-sidebar a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+        .w3-main {
+            margin-left: 260px;
+            margin-top: 60px;
+            padding: 20px;
+        }
+        .w3-container {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        .w3-code {
+            background-color: #2D2D2D;
+            color: #F8F8F2;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 15px;
+            line-height: 1.5;
+            overflow-x: auto;
+        }
+        .w3-example {
+            background-color: #f1f1f1;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        .w3-note, .w3-tip, .w3-warning {
+            padding: 15px;
+            border-left: 6px solid;
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+        .w3-note {
+            border-color: #2196F3;
+            background-color: #e3f2fd;
+        }
+        .w3-tip {
+            border-color: #04AA6D;
+            background-color: #e8f5e9;
+        }
+        .w3-warning {
+            border-color: #f44336;
+            background-color: #ffcdd2;
+        }
+        .w3-button {
+            background-color: #04AA6D;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        .w3-button:hover {
+            background-color: #00875A;
+        }
+        .w3-next-prev {
+            margin-top: 30px;
+            overflow: hidden;
+        }
+        .w3-next-prev .w3-button.w3-left {
+            float: left;
+        }
+        .w3-next-prev .w3-button.w3-right {
+            float: right;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation Bar -->
+    <div class="w3-top">
+        <div class="w3-bar">
+            <a href="#">ItTechGenie</a>
+            <a href="#" style="float:right;">Login</a>
+        </div>
+    </div>
+
+    <!-- Sidebar Menu -->
+    <div class="w3-sidebar">
+        <a href="#home" class="active">Extension Methods Home</a>
+        <a href="#whatare">What are Extension Methods?</a>
+        <a href="#creating">Creating an Extension Method</a>
+        <a href="#calling">Calling an Extension Method</a>
+        <a href="#interfaces">Extension Methods on Interfaces</a>
+        <a href="#nullable">Extension Methods on Nullable Types</a>
+        <a href="#limitations">Best Practices and Limitations</a>
+        <a href="#summary">Summary and Key Takeaways</a>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="w3-main">
+
+        <!-- Extension Methods Home Section -->
+        <div id="home" class="w3-container">
+            <h1>Extension Methods Tutorial</h1>
+            <p>Welcome to the ItTechGenie tutorial on C# Extension Methods. This page covers the basics of creating and using extension methods to add new functionality to existing types without modifying their source code.</p>
+            
+            <div class="w3-note">
+                <strong>Note:</strong> Extension methods are a powerful feature introduced in C# 3.0 that allow you to "extend" existing classes and interfaces without inheriting from them or changing their original source code. They are commonly used in LINQ (Language Integrated Query).
+            </div>
+
+            <div class="w3-next-prev">
+                <a href="#whatare" class="w3-button w3-right">Next &raquo;</a>
+            </div>
+        </div>
+
+        <!-- What are Extension Methods? Section -->
+        <div id="whatare" class="w3-container">
+            <h2>What are Extension Methods?</h2>
+            <p>Extension methods are static methods that can be called using the instance method syntax. They are defined within a static class, but when used, they act as if they are part of the extended type.</p>
+
+            <h3>Key Characteristics:</h3>
+            <ul>
+                <li>They must be defined in a non-generic, non-nested static class.</li>
+                <li>The first parameter of the extension method specifies which type the method operates on and must be preceded by the <code>this</code> modifier.</li>
+                <li>They cannot access private or protected members of the extended class.</li>
+            </ul>
+
+            <div class="w3-example">
+                <h3>Example of Syntax:</h3>
+                <div class="w3-code">
+                    <span style="color:coral;">public</span> <span style="color:coral;">static</span> <span style="color:coral;">class</span> <span style="color:yellow;">StringExtensions</span><br>
+                    {<br>
+                    &nbsp;&nbsp; <span style="color:coral;">public</span> <span style="color:coral;">static</span> <span style="color:royalblue;">int</span> <span style="color:yellow;">WordCount</span>(<span style="color:coral;">this</span> <span style="color:royalblue;">string</span> str)<br>
+                    &nbsp;&nbsp; {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; <span style="color:green;">// Method body goes here</span><br>
+                    &nbsp;&nbsp; }<br>
+                    }
+                </div>
+                <a href="#" class="w3-button">Try It Yourself</a>
+            </div>
+
+            <div class="w3-next-prev">
+                <a href="#home" class="w3-button w3-left">&laquo; Previous</a>
+                <a href="#creating" class="w3-button w3-right">Next &raquo;</a>
+            </div>
+        </div>
+
+        <!-- Creating an Extension Method Section -->
+        <div id="creating" class="w3-container">
+            <h2>Creating an Extension Method</h2>
+            <p>To create an extension method, follow these steps:</p>
+            <ol>
+                <li>Define a static class to host the extension method.</li>
+                <li>Define a static method within that class.</li>
+                <li>Use the <code>this</code> keyword before the first parameter of the static method to indicate the type you are extending.</li>
+            </ol>
+
+            <div class="w3-example">
+                <h3>Full Example (C# Code):</h3>
+                <div class="w3-code">
+                    <span style="color:coral;">using</span> System;<br><br>
+                    <span style="color:coral;">namespace</span> <span style="color:yellow;">ExtensionMethodsDemo</span><br>
+                    {<br>
+                    &nbsp;&nbsp; <span style="color:coral;">public</span> <span style="color:coral;">static</span> <span style="color:coral;">class</span> <span style="color:yellow;">StringHelpers</span><br>
+                    &nbsp;&nbsp; {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; <span style="color:green;">// Extension method for string type</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; <span style="color:coral;">public</span> <span style="color:coral;">static</span> <span style="color:royalblue;">int</span> <span style="color:yellow;">GetWordCount</span>(<span style="color:coral;">this</span> <span style="color:royalblue;">string</span> inputString)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:coral;">if</span> (<span style="color:coral;">string</span>.IsNullOrEmpty(inputString))<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:coral;">return</span> 0;<br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:royalblue;">char</span>[] delimiters = <span style="color:coral;">new</span> <span style="color:royalblue;">char</span>[] { ' ', '\r', '\n' };<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:coral;">return</span> inputString.Split(delimiters, StringSplitOptions.RemoveEmptyEntries).Length;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; }<br>
+                    &nbsp;&nbsp; }<br>
+                    }
+                </div>
+            </div>
+
+            <div class="w3-tip">
+                <strong>Tip:</strong> The extension method must be in scope (accessible via a <code>using</code> directive in the calling file) for it to be used like an instance method.
+            </div>
+
+            <div class="w3-next-prev">
+                <a href="#whatare" class="w3-button w3-left">&laquo; Previous</a>
+                <a href="#calling" class="w3-button w3-right">Next &raquo;</a>
+            </div>
+        </div>
+        
+        <!-- Calling an Extension Method Section -->
+        <div id="calling" class="w3-container">
+            <h2>Calling an Extension Method</h2>
+            <p>Once you have defined an extension method and it is in scope, you can call it just like any other instance method on the target data type.</p>
+
+            <div class="w3-example">
+                <h3>Calling the <code>GetWordCount</code> Method:</h3>
+                <div class="w3-code">
+                    <span style="color:coral;">using</span> System;<br>
+                    <span style="color:coral;">using</span> ExtensionMethodsDemo; <span style="color:green;">// Must include the namespace where the extension method is defined</span><br><br>
+                    <span style="color:coral;">class</span> <span style="color:yellow;">Program</span><br>
+                    {<br>
+                    &nbsp;&nbsp; <span style="color:coral;">static</span> <span style="color:coral;">void</span> <span style="color:yellow;">Main</span>()<br>
+                    &nbsp;&nbsp; {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; <span style="color:royalblue;">string</span> sentence = <span style="color:firebrick;">"This is a sentence with five words."</span>;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; <span style="color:royalblue;">int</span> wordCount = sentence.<span style="color:yellow;">GetWordCount</span>(); <span style="color:green;">// Calling the extension method</span><br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; Console.<span style="color:yellow;">WriteLine</span>($<span style="color:firebrick;">"The sentence has {wordCount} words."</span>);<br>
+                    &nbsp;&nbsp; }<br>
+                    }
+                </div>
+                <p><strong>Output:</strong></p>
+                <div class="w3-code" style="background-color: #f1f1f1; color: black;">
+                    The sentence has 6 words.
+                </div>
+                <a href="#" class="w3-button">Try It Yourself</a>
+            </div>
+
+            <div class="w3-next-prev">
+                <a href="#creating" class="w3-button w3-left">&laquo; Previous</a>
+                <a href="#interfaces" class="w3-button w3-right">Next &raquo;</a>
+            </div>
+        </div>
+
+        <!-- Extension Methods on Interfaces Section -->
+        <div id="interfaces" class="w3-container">
+            <h2>Extension Methods on Interfaces</h2>
+            <p>You can also create extension methods that extend interfaces. This is very common in LINQ, where many extension methods operate on types that implement <code>IEnumerable&lt;T&gt;</code>.</p>
+
+            <p>Any class that implements the interface will automatically have access to the extension method as if it were an instance method.</p>
+
+            <div class="w3-example">
+                <h3>Extending <code>IEnumerable&lt;T&gt;</code>:</h3>
+                <div class="w3-code">
+                    <span style="color:coral;">public</span> <span style="color:coral;">static</span> <span style="color:coral;">class</span> <span style="color:yellow;">EnumerableExtensions</span><br>
+                    {<br>
+                    &nbsp;&nbsp; <span style="color:coral;">public</span> <span style="color:coral;">static</span> <span style="color:royalblue;">void</span> <span style="color:yellow;">PrintItems</span><<span style="color:royalblue;">T</span>>>(<span style="color:coral;">this</span> <span style="color:royalblue;">IEnumerable</span><<span style="color:royalblue;">T</span>>> items)<br>
+                    &nbsp;&nbsp; {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; <span style="color:coral;">foreach</span> (<span style="color:royalblue;">T</span> item <span style="color:coral;">in</span> items)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.<span style="color:yellow;">WriteLine</span>(item);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; }<br>
+                    &nbsp;&nbsp; }<br>
+                    }
+                </div>
+            </div>
+
+            <div class="w3-next-prev">
+                <a href="#calling" class="w3-button w3-left">&laquo; Previous</a>
+                <a href="#nullable" class="w3-button w3-right">Next &raquo;</a>
+            </div>
+        </div>
+        
+        <!-- Extension Methods on Nullable Types Section -->
+        <div id="nullable" class="w3-container">
+            <h2>Extension Methods on Nullable Types</h2>
+            <p>Extension methods can also be applied to nullable types. This is useful for providing default values or common operations on values that might be null.</p>
+            <p>When you define an extension method on <code>&lt;T&gt;?</code> (nullable T), it works whether the underlying type is a class or a struct.</p>
+
+            <div class="w3-example">
+                <h3>Example on Nullable Int:</h3>
+                <div class="w3-code">
+                    <span style="color:coral;">public</span> <span style="color:coral;">static</span> <span style="color:coral;">class</span> <span style="color:yellow;">NullableExtensions</span><br>
+                    {<br>
+                    &nbsp;&nbsp; <span style="color:coral;">public</span> <span style="color:royalblue;">int</span> <span style="color:yellow;">GetValueOrDefaultNegativeOne</span>(<span style="color:coral;">this</span> <span style="color:royalblue;">int</span>? value)<br>
+                    &nbsp;&nbsp; {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; <span style="color:coral;">return</span> value ?? -1; <span style="color:green;">// Using the null-coalescing operator</span><br>
+                    &nbsp;&nbsp; }<br>
+                    }<br><br>
+                    <span style="color:green;">// Usage:</span><br>
+                    <span style="color:royalblue;">int</span>? nullableInt = <span style="color:coral;">null</span>;<br>
+                    Console.<span style="color:yellow;">WriteLine</span>(nullableInt.<span style="color:yellow;">GetValueOrDefaultNegativeOne</span>()); <span style="color:green;">// Output: -1</span>
+                </div>
+            </div>
+
+            <div class="w3-next-prev">
+                <a href="#interfaces" class="w3-button w3-left">&laquo; Previous</a>
+                <a href="#limitations" class="w3-button w3-right">Next &raquo;</a>
+            </div>
+        </div>
+
+        <!-- Best Practices and Limitations Section -->
+        <div id="limitations" class="w3-container">
+            <h2>Best Practices and Limitations</h2>
+            <p>While powerful, extension methods should be used judiciously.</p>
+
+            <h3>Limitations:</h3>
+            <ul>
+                <li>They cannot override existing methods. If a class has an instance method with the same signature, the instance method always takes precedence.</li>
+                <li>They cannot access private or protected members of the class they extend.</li>
+                <li>They cannot be used to extend static classes.</li>
+                <li>They cannot be used to extend properties, fields, or events.</li>
+            </ul>
+
+            <div class="w3-warning">
+                <strong>Warning:</strong> Overuse of extension methods can lead to "polluted" namespaces and confusion, as it might not be obvious whether a method is an instance method or an extension method defined elsewhere. Use them for consistent, widespread utility functions.
+            </div>
+            
+            <div class="w3-tip">
+                <strong>Best Practice:</strong> Place extension methods in their own specific namespace (e.g., <code>MyApp.Extensions</code>) to give the caller control over whether those methods are in scope via the <code>using</code> directive.
+            </div>
+
+            <div class="w3-next-prev">
+                <a href="#nullable" class="w3-button w3-left">&laquo; Previous</a>
+                <a href="#summary" class="w3-button w3-right">Next &raquo;</a>
+            </div>
+        </div>
+
+        <!-- Summary and Key Takeaways Section -->
+        <div id="summary" class="w3-container">
+            <h2>Summary and Key Takeaways</h2>
+            <p>Extension methods are a flexible way to add functionality to closed types or interfaces.</p>
+            <ul>
+                <li>Defined as <strong>static methods</strong> within a <strong>static class</strong>.</li>
+                <li>Use the <strong><code>this</code></strong> modifier on the first parameter.</li>
+                <li>Called using <strong>instance method syntax</strong>.</li>
+                <li>Cannot access <strong>private</strong> members.</li>
+                <li>Used extensively in <strong>LINQ</strong>.</li>
+            </ul>
+
+            <p>You have now completed the tutorial on Extension Methods. Continue to the next topic to learn about Object Initializers.</p>
+
+            <div class="w3-next-prev">
+                <a href="#limitations" class="w3-button w3-left">&laquo; Previous</a>
+                <a href="#obj-home" class="w3-button w3-right" onclick="alert('Link to Object Initializer tutorial page')">Next Topic: Object Initializer &raquo;</a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
