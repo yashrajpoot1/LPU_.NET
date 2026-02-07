@@ -1,0 +1,15 @@
+C:\LPU_Capgemini\Assessment\Questions\18_DuplicateDetectionFuzzy\bin\Debug\net8.0\18_DuplicateDetectionFuzzy.exe
+C:\LPU_Capgemini\Assessment\Questions\18_DuplicateDetectionFuzzy\bin\Debug\net8.0\18_DuplicateDetectionFuzzy.deps.json
+C:\LPU_Capgemini\Assessment\Questions\18_DuplicateDetectionFuzzy\bin\Debug\net8.0\18_DuplicateDetectionFuzzy.runtimeconfig.json
+C:\LPU_Capgemini\Assessment\Questions\18_DuplicateDetectionFuzzy\bin\Debug\net8.0\18_DuplicateDetectionFuzzy.dll
+C:\LPU_Capgemini\Assessment\Questions\18_DuplicateDetectionFuzzy\bin\Debug\net8.0\18_DuplicateDetectionFuzzy.pdb
+C:\LPU_Capgemini\Assessment\Questions\18_DuplicateDetectionFuzzy\obj\Debug\net8.0\18_DuplicateDetectionFuzzy.GeneratedMSBuildEditorConfig.editorconfig
+C:\LPU_Capgemini\Assessment\Questions\18_DuplicateDetectionFuzzy\obj\Debug\net8.0\18_DuplicateDetectionFuzzy.AssemblyInfoInputs.cache
+C:\LPU_Capgemini\Assessment\Questions\18_DuplicateDetectionFuzzy\obj\Debug\net8.0\18_DuplicateDetectionFuzzy.AssemblyInfo.cs
+C:\LPU_Capgemini\Assessment\Questions\18_DuplicateDetectionFuzzy\obj\Debug\net8.0\18_DuplicateDetectionFuzzy.csproj.CoreCompileInputs.cache
+C:\LPU_Capgemini\Assessment\Questions\18_DuplicateDetectionFuzzy\obj\Debug\net8.0\18_DuplicateDetectionFuzzy.sourcelink.json
+C:\LPU_Capgemini\Assessment\Questions\18_DuplicateDetectionFuzzy\obj\Debug\net8.0\18_DuplicateDetectionFuzzy.dll
+C:\LPU_Capgemini\Assessment\Questions\18_DuplicateDetectionFuzzy\obj\Debug\net8.0\refint\18_DuplicateDetectionFuzzy.dll
+C:\LPU_Capgemini\Assessment\Questions\18_DuplicateDetectionFuzzy\obj\Debug\net8.0\18_DuplicateDetectionFuzzy.pdb
+C:\LPU_Capgemini\Assessment\Questions\18_DuplicateDetectionFuzzy\obj\Debug\net8.0\18_DuplicateDetectionFuzzy.genruntimeconfig.cache
+C:\LPU_Capgemini\Assessment\Questions\18_DuplicateDetectionFuzzy\obj\Debug\net8.0\ref\18_DuplicateDetectionFuzzy.dll

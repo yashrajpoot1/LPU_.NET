@@ -1,0 +1,15 @@
+C:\LPU_Capgemini\Assessment\Questions\13_CsvImportPartialSuccess\bin\Debug\net8.0\13_CsvImportPartialSuccess.exe
+C:\LPU_Capgemini\Assessment\Questions\13_CsvImportPartialSuccess\bin\Debug\net8.0\13_CsvImportPartialSuccess.deps.json
+C:\LPU_Capgemini\Assessment\Questions\13_CsvImportPartialSuccess\bin\Debug\net8.0\13_CsvImportPartialSuccess.runtimeconfig.json
+C:\LPU_Capgemini\Assessment\Questions\13_CsvImportPartialSuccess\bin\Debug\net8.0\13_CsvImportPartialSuccess.dll
+C:\LPU_Capgemini\Assessment\Questions\13_CsvImportPartialSuccess\bin\Debug\net8.0\13_CsvImportPartialSuccess.pdb
+C:\LPU_Capgemini\Assessment\Questions\13_CsvImportPartialSuccess\obj\Debug\net8.0\13_CsvImportPartialSuccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\LPU_Capgemini\Assessment\Questions\13_CsvImportPartialSuccess\obj\Debug\net8.0\13_CsvImportPartialSuccess.AssemblyInfoInputs.cache
+C:\LPU_Capgemini\Assessment\Questions\13_CsvImportPartialSuccess\obj\Debug\net8.0\13_CsvImportPartialSuccess.AssemblyInfo.cs
+C:\LPU_Capgemini\Assessment\Questions\13_CsvImportPartialSuccess\obj\Debug\net8.0\13_CsvImportPartialSuccess.csproj.CoreCompileInputs.cache
+C:\LPU_Capgemini\Assessment\Questions\13_CsvImportPartialSuccess\obj\Debug\net8.0\13_CsvImportPartialSuccess.sourcelink.json
+C:\LPU_Capgemini\Assessment\Questions\13_CsvImportPartialSuccess\obj\Debug\net8.0\13_CsvImportPartialSuccess.dll
+C:\LPU_Capgemini\Assessment\Questions\13_CsvImportPartialSuccess\obj\Debug\net8.0\refint\13_CsvImportPartialSuccess.dll
+C:\LPU_Capgemini\Assessment\Questions\13_CsvImportPartialSuccess\obj\Debug\net8.0\13_CsvImportPartialSuccess.pdb
+C:\LPU_Capgemini\Assessment\Questions\13_CsvImportPartialSuccess\obj\Debug\net8.0\13_CsvImportPartialSuccess.genruntimeconfig.cache
+C:\LPU_Capgemini\Assessment\Questions\13_CsvImportPartialSuccess\obj\Debug\net8.0\ref\13_CsvImportPartialSuccess.dll

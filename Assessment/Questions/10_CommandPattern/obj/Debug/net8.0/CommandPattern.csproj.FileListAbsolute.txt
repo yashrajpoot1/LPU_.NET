@@ -1,0 +1,15 @@
+C:\LPU_Capgemini\Assessment\Questions\10_CommandPattern\bin\Debug\net8.0\CommandPattern.exe
+C:\LPU_Capgemini\Assessment\Questions\10_CommandPattern\bin\Debug\net8.0\CommandPattern.deps.json
+C:\LPU_Capgemini\Assessment\Questions\10_CommandPattern\bin\Debug\net8.0\CommandPattern.runtimeconfig.json
+C:\LPU_Capgemini\Assessment\Questions\10_CommandPattern\bin\Debug\net8.0\CommandPattern.dll
+C:\LPU_Capgemini\Assessment\Questions\10_CommandPattern\bin\Debug\net8.0\CommandPattern.pdb
+C:\LPU_Capgemini\Assessment\Questions\10_CommandPattern\obj\Debug\net8.0\CommandPattern.GeneratedMSBuildEditorConfig.editorconfig
+C:\LPU_Capgemini\Assessment\Questions\10_CommandPattern\obj\Debug\net8.0\CommandPattern.AssemblyInfoInputs.cache
+C:\LPU_Capgemini\Assessment\Questions\10_CommandPattern\obj\Debug\net8.0\CommandPattern.AssemblyInfo.cs
+C:\LPU_Capgemini\Assessment\Questions\10_CommandPattern\obj\Debug\net8.0\CommandPattern.csproj.CoreCompileInputs.cache
+C:\LPU_Capgemini\Assessment\Questions\10_CommandPattern\obj\Debug\net8.0\CommandPattern.sourcelink.json
+C:\LPU_Capgemini\Assessment\Questions\10_CommandPattern\obj\Debug\net8.0\CommandPattern.dll
+C:\LPU_Capgemini\Assessment\Questions\10_CommandPattern\obj\Debug\net8.0\refint\CommandPattern.dll
+C:\LPU_Capgemini\Assessment\Questions\10_CommandPattern\obj\Debug\net8.0\CommandPattern.pdb
+C:\LPU_Capgemini\Assessment\Questions\10_CommandPattern\obj\Debug\net8.0\CommandPattern.genruntimeconfig.cache
+C:\LPU_Capgemini\Assessment\Questions\10_CommandPattern\obj\Debug\net8.0\ref\CommandPattern.dll

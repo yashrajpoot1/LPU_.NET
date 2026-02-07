@@ -1,0 +1,15 @@
+C:\LPU_Capgemini\Assessment\Questions\06_TransactionalMoneyTransfer\bin\Debug\net8.0\06_TransactionalMoneyTransfer.exe
+C:\LPU_Capgemini\Assessment\Questions\06_TransactionalMoneyTransfer\bin\Debug\net8.0\06_TransactionalMoneyTransfer.deps.json
+C:\LPU_Capgemini\Assessment\Questions\06_TransactionalMoneyTransfer\bin\Debug\net8.0\06_TransactionalMoneyTransfer.runtimeconfig.json
+C:\LPU_Capgemini\Assessment\Questions\06_TransactionalMoneyTransfer\bin\Debug\net8.0\06_TransactionalMoneyTransfer.dll
+C:\LPU_Capgemini\Assessment\Questions\06_TransactionalMoneyTransfer\bin\Debug\net8.0\06_TransactionalMoneyTransfer.pdb
+C:\LPU_Capgemini\Assessment\Questions\06_TransactionalMoneyTransfer\obj\Debug\net8.0\06_TransactionalMoneyTransfer.GeneratedMSBuildEditorConfig.editorconfig
+C:\LPU_Capgemini\Assessment\Questions\06_TransactionalMoneyTransfer\obj\Debug\net8.0\06_TransactionalMoneyTransfer.AssemblyInfoInputs.cache
+C:\LPU_Capgemini\Assessment\Questions\06_TransactionalMoneyTransfer\obj\Debug\net8.0\06_TransactionalMoneyTransfer.AssemblyInfo.cs
+C:\LPU_Capgemini\Assessment\Questions\06_TransactionalMoneyTransfer\obj\Debug\net8.0\06_TransactionalMoneyTransfer.csproj.CoreCompileInputs.cache
+C:\LPU_Capgemini\Assessment\Questions\06_TransactionalMoneyTransfer\obj\Debug\net8.0\06_TransactionalMoneyTransfer.sourcelink.json
+C:\LPU_Capgemini\Assessment\Questions\06_TransactionalMoneyTransfer\obj\Debug\net8.0\06_TransactionalMoneyTransfer.dll
+C:\LPU_Capgemini\Assessment\Questions\06_TransactionalMoneyTransfer\obj\Debug\net8.0\refint\06_TransactionalMoneyTransfer.dll
+C:\LPU_Capgemini\Assessment\Questions\06_TransactionalMoneyTransfer\obj\Debug\net8.0\06_TransactionalMoneyTransfer.pdb
+C:\LPU_Capgemini\Assessment\Questions\06_TransactionalMoneyTransfer\obj\Debug\net8.0\06_TransactionalMoneyTransfer.genruntimeconfig.cache
+C:\LPU_Capgemini\Assessment\Questions\06_TransactionalMoneyTransfer\obj\Debug\net8.0\ref\06_TransactionalMoneyTransfer.dll

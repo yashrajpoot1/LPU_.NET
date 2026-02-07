@@ -1,0 +1,15 @@
+C:\LPU_Capgemini\Assessment\Questions\04_ProducerConsumer\bin\Debug\net8.0\04_ProducerConsumer.exe
+C:\LPU_Capgemini\Assessment\Questions\04_ProducerConsumer\bin\Debug\net8.0\04_ProducerConsumer.deps.json
+C:\LPU_Capgemini\Assessment\Questions\04_ProducerConsumer\bin\Debug\net8.0\04_ProducerConsumer.runtimeconfig.json
+C:\LPU_Capgemini\Assessment\Questions\04_ProducerConsumer\bin\Debug\net8.0\04_ProducerConsumer.dll
+C:\LPU_Capgemini\Assessment\Questions\04_ProducerConsumer\bin\Debug\net8.0\04_ProducerConsumer.pdb
+C:\LPU_Capgemini\Assessment\Questions\04_ProducerConsumer\obj\Debug\net8.0\04_ProducerConsumer.GeneratedMSBuildEditorConfig.editorconfig
+C:\LPU_Capgemini\Assessment\Questions\04_ProducerConsumer\obj\Debug\net8.0\04_ProducerConsumer.AssemblyInfoInputs.cache
+C:\LPU_Capgemini\Assessment\Questions\04_ProducerConsumer\obj\Debug\net8.0\04_ProducerConsumer.AssemblyInfo.cs
+C:\LPU_Capgemini\Assessment\Questions\04_ProducerConsumer\obj\Debug\net8.0\04_ProducerConsumer.csproj.CoreCompileInputs.cache
+C:\LPU_Capgemini\Assessment\Questions\04_ProducerConsumer\obj\Debug\net8.0\04_ProducerConsumer.sourcelink.json
+C:\LPU_Capgemini\Assessment\Questions\04_ProducerConsumer\obj\Debug\net8.0\04_ProducerConsumer.dll
+C:\LPU_Capgemini\Assessment\Questions\04_ProducerConsumer\obj\Debug\net8.0\refint\04_ProducerConsumer.dll
+C:\LPU_Capgemini\Assessment\Questions\04_ProducerConsumer\obj\Debug\net8.0\04_ProducerConsumer.pdb
+C:\LPU_Capgemini\Assessment\Questions\04_ProducerConsumer\obj\Debug\net8.0\04_ProducerConsumer.genruntimeconfig.cache
+C:\LPU_Capgemini\Assessment\Questions\04_ProducerConsumer\obj\Debug\net8.0\ref\04_ProducerConsumer.dll

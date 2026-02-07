@@ -1,0 +1,15 @@
+C:\LPU_Capgemini\Assessment\Questions\21_BulkEmailSenderThrottling\obj\Debug\net8.0\21_BulkEmailSenderThrottling.GeneratedMSBuildEditorConfig.editorconfig
+C:\LPU_Capgemini\Assessment\Questions\21_BulkEmailSenderThrottling\obj\Debug\net8.0\21_BulkEmailSenderThrottling.AssemblyInfoInputs.cache
+C:\LPU_Capgemini\Assessment\Questions\21_BulkEmailSenderThrottling\obj\Debug\net8.0\21_BulkEmailSenderThrottling.AssemblyInfo.cs
+C:\LPU_Capgemini\Assessment\Questions\21_BulkEmailSenderThrottling\obj\Debug\net8.0\21_BulkEmailSenderThrottling.csproj.CoreCompileInputs.cache
+C:\LPU_Capgemini\Assessment\Questions\21_BulkEmailSenderThrottling\obj\Debug\net8.0\21_BulkEmailSenderThrottling.sourcelink.json
+C:\LPU_Capgemini\Assessment\Questions\21_BulkEmailSenderThrottling\bin\Debug\net8.0\21_BulkEmailSenderThrottling.exe
+C:\LPU_Capgemini\Assessment\Questions\21_BulkEmailSenderThrottling\bin\Debug\net8.0\21_BulkEmailSenderThrottling.deps.json
+C:\LPU_Capgemini\Assessment\Questions\21_BulkEmailSenderThrottling\bin\Debug\net8.0\21_BulkEmailSenderThrottling.runtimeconfig.json
+C:\LPU_Capgemini\Assessment\Questions\21_BulkEmailSenderThrottling\bin\Debug\net8.0\21_BulkEmailSenderThrottling.dll
+C:\LPU_Capgemini\Assessment\Questions\21_BulkEmailSenderThrottling\bin\Debug\net8.0\21_BulkEmailSenderThrottling.pdb
+C:\LPU_Capgemini\Assessment\Questions\21_BulkEmailSenderThrottling\obj\Debug\net8.0\21_BulkEmailSenderThrottling.dll
+C:\LPU_Capgemini\Assessment\Questions\21_BulkEmailSenderThrottling\obj\Debug\net8.0\refint\21_BulkEmailSenderThrottling.dll
+C:\LPU_Capgemini\Assessment\Questions\21_BulkEmailSenderThrottling\obj\Debug\net8.0\21_BulkEmailSenderThrottling.pdb
+C:\LPU_Capgemini\Assessment\Questions\21_BulkEmailSenderThrottling\obj\Debug\net8.0\21_BulkEmailSenderThrottling.genruntimeconfig.cache
+C:\LPU_Capgemini\Assessment\Questions\21_BulkEmailSenderThrottling\obj\Debug\net8.0\ref\21_BulkEmailSenderThrottling.dll

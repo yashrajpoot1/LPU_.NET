@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "02_RateLimiter/1.0.0": {
+        "runtime": {
+          "02_RateLimiter.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "02_RateLimiter/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

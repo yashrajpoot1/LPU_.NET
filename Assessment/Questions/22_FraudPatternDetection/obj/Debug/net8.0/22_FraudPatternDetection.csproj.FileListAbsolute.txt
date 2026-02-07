@@ -1,0 +1,15 @@
+C:\LPU_Capgemini\Assessment\Questions\22_FraudPatternDetection\bin\Debug\net8.0\22_FraudPatternDetection.exe
+C:\LPU_Capgemini\Assessment\Questions\22_FraudPatternDetection\bin\Debug\net8.0\22_FraudPatternDetection.deps.json
+C:\LPU_Capgemini\Assessment\Questions\22_FraudPatternDetection\bin\Debug\net8.0\22_FraudPatternDetection.runtimeconfig.json
+C:\LPU_Capgemini\Assessment\Questions\22_FraudPatternDetection\bin\Debug\net8.0\22_FraudPatternDetection.dll
+C:\LPU_Capgemini\Assessment\Questions\22_FraudPatternDetection\bin\Debug\net8.0\22_FraudPatternDetection.pdb
+C:\LPU_Capgemini\Assessment\Questions\22_FraudPatternDetection\obj\Debug\net8.0\22_FraudPatternDetection.GeneratedMSBuildEditorConfig.editorconfig
+C:\LPU_Capgemini\Assessment\Questions\22_FraudPatternDetection\obj\Debug\net8.0\22_FraudPatternDetection.AssemblyInfoInputs.cache
+C:\LPU_Capgemini\Assessment\Questions\22_FraudPatternDetection\obj\Debug\net8.0\22_FraudPatternDetection.AssemblyInfo.cs
+C:\LPU_Capgemini\Assessment\Questions\22_FraudPatternDetection\obj\Debug\net8.0\22_FraudPatternDetection.csproj.CoreCompileInputs.cache
+C:\LPU_Capgemini\Assessment\Questions\22_FraudPatternDetection\obj\Debug\net8.0\22_FraudPatternDetection.sourcelink.json
+C:\LPU_Capgemini\Assessment\Questions\22_FraudPatternDetection\obj\Debug\net8.0\22_FraudPatternDetection.dll
+C:\LPU_Capgemini\Assessment\Questions\22_FraudPatternDetection\obj\Debug\net8.0\refint\22_FraudPatternDetection.dll
+C:\LPU_Capgemini\Assessment\Questions\22_FraudPatternDetection\obj\Debug\net8.0\22_FraudPatternDetection.pdb
+C:\LPU_Capgemini\Assessment\Questions\22_FraudPatternDetection\obj\Debug\net8.0\22_FraudPatternDetection.genruntimeconfig.cache
+C:\LPU_Capgemini\Assessment\Questions\22_FraudPatternDetection\obj\Debug\net8.0\ref\22_FraudPatternDetection.dll

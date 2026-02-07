@@ -1,0 +1,15 @@
+C:\LPU_Capgemini\Assessment\Questions\03_ResilientPaymentGateway\bin\Debug\net8.0\03_ResilientPaymentGateway.exe
+C:\LPU_Capgemini\Assessment\Questions\03_ResilientPaymentGateway\bin\Debug\net8.0\03_ResilientPaymentGateway.deps.json
+C:\LPU_Capgemini\Assessment\Questions\03_ResilientPaymentGateway\bin\Debug\net8.0\03_ResilientPaymentGateway.runtimeconfig.json
+C:\LPU_Capgemini\Assessment\Questions\03_ResilientPaymentGateway\bin\Debug\net8.0\03_ResilientPaymentGateway.dll
+C:\LPU_Capgemini\Assessment\Questions\03_ResilientPaymentGateway\bin\Debug\net8.0\03_ResilientPaymentGateway.pdb
+C:\LPU_Capgemini\Assessment\Questions\03_ResilientPaymentGateway\obj\Debug\net8.0\03_ResilientPaymentGateway.GeneratedMSBuildEditorConfig.editorconfig
+C:\LPU_Capgemini\Assessment\Questions\03_ResilientPaymentGateway\obj\Debug\net8.0\03_ResilientPaymentGateway.AssemblyInfoInputs.cache
+C:\LPU_Capgemini\Assessment\Questions\03_ResilientPaymentGateway\obj\Debug\net8.0\03_ResilientPaymentGateway.AssemblyInfo.cs
+C:\LPU_Capgemini\Assessment\Questions\03_ResilientPaymentGateway\obj\Debug\net8.0\03_ResilientPaymentGateway.csproj.CoreCompileInputs.cache
+C:\LPU_Capgemini\Assessment\Questions\03_ResilientPaymentGateway\obj\Debug\net8.0\03_ResilientPaymentGateway.sourcelink.json
+C:\LPU_Capgemini\Assessment\Questions\03_ResilientPaymentGateway\obj\Debug\net8.0\03_ResilientPaymentGateway.dll
+C:\LPU_Capgemini\Assessment\Questions\03_ResilientPaymentGateway\obj\Debug\net8.0\refint\03_ResilientPaymentGateway.dll
+C:\LPU_Capgemini\Assessment\Questions\03_ResilientPaymentGateway\obj\Debug\net8.0\03_ResilientPaymentGateway.pdb
+C:\LPU_Capgemini\Assessment\Questions\03_ResilientPaymentGateway\obj\Debug\net8.0\03_ResilientPaymentGateway.genruntimeconfig.cache
+C:\LPU_Capgemini\Assessment\Questions\03_ResilientPaymentGateway\obj\Debug\net8.0\ref\03_ResilientPaymentGateway.dll

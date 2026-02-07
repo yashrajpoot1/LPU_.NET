@@ -1,0 +1,15 @@
+C:\LPU_Capgemini\Assessment\Questions\25_MiniOrderSystem\bin\Debug\net8.0\25_MiniOrderSystem.exe
+C:\LPU_Capgemini\Assessment\Questions\25_MiniOrderSystem\bin\Debug\net8.0\25_MiniOrderSystem.deps.json
+C:\LPU_Capgemini\Assessment\Questions\25_MiniOrderSystem\bin\Debug\net8.0\25_MiniOrderSystem.runtimeconfig.json
+C:\LPU_Capgemini\Assessment\Questions\25_MiniOrderSystem\bin\Debug\net8.0\25_MiniOrderSystem.dll
+C:\LPU_Capgemini\Assessment\Questions\25_MiniOrderSystem\bin\Debug\net8.0\25_MiniOrderSystem.pdb
+C:\LPU_Capgemini\Assessment\Questions\25_MiniOrderSystem\obj\Debug\net8.0\25_MiniOrderSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\LPU_Capgemini\Assessment\Questions\25_MiniOrderSystem\obj\Debug\net8.0\25_MiniOrderSystem.AssemblyInfoInputs.cache
+C:\LPU_Capgemini\Assessment\Questions\25_MiniOrderSystem\obj\Debug\net8.0\25_MiniOrderSystem.AssemblyInfo.cs
+C:\LPU_Capgemini\Assessment\Questions\25_MiniOrderSystem\obj\Debug\net8.0\25_MiniOrderSystem.csproj.CoreCompileInputs.cache
+C:\LPU_Capgemini\Assessment\Questions\25_MiniOrderSystem\obj\Debug\net8.0\25_MiniOrderSystem.sourcelink.json
+C:\LPU_Capgemini\Assessment\Questions\25_MiniOrderSystem\obj\Debug\net8.0\25_MiniOrderSystem.dll
+C:\LPU_Capgemini\Assessment\Questions\25_MiniOrderSystem\obj\Debug\net8.0\refint\25_MiniOrderSystem.dll
+C:\LPU_Capgemini\Assessment\Questions\25_MiniOrderSystem\obj\Debug\net8.0\25_MiniOrderSystem.pdb
+C:\LPU_Capgemini\Assessment\Questions\25_MiniOrderSystem\obj\Debug\net8.0\25_MiniOrderSystem.genruntimeconfig.cache
+C:\LPU_Capgemini\Assessment\Questions\25_MiniOrderSystem\obj\Debug\net8.0\ref\25_MiniOrderSystem.dll

@@ -1,0 +1,15 @@
+C:\LPU_Capgemini\Assessment\Questions\05_LargeFileLogAnalyzer\bin\Debug\net8.0\05_LargeFileLogAnalyzer.exe
+C:\LPU_Capgemini\Assessment\Questions\05_LargeFileLogAnalyzer\bin\Debug\net8.0\05_LargeFileLogAnalyzer.deps.json
+C:\LPU_Capgemini\Assessment\Questions\05_LargeFileLogAnalyzer\bin\Debug\net8.0\05_LargeFileLogAnalyzer.runtimeconfig.json
+C:\LPU_Capgemini\Assessment\Questions\05_LargeFileLogAnalyzer\bin\Debug\net8.0\05_LargeFileLogAnalyzer.dll
+C:\LPU_Capgemini\Assessment\Questions\05_LargeFileLogAnalyzer\bin\Debug\net8.0\05_LargeFileLogAnalyzer.pdb
+C:\LPU_Capgemini\Assessment\Questions\05_LargeFileLogAnalyzer\obj\Debug\net8.0\05_LargeFileLogAnalyzer.GeneratedMSBuildEditorConfig.editorconfig
+C:\LPU_Capgemini\Assessment\Questions\05_LargeFileLogAnalyzer\obj\Debug\net8.0\05_LargeFileLogAnalyzer.AssemblyInfoInputs.cache
+C:\LPU_Capgemini\Assessment\Questions\05_LargeFileLogAnalyzer\obj\Debug\net8.0\05_LargeFileLogAnalyzer.AssemblyInfo.cs
+C:\LPU_Capgemini\Assessment\Questions\05_LargeFileLogAnalyzer\obj\Debug\net8.0\05_LargeFileLogAnalyzer.csproj.CoreCompileInputs.cache
+C:\LPU_Capgemini\Assessment\Questions\05_LargeFileLogAnalyzer\obj\Debug\net8.0\05_LargeFileLogAnalyzer.sourcelink.json
+C:\LPU_Capgemini\Assessment\Questions\05_LargeFileLogAnalyzer\obj\Debug\net8.0\05_LargeFileLogAnalyzer.dll
+C:\LPU_Capgemini\Assessment\Questions\05_LargeFileLogAnalyzer\obj\Debug\net8.0\refint\05_LargeFileLogAnalyzer.dll
+C:\LPU_Capgemini\Assessment\Questions\05_LargeFileLogAnalyzer\obj\Debug\net8.0\05_LargeFileLogAnalyzer.pdb
+C:\LPU_Capgemini\Assessment\Questions\05_LargeFileLogAnalyzer\obj\Debug\net8.0\05_LargeFileLogAnalyzer.genruntimeconfig.cache
+C:\LPU_Capgemini\Assessment\Questions\05_LargeFileLogAnalyzer\obj\Debug\net8.0\ref\05_LargeFileLogAnalyzer.dll

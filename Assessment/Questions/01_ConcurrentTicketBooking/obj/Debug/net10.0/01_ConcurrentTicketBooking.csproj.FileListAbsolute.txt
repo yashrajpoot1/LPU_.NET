@@ -1,0 +1,15 @@
+C:\LPU_Capgemini\Assessment\Questions\01_ConcurrentTicketBooking\bin\Debug\net10.0\01_ConcurrentTicketBooking.exe
+C:\LPU_Capgemini\Assessment\Questions\01_ConcurrentTicketBooking\bin\Debug\net10.0\01_ConcurrentTicketBooking.deps.json
+C:\LPU_Capgemini\Assessment\Questions\01_ConcurrentTicketBooking\bin\Debug\net10.0\01_ConcurrentTicketBooking.runtimeconfig.json
+C:\LPU_Capgemini\Assessment\Questions\01_ConcurrentTicketBooking\bin\Debug\net10.0\01_ConcurrentTicketBooking.dll
+C:\LPU_Capgemini\Assessment\Questions\01_ConcurrentTicketBooking\bin\Debug\net10.0\01_ConcurrentTicketBooking.pdb
+C:\LPU_Capgemini\Assessment\Questions\01_ConcurrentTicketBooking\obj\Debug\net10.0\01_ConcurrentTicketBooking.GeneratedMSBuildEditorConfig.editorconfig
+C:\LPU_Capgemini\Assessment\Questions\01_ConcurrentTicketBooking\obj\Debug\net10.0\01_ConcurrentTicketBooking.AssemblyInfoInputs.cache
+C:\LPU_Capgemini\Assessment\Questions\01_ConcurrentTicketBooking\obj\Debug\net10.0\01_ConcurrentTicketBooking.AssemblyInfo.cs
+C:\LPU_Capgemini\Assessment\Questions\01_ConcurrentTicketBooking\obj\Debug\net10.0\01_ConcurrentTicketBooking.csproj.CoreCompileInputs.cache
+C:\LPU_Capgemini\Assessment\Questions\01_ConcurrentTicketBooking\obj\Debug\net10.0\01_ConcurrentTicketBooking.sourcelink.json
+C:\LPU_Capgemini\Assessment\Questions\01_ConcurrentTicketBooking\obj\Debug\net10.0\01_ConcurrentTicketBooking.dll
+C:\LPU_Capgemini\Assessment\Questions\01_ConcurrentTicketBooking\obj\Debug\net10.0\refint\01_ConcurrentTicketBooking.dll
+C:\LPU_Capgemini\Assessment\Questions\01_ConcurrentTicketBooking\obj\Debug\net10.0\01_ConcurrentTicketBooking.pdb
+C:\LPU_Capgemini\Assessment\Questions\01_ConcurrentTicketBooking\obj\Debug\net10.0\01_ConcurrentTicketBooking.genruntimeconfig.cache
+C:\LPU_Capgemini\Assessment\Questions\01_ConcurrentTicketBooking\obj\Debug\net10.0\ref\01_ConcurrentTicketBooking.dll

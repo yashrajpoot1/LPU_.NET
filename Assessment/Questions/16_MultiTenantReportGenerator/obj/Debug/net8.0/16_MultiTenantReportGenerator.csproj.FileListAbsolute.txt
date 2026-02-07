@@ -1,0 +1,15 @@
+C:\LPU_Capgemini\Assessment\Questions\16_MultiTenantReportGenerator\bin\Debug\net8.0\16_MultiTenantReportGenerator.exe
+C:\LPU_Capgemini\Assessment\Questions\16_MultiTenantReportGenerator\bin\Debug\net8.0\16_MultiTenantReportGenerator.deps.json
+C:\LPU_Capgemini\Assessment\Questions\16_MultiTenantReportGenerator\bin\Debug\net8.0\16_MultiTenantReportGenerator.runtimeconfig.json
+C:\LPU_Capgemini\Assessment\Questions\16_MultiTenantReportGenerator\bin\Debug\net8.0\16_MultiTenantReportGenerator.dll
+C:\LPU_Capgemini\Assessment\Questions\16_MultiTenantReportGenerator\bin\Debug\net8.0\16_MultiTenantReportGenerator.pdb
+C:\LPU_Capgemini\Assessment\Questions\16_MultiTenantReportGenerator\obj\Debug\net8.0\16_MultiTenantReportGenerator.GeneratedMSBuildEditorConfig.editorconfig
+C:\LPU_Capgemini\Assessment\Questions\16_MultiTenantReportGenerator\obj\Debug\net8.0\16_MultiTenantReportGenerator.AssemblyInfoInputs.cache
+C:\LPU_Capgemini\Assessment\Questions\16_MultiTenantReportGenerator\obj\Debug\net8.0\16_MultiTenantReportGenerator.AssemblyInfo.cs
+C:\LPU_Capgemini\Assessment\Questions\16_MultiTenantReportGenerator\obj\Debug\net8.0\16_MultiTenantReportGenerator.csproj.CoreCompileInputs.cache
+C:\LPU_Capgemini\Assessment\Questions\16_MultiTenantReportGenerator\obj\Debug\net8.0\16_MultiTenantReportGenerator.sourcelink.json
+C:\LPU_Capgemini\Assessment\Questions\16_MultiTenantReportGenerator\obj\Debug\net8.0\16_MultiTenantReportGenerator.dll
+C:\LPU_Capgemini\Assessment\Questions\16_MultiTenantReportGenerator\obj\Debug\net8.0\refint\16_MultiTenantReportGenerator.dll
+C:\LPU_Capgemini\Assessment\Questions\16_MultiTenantReportGenerator\obj\Debug\net8.0\16_MultiTenantReportGenerator.pdb
+C:\LPU_Capgemini\Assessment\Questions\16_MultiTenantReportGenerator\obj\Debug\net8.0\16_MultiTenantReportGenerator.genruntimeconfig.cache
+C:\LPU_Capgemini\Assessment\Questions\16_MultiTenantReportGenerator\obj\Debug\net8.0\ref\16_MultiTenantReportGenerator.dll

@@ -1,0 +1,15 @@
+C:\LPU_Capgemini\Assessment\Questions\07_JsonBatchValidation\bin\Debug\net8.0\07_JsonBatchValidation.exe
+C:\LPU_Capgemini\Assessment\Questions\07_JsonBatchValidation\bin\Debug\net8.0\07_JsonBatchValidation.deps.json
+C:\LPU_Capgemini\Assessment\Questions\07_JsonBatchValidation\bin\Debug\net8.0\07_JsonBatchValidation.runtimeconfig.json
+C:\LPU_Capgemini\Assessment\Questions\07_JsonBatchValidation\bin\Debug\net8.0\07_JsonBatchValidation.dll
+C:\LPU_Capgemini\Assessment\Questions\07_JsonBatchValidation\bin\Debug\net8.0\07_JsonBatchValidation.pdb
+C:\LPU_Capgemini\Assessment\Questions\07_JsonBatchValidation\obj\Debug\net8.0\07_JsonBatchValidation.GeneratedMSBuildEditorConfig.editorconfig
+C:\LPU_Capgemini\Assessment\Questions\07_JsonBatchValidation\obj\Debug\net8.0\07_JsonBatchValidation.AssemblyInfoInputs.cache
+C:\LPU_Capgemini\Assessment\Questions\07_JsonBatchValidation\obj\Debug\net8.0\07_JsonBatchValidation.AssemblyInfo.cs
+C:\LPU_Capgemini\Assessment\Questions\07_JsonBatchValidation\obj\Debug\net8.0\07_JsonBatchValidation.csproj.CoreCompileInputs.cache
+C:\LPU_Capgemini\Assessment\Questions\07_JsonBatchValidation\obj\Debug\net8.0\07_JsonBatchValidation.sourcelink.json
+C:\LPU_Capgemini\Assessment\Questions\07_JsonBatchValidation\obj\Debug\net8.0\07_JsonBatchValidation.dll
+C:\LPU_Capgemini\Assessment\Questions\07_JsonBatchValidation\obj\Debug\net8.0\refint\07_JsonBatchValidation.dll
+C:\LPU_Capgemini\Assessment\Questions\07_JsonBatchValidation\obj\Debug\net8.0\07_JsonBatchValidation.pdb
+C:\LPU_Capgemini\Assessment\Questions\07_JsonBatchValidation\obj\Debug\net8.0\07_JsonBatchValidation.genruntimeconfig.cache
+C:\LPU_Capgemini\Assessment\Questions\07_JsonBatchValidation\obj\Debug\net8.0\ref\07_JsonBatchValidation.dll

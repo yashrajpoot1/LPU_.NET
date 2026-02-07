@@ -1,0 +1,15 @@
+C:\LPU_Capgemini\Assessment\Questions\20_RoleBasedAccessControl\bin\Debug\net8.0\20_RoleBasedAccessControl.exe
+C:\LPU_Capgemini\Assessment\Questions\20_RoleBasedAccessControl\bin\Debug\net8.0\20_RoleBasedAccessControl.deps.json
+C:\LPU_Capgemini\Assessment\Questions\20_RoleBasedAccessControl\bin\Debug\net8.0\20_RoleBasedAccessControl.runtimeconfig.json
+C:\LPU_Capgemini\Assessment\Questions\20_RoleBasedAccessControl\bin\Debug\net8.0\20_RoleBasedAccessControl.dll
+C:\LPU_Capgemini\Assessment\Questions\20_RoleBasedAccessControl\bin\Debug\net8.0\20_RoleBasedAccessControl.pdb
+C:\LPU_Capgemini\Assessment\Questions\20_RoleBasedAccessControl\obj\Debug\net8.0\20_RoleBasedAccessControl.GeneratedMSBuildEditorConfig.editorconfig
+C:\LPU_Capgemini\Assessment\Questions\20_RoleBasedAccessControl\obj\Debug\net8.0\20_RoleBasedAccessControl.AssemblyInfoInputs.cache
+C:\LPU_Capgemini\Assessment\Questions\20_RoleBasedAccessControl\obj\Debug\net8.0\20_RoleBasedAccessControl.AssemblyInfo.cs
+C:\LPU_Capgemini\Assessment\Questions\20_RoleBasedAccessControl\obj\Debug\net8.0\20_RoleBasedAccessControl.csproj.CoreCompileInputs.cache
+C:\LPU_Capgemini\Assessment\Questions\20_RoleBasedAccessControl\obj\Debug\net8.0\20_RoleBasedAccessControl.sourcelink.json
+C:\LPU_Capgemini\Assessment\Questions\20_RoleBasedAccessControl\obj\Debug\net8.0\20_RoleBasedAccessControl.dll
+C:\LPU_Capgemini\Assessment\Questions\20_RoleBasedAccessControl\obj\Debug\net8.0\refint\20_RoleBasedAccessControl.dll
+C:\LPU_Capgemini\Assessment\Questions\20_RoleBasedAccessControl\obj\Debug\net8.0\20_RoleBasedAccessControl.pdb
+C:\LPU_Capgemini\Assessment\Questions\20_RoleBasedAccessControl\obj\Debug\net8.0\20_RoleBasedAccessControl.genruntimeconfig.cache
+C:\LPU_Capgemini\Assessment\Questions\20_RoleBasedAccessControl\obj\Debug\net8.0\ref\20_RoleBasedAccessControl.dll

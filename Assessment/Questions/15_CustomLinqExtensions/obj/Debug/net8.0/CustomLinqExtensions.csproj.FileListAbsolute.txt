@@ -1,0 +1,15 @@
+C:\LPU_Capgemini\Assessment\Questions\15_CustomLinqExtensions\bin\Debug\net8.0\CustomLinqExtensions.exe
+C:\LPU_Capgemini\Assessment\Questions\15_CustomLinqExtensions\bin\Debug\net8.0\CustomLinqExtensions.deps.json
+C:\LPU_Capgemini\Assessment\Questions\15_CustomLinqExtensions\bin\Debug\net8.0\CustomLinqExtensions.runtimeconfig.json
+C:\LPU_Capgemini\Assessment\Questions\15_CustomLinqExtensions\bin\Debug\net8.0\CustomLinqExtensions.dll
+C:\LPU_Capgemini\Assessment\Questions\15_CustomLinqExtensions\bin\Debug\net8.0\CustomLinqExtensions.pdb
+C:\LPU_Capgemini\Assessment\Questions\15_CustomLinqExtensions\obj\Debug\net8.0\CustomLinqExtensions.GeneratedMSBuildEditorConfig.editorconfig
+C:\LPU_Capgemini\Assessment\Questions\15_CustomLinqExtensions\obj\Debug\net8.0\CustomLinqExtensions.AssemblyInfoInputs.cache
+C:\LPU_Capgemini\Assessment\Questions\15_CustomLinqExtensions\obj\Debug\net8.0\CustomLinqExtensions.AssemblyInfo.cs
+C:\LPU_Capgemini\Assessment\Questions\15_CustomLinqExtensions\obj\Debug\net8.0\CustomLinqExtensions.csproj.CoreCompileInputs.cache
+C:\LPU_Capgemini\Assessment\Questions\15_CustomLinqExtensions\obj\Debug\net8.0\CustomLinqExtensions.sourcelink.json
+C:\LPU_Capgemini\Assessment\Questions\15_CustomLinqExtensions\obj\Debug\net8.0\CustomLinqExtensions.dll
+C:\LPU_Capgemini\Assessment\Questions\15_CustomLinqExtensions\obj\Debug\net8.0\refint\CustomLinqExtensions.dll
+C:\LPU_Capgemini\Assessment\Questions\15_CustomLinqExtensions\obj\Debug\net8.0\CustomLinqExtensions.pdb
+C:\LPU_Capgemini\Assessment\Questions\15_CustomLinqExtensions\obj\Debug\net8.0\CustomLinqExtensions.genruntimeconfig.cache
+C:\LPU_Capgemini\Assessment\Questions\15_CustomLinqExtensions\obj\Debug\net8.0\ref\CustomLinqExtensions.dll

@@ -1,0 +1,15 @@
+C:\LPU_Capgemini\Assessment\Questions\19_AuditTriggerSimulation\bin\Debug\net8.0\19_AuditTriggerSimulation.exe
+C:\LPU_Capgemini\Assessment\Questions\19_AuditTriggerSimulation\bin\Debug\net8.0\19_AuditTriggerSimulation.deps.json
+C:\LPU_Capgemini\Assessment\Questions\19_AuditTriggerSimulation\bin\Debug\net8.0\19_AuditTriggerSimulation.runtimeconfig.json
+C:\LPU_Capgemini\Assessment\Questions\19_AuditTriggerSimulation\bin\Debug\net8.0\19_AuditTriggerSimulation.dll
+C:\LPU_Capgemini\Assessment\Questions\19_AuditTriggerSimulation\bin\Debug\net8.0\19_AuditTriggerSimulation.pdb
+C:\LPU_Capgemini\Assessment\Questions\19_AuditTriggerSimulation\obj\Debug\net8.0\19_AuditTriggerSimulation.GeneratedMSBuildEditorConfig.editorconfig
+C:\LPU_Capgemini\Assessment\Questions\19_AuditTriggerSimulation\obj\Debug\net8.0\19_AuditTriggerSimulation.AssemblyInfoInputs.cache
+C:\LPU_Capgemini\Assessment\Questions\19_AuditTriggerSimulation\obj\Debug\net8.0\19_AuditTriggerSimulation.AssemblyInfo.cs
+C:\LPU_Capgemini\Assessment\Questions\19_AuditTriggerSimulation\obj\Debug\net8.0\19_AuditTriggerSimulation.csproj.CoreCompileInputs.cache
+C:\LPU_Capgemini\Assessment\Questions\19_AuditTriggerSimulation\obj\Debug\net8.0\19_AuditTriggerSimulation.sourcelink.json
+C:\LPU_Capgemini\Assessment\Questions\19_AuditTriggerSimulation\obj\Debug\net8.0\19_AuditTriggerSimulation.dll
+C:\LPU_Capgemini\Assessment\Questions\19_AuditTriggerSimulation\obj\Debug\net8.0\refint\19_AuditTriggerSimulation.dll
+C:\LPU_Capgemini\Assessment\Questions\19_AuditTriggerSimulation\obj\Debug\net8.0\19_AuditTriggerSimulation.pdb
+C:\LPU_Capgemini\Assessment\Questions\19_AuditTriggerSimulation\obj\Debug\net8.0\19_AuditTriggerSimulation.genruntimeconfig.cache
+C:\LPU_Capgemini\Assessment\Questions\19_AuditTriggerSimulation\obj\Debug\net8.0\ref\19_AuditTriggerSimulation.dll

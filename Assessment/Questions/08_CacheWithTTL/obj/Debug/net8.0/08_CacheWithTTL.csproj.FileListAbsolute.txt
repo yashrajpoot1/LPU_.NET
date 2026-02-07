@@ -1,0 +1,15 @@
+C:\LPU_Capgemini\Assessment\Questions\08_CacheWithTTL\bin\Debug\net8.0\08_CacheWithTTL.exe
+C:\LPU_Capgemini\Assessment\Questions\08_CacheWithTTL\bin\Debug\net8.0\08_CacheWithTTL.deps.json
+C:\LPU_Capgemini\Assessment\Questions\08_CacheWithTTL\bin\Debug\net8.0\08_CacheWithTTL.runtimeconfig.json
+C:\LPU_Capgemini\Assessment\Questions\08_CacheWithTTL\bin\Debug\net8.0\08_CacheWithTTL.dll
+C:\LPU_Capgemini\Assessment\Questions\08_CacheWithTTL\bin\Debug\net8.0\08_CacheWithTTL.pdb
+C:\LPU_Capgemini\Assessment\Questions\08_CacheWithTTL\obj\Debug\net8.0\08_CacheWithTTL.GeneratedMSBuildEditorConfig.editorconfig
+C:\LPU_Capgemini\Assessment\Questions\08_CacheWithTTL\obj\Debug\net8.0\08_CacheWithTTL.AssemblyInfoInputs.cache
+C:\LPU_Capgemini\Assessment\Questions\08_CacheWithTTL\obj\Debug\net8.0\08_CacheWithTTL.AssemblyInfo.cs
+C:\LPU_Capgemini\Assessment\Questions\08_CacheWithTTL\obj\Debug\net8.0\08_CacheWithTTL.csproj.CoreCompileInputs.cache
+C:\LPU_Capgemini\Assessment\Questions\08_CacheWithTTL\obj\Debug\net8.0\08_CacheWithTTL.sourcelink.json
+C:\LPU_Capgemini\Assessment\Questions\08_CacheWithTTL\obj\Debug\net8.0\08_CacheWithTTL.dll
+C:\LPU_Capgemini\Assessment\Questions\08_CacheWithTTL\obj\Debug\net8.0\refint\08_CacheWithTTL.dll
+C:\LPU_Capgemini\Assessment\Questions\08_CacheWithTTL\obj\Debug\net8.0\08_CacheWithTTL.pdb
+C:\LPU_Capgemini\Assessment\Questions\08_CacheWithTTL\obj\Debug\net8.0\08_CacheWithTTL.genruntimeconfig.cache
+C:\LPU_Capgemini\Assessment\Questions\08_CacheWithTTL\obj\Debug\net8.0\ref\08_CacheWithTTL.dll

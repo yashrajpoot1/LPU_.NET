@@ -1,0 +1,15 @@
+C:\LPU_Capgemini\Assessment\Questions\23_PluginLoader\bin\Debug\net8.0\23_PluginLoader.exe
+C:\LPU_Capgemini\Assessment\Questions\23_PluginLoader\bin\Debug\net8.0\23_PluginLoader.deps.json
+C:\LPU_Capgemini\Assessment\Questions\23_PluginLoader\bin\Debug\net8.0\23_PluginLoader.runtimeconfig.json
+C:\LPU_Capgemini\Assessment\Questions\23_PluginLoader\bin\Debug\net8.0\23_PluginLoader.dll
+C:\LPU_Capgemini\Assessment\Questions\23_PluginLoader\bin\Debug\net8.0\23_PluginLoader.pdb
+C:\LPU_Capgemini\Assessment\Questions\23_PluginLoader\obj\Debug\net8.0\23_PluginLoader.GeneratedMSBuildEditorConfig.editorconfig
+C:\LPU_Capgemini\Assessment\Questions\23_PluginLoader\obj\Debug\net8.0\23_PluginLoader.AssemblyInfoInputs.cache
+C:\LPU_Capgemini\Assessment\Questions\23_PluginLoader\obj\Debug\net8.0\23_PluginLoader.AssemblyInfo.cs
+C:\LPU_Capgemini\Assessment\Questions\23_PluginLoader\obj\Debug\net8.0\23_PluginLoader.csproj.CoreCompileInputs.cache
+C:\LPU_Capgemini\Assessment\Questions\23_PluginLoader\obj\Debug\net8.0\23_PluginLoader.sourcelink.json
+C:\LPU_Capgemini\Assessment\Questions\23_PluginLoader\obj\Debug\net8.0\23_PluginLoader.dll
+C:\LPU_Capgemini\Assessment\Questions\23_PluginLoader\obj\Debug\net8.0\refint\23_PluginLoader.dll
+C:\LPU_Capgemini\Assessment\Questions\23_PluginLoader\obj\Debug\net8.0\23_PluginLoader.pdb
+C:\LPU_Capgemini\Assessment\Questions\23_PluginLoader\obj\Debug\net8.0\23_PluginLoader.genruntimeconfig.cache
+C:\LPU_Capgemini\Assessment\Questions\23_PluginLoader\obj\Debug\net8.0\ref\23_PluginLoader.dll

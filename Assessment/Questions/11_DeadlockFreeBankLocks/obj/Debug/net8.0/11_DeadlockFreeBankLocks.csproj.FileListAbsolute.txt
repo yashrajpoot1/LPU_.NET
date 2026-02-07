@@ -1,0 +1,15 @@
+C:\LPU_Capgemini\Assessment\Questions\11_DeadlockFreeBankLocks\bin\Debug\net8.0\11_DeadlockFreeBankLocks.exe
+C:\LPU_Capgemini\Assessment\Questions\11_DeadlockFreeBankLocks\bin\Debug\net8.0\11_DeadlockFreeBankLocks.deps.json
+C:\LPU_Capgemini\Assessment\Questions\11_DeadlockFreeBankLocks\bin\Debug\net8.0\11_DeadlockFreeBankLocks.runtimeconfig.json
+C:\LPU_Capgemini\Assessment\Questions\11_DeadlockFreeBankLocks\bin\Debug\net8.0\11_DeadlockFreeBankLocks.dll
+C:\LPU_Capgemini\Assessment\Questions\11_DeadlockFreeBankLocks\bin\Debug\net8.0\11_DeadlockFreeBankLocks.pdb
+C:\LPU_Capgemini\Assessment\Questions\11_DeadlockFreeBankLocks\obj\Debug\net8.0\11_DeadlockFreeBankLocks.GeneratedMSBuildEditorConfig.editorconfig
+C:\LPU_Capgemini\Assessment\Questions\11_DeadlockFreeBankLocks\obj\Debug\net8.0\11_DeadlockFreeBankLocks.AssemblyInfoInputs.cache
+C:\LPU_Capgemini\Assessment\Questions\11_DeadlockFreeBankLocks\obj\Debug\net8.0\11_DeadlockFreeBankLocks.AssemblyInfo.cs
+C:\LPU_Capgemini\Assessment\Questions\11_DeadlockFreeBankLocks\obj\Debug\net8.0\11_DeadlockFreeBankLocks.csproj.CoreCompileInputs.cache
+C:\LPU_Capgemini\Assessment\Questions\11_DeadlockFreeBankLocks\obj\Debug\net8.0\11_DeadlockFreeBankLocks.sourcelink.json
+C:\LPU_Capgemini\Assessment\Questions\11_DeadlockFreeBankLocks\obj\Debug\net8.0\11_DeadlockFreeBankLocks.dll
+C:\LPU_Capgemini\Assessment\Questions\11_DeadlockFreeBankLocks\obj\Debug\net8.0\refint\11_DeadlockFreeBankLocks.dll
+C:\LPU_Capgemini\Assessment\Questions\11_DeadlockFreeBankLocks\obj\Debug\net8.0\11_DeadlockFreeBankLocks.pdb
+C:\LPU_Capgemini\Assessment\Questions\11_DeadlockFreeBankLocks\obj\Debug\net8.0\11_DeadlockFreeBankLocks.genruntimeconfig.cache
+C:\LPU_Capgemini\Assessment\Questions\11_DeadlockFreeBankLocks\obj\Debug\net8.0\ref\11_DeadlockFreeBankLocks.dll

@@ -1,0 +1,15 @@
+C:\LPU_Capgemini\Assessment\Questions\24_ThreadSafeSingleton\bin\Debug\net8.0\24_ThreadSafeSingleton.exe
+C:\LPU_Capgemini\Assessment\Questions\24_ThreadSafeSingleton\bin\Debug\net8.0\24_ThreadSafeSingleton.deps.json
+C:\LPU_Capgemini\Assessment\Questions\24_ThreadSafeSingleton\bin\Debug\net8.0\24_ThreadSafeSingleton.runtimeconfig.json
+C:\LPU_Capgemini\Assessment\Questions\24_ThreadSafeSingleton\bin\Debug\net8.0\24_ThreadSafeSingleton.dll
+C:\LPU_Capgemini\Assessment\Questions\24_ThreadSafeSingleton\bin\Debug\net8.0\24_ThreadSafeSingleton.pdb
+C:\LPU_Capgemini\Assessment\Questions\24_ThreadSafeSingleton\obj\Debug\net8.0\24_ThreadSafeSingleton.GeneratedMSBuildEditorConfig.editorconfig
+C:\LPU_Capgemini\Assessment\Questions\24_ThreadSafeSingleton\obj\Debug\net8.0\24_ThreadSafeSingleton.AssemblyInfoInputs.cache
+C:\LPU_Capgemini\Assessment\Questions\24_ThreadSafeSingleton\obj\Debug\net8.0\24_ThreadSafeSingleton.AssemblyInfo.cs
+C:\LPU_Capgemini\Assessment\Questions\24_ThreadSafeSingleton\obj\Debug\net8.0\24_ThreadSafeSingleton.csproj.CoreCompileInputs.cache
+C:\LPU_Capgemini\Assessment\Questions\24_ThreadSafeSingleton\obj\Debug\net8.0\24_ThreadSafeSingleton.sourcelink.json
+C:\LPU_Capgemini\Assessment\Questions\24_ThreadSafeSingleton\obj\Debug\net8.0\24_ThreadSafeSingleton.dll
+C:\LPU_Capgemini\Assessment\Questions\24_ThreadSafeSingleton\obj\Debug\net8.0\refint\24_ThreadSafeSingleton.dll
+C:\LPU_Capgemini\Assessment\Questions\24_ThreadSafeSingleton\obj\Debug\net8.0\24_ThreadSafeSingleton.pdb
+C:\LPU_Capgemini\Assessment\Questions\24_ThreadSafeSingleton\obj\Debug\net8.0\24_ThreadSafeSingleton.genruntimeconfig.cache
+C:\LPU_Capgemini\Assessment\Questions\24_ThreadSafeSingleton\obj\Debug\net8.0\ref\24_ThreadSafeSingleton.dll
