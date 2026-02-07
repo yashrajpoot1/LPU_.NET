@@ -40,9 +40,3 @@ Each problem folder contains:
 - Implementation files (.cs)
 - Program.cs (test program)
 - .csproj (project file)
-
-## Technologies
-- C# 10+ / .NET 8.0
-- Async/Await, LINQ, PLINQ
-- Concurrent Collections
-- Design Patterns
