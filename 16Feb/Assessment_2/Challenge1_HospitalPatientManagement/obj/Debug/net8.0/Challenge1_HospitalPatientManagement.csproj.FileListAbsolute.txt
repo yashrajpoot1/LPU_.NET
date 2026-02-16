@@ -1,0 +1,15 @@
+C:\LPU_Capgemini\16Feb\Assessment_2\Challenge1_HospitalPatientManagement\bin\Debug\net8.0\Challenge1_HospitalPatientManagement.exe
+C:\LPU_Capgemini\16Feb\Assessment_2\Challenge1_HospitalPatientManagement\bin\Debug\net8.0\Challenge1_HospitalPatientManagement.deps.json
+C:\LPU_Capgemini\16Feb\Assessment_2\Challenge1_HospitalPatientManagement\bin\Debug\net8.0\Challenge1_HospitalPatientManagement.runtimeconfig.json
+C:\LPU_Capgemini\16Feb\Assessment_2\Challenge1_HospitalPatientManagement\bin\Debug\net8.0\Challenge1_HospitalPatientManagement.dll
+C:\LPU_Capgemini\16Feb\Assessment_2\Challenge1_HospitalPatientManagement\bin\Debug\net8.0\Challenge1_HospitalPatientManagement.pdb
+C:\LPU_Capgemini\16Feb\Assessment_2\Challenge1_HospitalPatientManagement\obj\Debug\net8.0\Challenge1_HospitalPatientManagement.GeneratedMSBuildEditorConfig.editorconfig
+C:\LPU_Capgemini\16Feb\Assessment_2\Challenge1_HospitalPatientManagement\obj\Debug\net8.0\Challenge1_HospitalPatientManagement.AssemblyInfoInputs.cache
+C:\LPU_Capgemini\16Feb\Assessment_2\Challenge1_HospitalPatientManagement\obj\Debug\net8.0\Challenge1_HospitalPatientManagement.AssemblyInfo.cs
+C:\LPU_Capgemini\16Feb\Assessment_2\Challenge1_HospitalPatientManagement\obj\Debug\net8.0\Challenge1_HospitalPatientManagement.csproj.CoreCompileInputs.cache
+C:\LPU_Capgemini\16Feb\Assessment_2\Challenge1_HospitalPatientManagement\obj\Debug\net8.0\Challenge1_HospitalPatientManagement.sourcelink.json
+C:\LPU_Capgemini\16Feb\Assessment_2\Challenge1_HospitalPatientManagement\obj\Debug\net8.0\Challenge1_HospitalPatientManagement.dll
+C:\LPU_Capgemini\16Feb\Assessment_2\Challenge1_HospitalPatientManagement\obj\Debug\net8.0\refint\Challenge1_HospitalPatientManagement.dll
+C:\LPU_Capgemini\16Feb\Assessment_2\Challenge1_HospitalPatientManagement\obj\Debug\net8.0\Challenge1_HospitalPatientManagement.pdb
+C:\LPU_Capgemini\16Feb\Assessment_2\Challenge1_HospitalPatientManagement\obj\Debug\net8.0\Challenge1_HospitalPatientManagement.genruntimeconfig.cache
+C:\LPU_Capgemini\16Feb\Assessment_2\Challenge1_HospitalPatientManagement\obj\Debug\net8.0\ref\Challenge1_HospitalPatientManagement.dll

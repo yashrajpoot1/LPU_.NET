@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "eMgbByWVwP0=",
+  "success": true,
+  "projectFilePath": "C:\\LPU_Capgemini\\16Feb\\Assessment_2\\Challenge1_HospitalPatientManagement\\Challenge1_HospitalPatientManagement.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\rajpo\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.23\\microsoft.netcore.app.ref.8.0.23.nupkg.sha512",
+    "C:\\Users\\rajpo\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.23\\microsoft.windowsdesktop.app.ref.8.0.23.nupkg.sha512",
+    "C:\\Users\\rajpo\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.23\\microsoft.aspnetcore.app.ref.8.0.23.nupkg.sha512",
+    "C:\\Users\\rajpo\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.23\\microsoft.netcore.app.host.win-x64.8.0.23.nupkg.sha512"
+  ],
+  "logs": []
+}
