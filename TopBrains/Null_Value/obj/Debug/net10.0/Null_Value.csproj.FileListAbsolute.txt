@@ -1,0 +1,15 @@
+E:\LPU\TopBrains\Null_Value\bin\Debug\net10.0\Null_Value.exe
+E:\LPU\TopBrains\Null_Value\bin\Debug\net10.0\Null_Value.deps.json
+E:\LPU\TopBrains\Null_Value\bin\Debug\net10.0\Null_Value.runtimeconfig.json
+E:\LPU\TopBrains\Null_Value\bin\Debug\net10.0\Null_Value.dll
+E:\LPU\TopBrains\Null_Value\bin\Debug\net10.0\Null_Value.pdb
+E:\LPU\TopBrains\Null_Value\obj\Debug\net10.0\Null_Value.GeneratedMSBuildEditorConfig.editorconfig
+E:\LPU\TopBrains\Null_Value\obj\Debug\net10.0\Null_Value.AssemblyInfoInputs.cache
+E:\LPU\TopBrains\Null_Value\obj\Debug\net10.0\Null_Value.AssemblyInfo.cs
+E:\LPU\TopBrains\Null_Value\obj\Debug\net10.0\Null_Value.csproj.CoreCompileInputs.cache
+E:\LPU\TopBrains\Null_Value\obj\Debug\net10.0\Null_Value.sourcelink.json
+E:\LPU\TopBrains\Null_Value\obj\Debug\net10.0\Null_Value.dll
+E:\LPU\TopBrains\Null_Value\obj\Debug\net10.0\refint\Null_Value.dll
+E:\LPU\TopBrains\Null_Value\obj\Debug\net10.0\Null_Value.pdb
+E:\LPU\TopBrains\Null_Value\obj\Debug\net10.0\Null_Value.genruntimeconfig.cache
+E:\LPU\TopBrains\Null_Value\obj\Debug\net10.0\ref\Null_Value.dll

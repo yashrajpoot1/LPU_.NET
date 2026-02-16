@@ -1,0 +1,6 @@
+E:\LPU\TopBrains\BankAccountTests\obj\Debug\net10.0\BankAccountTests.csproj.AssemblyReference.cache
+E:\LPU\TopBrains\BankAccountTests\obj\Debug\net10.0\BankAccountTests.GeneratedMSBuildEditorConfig.editorconfig
+E:\LPU\TopBrains\BankAccountTests\obj\Debug\net10.0\BankAccountTests.AssemblyInfoInputs.cache
+E:\LPU\TopBrains\BankAccountTests\obj\Debug\net10.0\BankAccountTests.AssemblyInfo.cs
+E:\LPU\TopBrains\BankAccountTests\obj\Debug\net10.0\BankAccountTests.csproj.CoreCompileInputs.cache
+E:\LPU\TopBrains\BankAccountTests\obj\Debug\net10.0\BankAccountTests.sourcelink.json

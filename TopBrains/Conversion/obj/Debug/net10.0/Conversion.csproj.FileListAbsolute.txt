@@ -1,0 +1,15 @@
+E:\LPU\TopBrains\Conversion\bin\Debug\net10.0\Conversion.exe
+E:\LPU\TopBrains\Conversion\bin\Debug\net10.0\Conversion.deps.json
+E:\LPU\TopBrains\Conversion\bin\Debug\net10.0\Conversion.runtimeconfig.json
+E:\LPU\TopBrains\Conversion\bin\Debug\net10.0\Conversion.dll
+E:\LPU\TopBrains\Conversion\bin\Debug\net10.0\Conversion.pdb
+E:\LPU\TopBrains\Conversion\obj\Debug\net10.0\Conversion.GeneratedMSBuildEditorConfig.editorconfig
+E:\LPU\TopBrains\Conversion\obj\Debug\net10.0\Conversion.AssemblyInfoInputs.cache
+E:\LPU\TopBrains\Conversion\obj\Debug\net10.0\Conversion.AssemblyInfo.cs
+E:\LPU\TopBrains\Conversion\obj\Debug\net10.0\Conversion.csproj.CoreCompileInputs.cache
+E:\LPU\TopBrains\Conversion\obj\Debug\net10.0\Conversion.sourcelink.json
+E:\LPU\TopBrains\Conversion\obj\Debug\net10.0\Conversion.dll
+E:\LPU\TopBrains\Conversion\obj\Debug\net10.0\refint\Conversion.dll
+E:\LPU\TopBrains\Conversion\obj\Debug\net10.0\Conversion.pdb
+E:\LPU\TopBrains\Conversion\obj\Debug\net10.0\Conversion.genruntimeconfig.cache
+E:\LPU\TopBrains\Conversion\obj\Debug\net10.0\ref\Conversion.dll

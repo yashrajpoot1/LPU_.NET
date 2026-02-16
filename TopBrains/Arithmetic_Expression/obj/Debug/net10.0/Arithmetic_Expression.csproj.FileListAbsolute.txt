@@ -1,0 +1,15 @@
+E:\LPU\TopBrains\Arithmetic_Expression\obj\Debug\net10.0\Arithmetic_Expression.GeneratedMSBuildEditorConfig.editorconfig
+E:\LPU\TopBrains\Arithmetic_Expression\obj\Debug\net10.0\Arithmetic_Expression.AssemblyInfoInputs.cache
+E:\LPU\TopBrains\Arithmetic_Expression\obj\Debug\net10.0\Arithmetic_Expression.AssemblyInfo.cs
+E:\LPU\TopBrains\Arithmetic_Expression\obj\Debug\net10.0\Arithmetic_Expression.csproj.CoreCompileInputs.cache
+E:\LPU\TopBrains\Arithmetic_Expression\obj\Debug\net10.0\Arithmetic_Expression.sourcelink.json
+E:\LPU\TopBrains\Arithmetic_Expression\bin\Debug\net10.0\Arithmetic_Expression.exe
+E:\LPU\TopBrains\Arithmetic_Expression\bin\Debug\net10.0\Arithmetic_Expression.deps.json
+E:\LPU\TopBrains\Arithmetic_Expression\bin\Debug\net10.0\Arithmetic_Expression.runtimeconfig.json
+E:\LPU\TopBrains\Arithmetic_Expression\bin\Debug\net10.0\Arithmetic_Expression.dll
+E:\LPU\TopBrains\Arithmetic_Expression\bin\Debug\net10.0\Arithmetic_Expression.pdb
+E:\LPU\TopBrains\Arithmetic_Expression\obj\Debug\net10.0\Arithmetic_Expression.dll
+E:\LPU\TopBrains\Arithmetic_Expression\obj\Debug\net10.0\refint\Arithmetic_Expression.dll
+E:\LPU\TopBrains\Arithmetic_Expression\obj\Debug\net10.0\Arithmetic_Expression.pdb
+E:\LPU\TopBrains\Arithmetic_Expression\obj\Debug\net10.0\Arithmetic_Expression.genruntimeconfig.cache
+E:\LPU\TopBrains\Arithmetic_Expression\obj\Debug\net10.0\ref\Arithmetic_Expression.dll

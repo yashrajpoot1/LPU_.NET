@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "Bank_Transaction_Program/1.0.0": {
+        "runtime": {
+          "Bank_Transaction_Program.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Bank_Transaction_Program/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,15 @@
+E:\LPU\TopBrains\Mid_Point_Rounding\bin\Debug\net10.0\Mid_Point_Rounding.exe
+E:\LPU\TopBrains\Mid_Point_Rounding\bin\Debug\net10.0\Mid_Point_Rounding.deps.json
+E:\LPU\TopBrains\Mid_Point_Rounding\bin\Debug\net10.0\Mid_Point_Rounding.runtimeconfig.json
+E:\LPU\TopBrains\Mid_Point_Rounding\bin\Debug\net10.0\Mid_Point_Rounding.dll
+E:\LPU\TopBrains\Mid_Point_Rounding\bin\Debug\net10.0\Mid_Point_Rounding.pdb
+E:\LPU\TopBrains\Mid_Point_Rounding\obj\Debug\net10.0\Mid_Point_Rounding.GeneratedMSBuildEditorConfig.editorconfig
+E:\LPU\TopBrains\Mid_Point_Rounding\obj\Debug\net10.0\Mid_Point_Rounding.AssemblyInfoInputs.cache
+E:\LPU\TopBrains\Mid_Point_Rounding\obj\Debug\net10.0\Mid_Point_Rounding.AssemblyInfo.cs
+E:\LPU\TopBrains\Mid_Point_Rounding\obj\Debug\net10.0\Mid_Point_Rounding.csproj.CoreCompileInputs.cache
+E:\LPU\TopBrains\Mid_Point_Rounding\obj\Debug\net10.0\Mid_Point_Rounding.sourcelink.json
+E:\LPU\TopBrains\Mid_Point_Rounding\obj\Debug\net10.0\Mid_Point_Rounding.dll
+E:\LPU\TopBrains\Mid_Point_Rounding\obj\Debug\net10.0\refint\Mid_Point_Rounding.dll
+E:\LPU\TopBrains\Mid_Point_Rounding\obj\Debug\net10.0\Mid_Point_Rounding.pdb
+E:\LPU\TopBrains\Mid_Point_Rounding\obj\Debug\net10.0\Mid_Point_Rounding.genruntimeconfig.cache
+E:\LPU\TopBrains\Mid_Point_Rounding\obj\Debug\net10.0\ref\Mid_Point_Rounding.dll

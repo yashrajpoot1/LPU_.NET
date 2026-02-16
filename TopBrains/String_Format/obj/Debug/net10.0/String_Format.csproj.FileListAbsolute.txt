@@ -1,0 +1,15 @@
+E:\LPU\TopBrains\String_Format\obj\Debug\net10.0\String_Format.GeneratedMSBuildEditorConfig.editorconfig
+E:\LPU\TopBrains\String_Format\obj\Debug\net10.0\String_Format.AssemblyInfoInputs.cache
+E:\LPU\TopBrains\String_Format\obj\Debug\net10.0\String_Format.AssemblyInfo.cs
+E:\LPU\TopBrains\String_Format\obj\Debug\net10.0\String_Format.csproj.CoreCompileInputs.cache
+E:\LPU\TopBrains\String_Format\obj\Debug\net10.0\String_Format.sourcelink.json
+E:\LPU\TopBrains\String_Format\bin\Debug\net10.0\String_Format.exe
+E:\LPU\TopBrains\String_Format\bin\Debug\net10.0\String_Format.deps.json
+E:\LPU\TopBrains\String_Format\bin\Debug\net10.0\String_Format.runtimeconfig.json
+E:\LPU\TopBrains\String_Format\bin\Debug\net10.0\String_Format.dll
+E:\LPU\TopBrains\String_Format\bin\Debug\net10.0\String_Format.pdb
+E:\LPU\TopBrains\String_Format\obj\Debug\net10.0\String_Format.dll
+E:\LPU\TopBrains\String_Format\obj\Debug\net10.0\refint\String_Format.dll
+E:\LPU\TopBrains\String_Format\obj\Debug\net10.0\String_Format.pdb
+E:\LPU\TopBrains\String_Format\obj\Debug\net10.0\String_Format.genruntimeconfig.cache
+E:\LPU\TopBrains\String_Format\obj\Debug\net10.0\ref\String_Format.dll

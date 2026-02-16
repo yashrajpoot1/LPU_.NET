@@ -1,0 +1,15 @@
+E:\LPU\TopBrains\File_IO\bin\Debug\net10.0\File_IO.exe
+E:\LPU\TopBrains\File_IO\bin\Debug\net10.0\File_IO.deps.json
+E:\LPU\TopBrains\File_IO\bin\Debug\net10.0\File_IO.runtimeconfig.json
+E:\LPU\TopBrains\File_IO\bin\Debug\net10.0\File_IO.dll
+E:\LPU\TopBrains\File_IO\bin\Debug\net10.0\File_IO.pdb
+E:\LPU\TopBrains\File_IO\obj\Debug\net10.0\File_IO.GeneratedMSBuildEditorConfig.editorconfig
+E:\LPU\TopBrains\File_IO\obj\Debug\net10.0\File_IO.AssemblyInfoInputs.cache
+E:\LPU\TopBrains\File_IO\obj\Debug\net10.0\File_IO.AssemblyInfo.cs
+E:\LPU\TopBrains\File_IO\obj\Debug\net10.0\File_IO.csproj.CoreCompileInputs.cache
+E:\LPU\TopBrains\File_IO\obj\Debug\net10.0\File_IO.sourcelink.json
+E:\LPU\TopBrains\File_IO\obj\Debug\net10.0\File_IO.dll
+E:\LPU\TopBrains\File_IO\obj\Debug\net10.0\refint\File_IO.dll
+E:\LPU\TopBrains\File_IO\obj\Debug\net10.0\File_IO.pdb
+E:\LPU\TopBrains\File_IO\obj\Debug\net10.0\File_IO.genruntimeconfig.cache
+E:\LPU\TopBrains\File_IO\obj\Debug\net10.0\ref\File_IO.dll

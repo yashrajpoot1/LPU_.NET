@@ -1,0 +1,15 @@
+E:\LPU\TopBrains\Smart_Classroom_System\bin\Debug\net10.0\Smart_Classroom_System.exe
+E:\LPU\TopBrains\Smart_Classroom_System\bin\Debug\net10.0\Smart_Classroom_System.deps.json
+E:\LPU\TopBrains\Smart_Classroom_System\bin\Debug\net10.0\Smart_Classroom_System.runtimeconfig.json
+E:\LPU\TopBrains\Smart_Classroom_System\bin\Debug\net10.0\Smart_Classroom_System.dll
+E:\LPU\TopBrains\Smart_Classroom_System\bin\Debug\net10.0\Smart_Classroom_System.pdb
+E:\LPU\TopBrains\Smart_Classroom_System\obj\Debug\net10.0\Smart_Classroom_System.GeneratedMSBuildEditorConfig.editorconfig
+E:\LPU\TopBrains\Smart_Classroom_System\obj\Debug\net10.0\Smart_Classroom_System.AssemblyInfoInputs.cache
+E:\LPU\TopBrains\Smart_Classroom_System\obj\Debug\net10.0\Smart_Classroom_System.AssemblyInfo.cs
+E:\LPU\TopBrains\Smart_Classroom_System\obj\Debug\net10.0\Smart_Classroom_System.csproj.CoreCompileInputs.cache
+E:\LPU\TopBrains\Smart_Classroom_System\obj\Debug\net10.0\Smart_Classroom_System.sourcelink.json
+E:\LPU\TopBrains\Smart_Classroom_System\obj\Debug\net10.0\Smart_Classroom_System.dll
+E:\LPU\TopBrains\Smart_Classroom_System\obj\Debug\net10.0\refint\Smart_Classroom_System.dll
+E:\LPU\TopBrains\Smart_Classroom_System\obj\Debug\net10.0\Smart_Classroom_System.pdb
+E:\LPU\TopBrains\Smart_Classroom_System\obj\Debug\net10.0\Smart_Classroom_System.genruntimeconfig.cache
+E:\LPU\TopBrains\Smart_Classroom_System\obj\Debug\net10.0\ref\Smart_Classroom_System.dll

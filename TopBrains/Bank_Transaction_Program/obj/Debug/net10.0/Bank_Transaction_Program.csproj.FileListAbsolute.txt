@@ -1,0 +1,15 @@
+E:\LPU\TopBrains\Bank_Transaction_Program\obj\Debug\net10.0\Bank_Transaction_Program.GeneratedMSBuildEditorConfig.editorconfig
+E:\LPU\TopBrains\Bank_Transaction_Program\obj\Debug\net10.0\Bank_Transaction_Program.AssemblyInfoInputs.cache
+E:\LPU\TopBrains\Bank_Transaction_Program\obj\Debug\net10.0\Bank_Transaction_Program.AssemblyInfo.cs
+E:\LPU\TopBrains\Bank_Transaction_Program\obj\Debug\net10.0\Bank_Transaction_Program.csproj.CoreCompileInputs.cache
+E:\LPU\TopBrains\Bank_Transaction_Program\obj\Debug\net10.0\Bank_Transaction_Program.sourcelink.json
+E:\LPU\TopBrains\Bank_Transaction_Program\bin\Debug\net10.0\Bank_Transaction_Program.exe
+E:\LPU\TopBrains\Bank_Transaction_Program\bin\Debug\net10.0\Bank_Transaction_Program.deps.json
+E:\LPU\TopBrains\Bank_Transaction_Program\bin\Debug\net10.0\Bank_Transaction_Program.runtimeconfig.json
+E:\LPU\TopBrains\Bank_Transaction_Program\bin\Debug\net10.0\Bank_Transaction_Program.dll
+E:\LPU\TopBrains\Bank_Transaction_Program\bin\Debug\net10.0\Bank_Transaction_Program.pdb
+E:\LPU\TopBrains\Bank_Transaction_Program\obj\Debug\net10.0\Bank_Transaction_Program.dll
+E:\LPU\TopBrains\Bank_Transaction_Program\obj\Debug\net10.0\refint\Bank_Transaction_Program.dll
+E:\LPU\TopBrains\Bank_Transaction_Program\obj\Debug\net10.0\Bank_Transaction_Program.pdb
+E:\LPU\TopBrains\Bank_Transaction_Program\obj\Debug\net10.0\Bank_Transaction_Program.genruntimeconfig.cache
+E:\LPU\TopBrains\Bank_Transaction_Program\obj\Debug\net10.0\ref\Bank_Transaction_Program.dll

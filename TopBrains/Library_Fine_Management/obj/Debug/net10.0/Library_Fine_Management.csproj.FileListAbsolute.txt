@@ -1,0 +1,15 @@
+E:\LPU\TopBrains\Library_Fine_Management\bin\Debug\net10.0\Library_Fine_Management.exe
+E:\LPU\TopBrains\Library_Fine_Management\bin\Debug\net10.0\Library_Fine_Management.deps.json
+E:\LPU\TopBrains\Library_Fine_Management\bin\Debug\net10.0\Library_Fine_Management.runtimeconfig.json
+E:\LPU\TopBrains\Library_Fine_Management\bin\Debug\net10.0\Library_Fine_Management.dll
+E:\LPU\TopBrains\Library_Fine_Management\bin\Debug\net10.0\Library_Fine_Management.pdb
+E:\LPU\TopBrains\Library_Fine_Management\obj\Debug\net10.0\Library_Fine_Management.GeneratedMSBuildEditorConfig.editorconfig
+E:\LPU\TopBrains\Library_Fine_Management\obj\Debug\net10.0\Library_Fine_Management.AssemblyInfoInputs.cache
+E:\LPU\TopBrains\Library_Fine_Management\obj\Debug\net10.0\Library_Fine_Management.AssemblyInfo.cs
+E:\LPU\TopBrains\Library_Fine_Management\obj\Debug\net10.0\Library_Fine_Management.csproj.CoreCompileInputs.cache
+E:\LPU\TopBrains\Library_Fine_Management\obj\Debug\net10.0\Library_Fine_Management.sourcelink.json
+E:\LPU\TopBrains\Library_Fine_Management\obj\Debug\net10.0\Library_Fine_Management.dll
+E:\LPU\TopBrains\Library_Fine_Management\obj\Debug\net10.0\refint\Library_Fine_Management.dll
+E:\LPU\TopBrains\Library_Fine_Management\obj\Debug\net10.0\Library_Fine_Management.pdb
+E:\LPU\TopBrains\Library_Fine_Management\obj\Debug\net10.0\Library_Fine_Management.genruntimeconfig.cache
+E:\LPU\TopBrains\Library_Fine_Management\obj\Debug\net10.0\ref\Library_Fine_Management.dll

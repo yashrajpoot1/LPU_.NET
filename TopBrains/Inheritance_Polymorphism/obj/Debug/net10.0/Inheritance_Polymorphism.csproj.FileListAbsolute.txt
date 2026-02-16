@@ -1,0 +1,15 @@
+E:\LPU\TopBrains\Inheritance_Polymorphism\obj\Debug\net10.0\Inheritance_Polymorphism.GeneratedMSBuildEditorConfig.editorconfig
+E:\LPU\TopBrains\Inheritance_Polymorphism\obj\Debug\net10.0\Inheritance_Polymorphism.AssemblyInfoInputs.cache
+E:\LPU\TopBrains\Inheritance_Polymorphism\obj\Debug\net10.0\Inheritance_Polymorphism.AssemblyInfo.cs
+E:\LPU\TopBrains\Inheritance_Polymorphism\obj\Debug\net10.0\Inheritance_Polymorphism.csproj.CoreCompileInputs.cache
+E:\LPU\TopBrains\Inheritance_Polymorphism\obj\Debug\net10.0\Inheritance_Polymorphism.sourcelink.json
+E:\LPU\TopBrains\Inheritance_Polymorphism\bin\Debug\net10.0\Inheritance_Polymorphism.exe
+E:\LPU\TopBrains\Inheritance_Polymorphism\bin\Debug\net10.0\Inheritance_Polymorphism.deps.json
+E:\LPU\TopBrains\Inheritance_Polymorphism\bin\Debug\net10.0\Inheritance_Polymorphism.runtimeconfig.json
+E:\LPU\TopBrains\Inheritance_Polymorphism\bin\Debug\net10.0\Inheritance_Polymorphism.dll
+E:\LPU\TopBrains\Inheritance_Polymorphism\bin\Debug\net10.0\Inheritance_Polymorphism.pdb
+E:\LPU\TopBrains\Inheritance_Polymorphism\obj\Debug\net10.0\Inheritance_Polymorphism.dll
+E:\LPU\TopBrains\Inheritance_Polymorphism\obj\Debug\net10.0\refint\Inheritance_Polymorphism.dll
+E:\LPU\TopBrains\Inheritance_Polymorphism\obj\Debug\net10.0\Inheritance_Polymorphism.pdb
+E:\LPU\TopBrains\Inheritance_Polymorphism\obj\Debug\net10.0\Inheritance_Polymorphism.genruntimeconfig.cache
+E:\LPU\TopBrains\Inheritance_Polymorphism\obj\Debug\net10.0\ref\Inheritance_Polymorphism.dll

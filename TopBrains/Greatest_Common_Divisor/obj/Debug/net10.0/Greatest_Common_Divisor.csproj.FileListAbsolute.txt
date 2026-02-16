@@ -1,0 +1,15 @@
+E:\LPU\TopBrains\Greatest_Common_Divisor\bin\Debug\net10.0\Greatest_Common_Divisor.exe
+E:\LPU\TopBrains\Greatest_Common_Divisor\bin\Debug\net10.0\Greatest_Common_Divisor.deps.json
+E:\LPU\TopBrains\Greatest_Common_Divisor\bin\Debug\net10.0\Greatest_Common_Divisor.runtimeconfig.json
+E:\LPU\TopBrains\Greatest_Common_Divisor\bin\Debug\net10.0\Greatest_Common_Divisor.dll
+E:\LPU\TopBrains\Greatest_Common_Divisor\bin\Debug\net10.0\Greatest_Common_Divisor.pdb
+E:\LPU\TopBrains\Greatest_Common_Divisor\obj\Debug\net10.0\Greatest_Common_Divisor.GeneratedMSBuildEditorConfig.editorconfig
+E:\LPU\TopBrains\Greatest_Common_Divisor\obj\Debug\net10.0\Greatest_Common_Divisor.AssemblyInfoInputs.cache
+E:\LPU\TopBrains\Greatest_Common_Divisor\obj\Debug\net10.0\Greatest_Common_Divisor.AssemblyInfo.cs
+E:\LPU\TopBrains\Greatest_Common_Divisor\obj\Debug\net10.0\Greatest_Common_Divisor.csproj.CoreCompileInputs.cache
+E:\LPU\TopBrains\Greatest_Common_Divisor\obj\Debug\net10.0\Greatest_Common_Divisor.sourcelink.json
+E:\LPU\TopBrains\Greatest_Common_Divisor\obj\Debug\net10.0\Greatest_Common_Divisor.dll
+E:\LPU\TopBrains\Greatest_Common_Divisor\obj\Debug\net10.0\refint\Greatest_Common_Divisor.dll
+E:\LPU\TopBrains\Greatest_Common_Divisor\obj\Debug\net10.0\Greatest_Common_Divisor.pdb
+E:\LPU\TopBrains\Greatest_Common_Divisor\obj\Debug\net10.0\Greatest_Common_Divisor.genruntimeconfig.cache
+E:\LPU\TopBrains\Greatest_Common_Divisor\obj\Debug\net10.0\ref\Greatest_Common_Divisor.dll

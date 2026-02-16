@@ -1,0 +1,15 @@
+E:\LPU\TopBrains\Product_Discount_Eligibility\bin\Debug\net10.0\Product_Discount_Eligibility.exe
+E:\LPU\TopBrains\Product_Discount_Eligibility\bin\Debug\net10.0\Product_Discount_Eligibility.deps.json
+E:\LPU\TopBrains\Product_Discount_Eligibility\bin\Debug\net10.0\Product_Discount_Eligibility.runtimeconfig.json
+E:\LPU\TopBrains\Product_Discount_Eligibility\bin\Debug\net10.0\Product_Discount_Eligibility.dll
+E:\LPU\TopBrains\Product_Discount_Eligibility\bin\Debug\net10.0\Product_Discount_Eligibility.pdb
+E:\LPU\TopBrains\Product_Discount_Eligibility\obj\Debug\net10.0\Product_Discount_Eligibility.GeneratedMSBuildEditorConfig.editorconfig
+E:\LPU\TopBrains\Product_Discount_Eligibility\obj\Debug\net10.0\Product_Discount_Eligibility.AssemblyInfoInputs.cache
+E:\LPU\TopBrains\Product_Discount_Eligibility\obj\Debug\net10.0\Product_Discount_Eligibility.AssemblyInfo.cs
+E:\LPU\TopBrains\Product_Discount_Eligibility\obj\Debug\net10.0\Product_Discount_Eligibility.csproj.CoreCompileInputs.cache
+E:\LPU\TopBrains\Product_Discount_Eligibility\obj\Debug\net10.0\Product_Discount_Eligibility.sourcelink.json
+E:\LPU\TopBrains\Product_Discount_Eligibility\obj\Debug\net10.0\Product_Discount_Eligibility.dll
+E:\LPU\TopBrains\Product_Discount_Eligibility\obj\Debug\net10.0\refint\Product_Discount_Eligibility.dll
+E:\LPU\TopBrains\Product_Discount_Eligibility\obj\Debug\net10.0\Product_Discount_Eligibility.pdb
+E:\LPU\TopBrains\Product_Discount_Eligibility\obj\Debug\net10.0\Product_Discount_Eligibility.genruntimeconfig.cache
+E:\LPU\TopBrains\Product_Discount_Eligibility\obj\Debug\net10.0\ref\Product_Discount_Eligibility.dll

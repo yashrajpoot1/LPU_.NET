@@ -1,0 +1,15 @@
+E:\LPU\TopBrains\Sorted_Array\bin\Debug\net10.0\Sorted_Array.exe
+E:\LPU\TopBrains\Sorted_Array\bin\Debug\net10.0\Sorted_Array.deps.json
+E:\LPU\TopBrains\Sorted_Array\bin\Debug\net10.0\Sorted_Array.runtimeconfig.json
+E:\LPU\TopBrains\Sorted_Array\bin\Debug\net10.0\Sorted_Array.dll
+E:\LPU\TopBrains\Sorted_Array\bin\Debug\net10.0\Sorted_Array.pdb
+E:\LPU\TopBrains\Sorted_Array\obj\Debug\net10.0\Sorted_Array.GeneratedMSBuildEditorConfig.editorconfig
+E:\LPU\TopBrains\Sorted_Array\obj\Debug\net10.0\Sorted_Array.AssemblyInfoInputs.cache
+E:\LPU\TopBrains\Sorted_Array\obj\Debug\net10.0\Sorted_Array.AssemblyInfo.cs
+E:\LPU\TopBrains\Sorted_Array\obj\Debug\net10.0\Sorted_Array.csproj.CoreCompileInputs.cache
+E:\LPU\TopBrains\Sorted_Array\obj\Debug\net10.0\Sorted_Array.sourcelink.json
+E:\LPU\TopBrains\Sorted_Array\obj\Debug\net10.0\Sorted_Array.dll
+E:\LPU\TopBrains\Sorted_Array\obj\Debug\net10.0\refint\Sorted_Array.dll
+E:\LPU\TopBrains\Sorted_Array\obj\Debug\net10.0\Sorted_Array.pdb
+E:\LPU\TopBrains\Sorted_Array\obj\Debug\net10.0\Sorted_Array.genruntimeconfig.cache
+E:\LPU\TopBrains\Sorted_Array\obj\Debug\net10.0\ref\Sorted_Array.dll

@@ -1,0 +1,15 @@
+E:\LPU\TopBrains\Extension_Method\bin\Debug\net10.0\Extension_Method.exe
+E:\LPU\TopBrains\Extension_Method\bin\Debug\net10.0\Extension_Method.deps.json
+E:\LPU\TopBrains\Extension_Method\bin\Debug\net10.0\Extension_Method.runtimeconfig.json
+E:\LPU\TopBrains\Extension_Method\bin\Debug\net10.0\Extension_Method.dll
+E:\LPU\TopBrains\Extension_Method\bin\Debug\net10.0\Extension_Method.pdb
+E:\LPU\TopBrains\Extension_Method\obj\Debug\net10.0\Extension_Method.GeneratedMSBuildEditorConfig.editorconfig
+E:\LPU\TopBrains\Extension_Method\obj\Debug\net10.0\Extension_Method.AssemblyInfoInputs.cache
+E:\LPU\TopBrains\Extension_Method\obj\Debug\net10.0\Extension_Method.AssemblyInfo.cs
+E:\LPU\TopBrains\Extension_Method\obj\Debug\net10.0\Extension_Method.csproj.CoreCompileInputs.cache
+E:\LPU\TopBrains\Extension_Method\obj\Debug\net10.0\Extension_Method.sourcelink.json
+E:\LPU\TopBrains\Extension_Method\obj\Debug\net10.0\Extension_Method.dll
+E:\LPU\TopBrains\Extension_Method\obj\Debug\net10.0\refint\Extension_Method.dll
+E:\LPU\TopBrains\Extension_Method\obj\Debug\net10.0\Extension_Method.pdb
+E:\LPU\TopBrains\Extension_Method\obj\Debug\net10.0\Extension_Method.genruntimeconfig.cache
+E:\LPU\TopBrains\Extension_Method\obj\Debug\net10.0\ref\Extension_Method.dll

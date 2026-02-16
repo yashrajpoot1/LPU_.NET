@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "Library_Fine_Management/1.0.0": {
+        "runtime": {
+          "Library_Fine_Management.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Library_Fine_Management/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

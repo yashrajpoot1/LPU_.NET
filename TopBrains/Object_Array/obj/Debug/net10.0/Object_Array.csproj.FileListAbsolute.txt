@@ -1,0 +1,15 @@
+E:\LPU\TopBrains\Object_Array\obj\Debug\net10.0\Object_Array.GeneratedMSBuildEditorConfig.editorconfig
+E:\LPU\TopBrains\Object_Array\obj\Debug\net10.0\Object_Array.AssemblyInfoInputs.cache
+E:\LPU\TopBrains\Object_Array\obj\Debug\net10.0\Object_Array.AssemblyInfo.cs
+E:\LPU\TopBrains\Object_Array\obj\Debug\net10.0\Object_Array.csproj.CoreCompileInputs.cache
+E:\LPU\TopBrains\Object_Array\obj\Debug\net10.0\Object_Array.sourcelink.json
+E:\LPU\TopBrains\Object_Array\bin\Debug\net10.0\Object_Array.exe
+E:\LPU\TopBrains\Object_Array\bin\Debug\net10.0\Object_Array.deps.json
+E:\LPU\TopBrains\Object_Array\bin\Debug\net10.0\Object_Array.runtimeconfig.json
+E:\LPU\TopBrains\Object_Array\bin\Debug\net10.0\Object_Array.dll
+E:\LPU\TopBrains\Object_Array\bin\Debug\net10.0\Object_Array.pdb
+E:\LPU\TopBrains\Object_Array\obj\Debug\net10.0\Object_Array.dll
+E:\LPU\TopBrains\Object_Array\obj\Debug\net10.0\refint\Object_Array.dll
+E:\LPU\TopBrains\Object_Array\obj\Debug\net10.0\Object_Array.pdb
+E:\LPU\TopBrains\Object_Array\obj\Debug\net10.0\Object_Array.genruntimeconfig.cache
+E:\LPU\TopBrains\Object_Array\obj\Debug\net10.0\ref\Object_Array.dll

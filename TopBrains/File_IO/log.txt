@@ -1,0 +1,6 @@
+INFO Application started
+INFO User logged in
+ERROR Database connection failed
+WARN Disk space is low
+ERROR File not found
+INFO Application stopped

@@ -1,0 +1,15 @@
+E:\LPU\TopBrains\Strings\bin\Debug\net10.0\Strings.exe
+E:\LPU\TopBrains\Strings\bin\Debug\net10.0\Strings.deps.json
+E:\LPU\TopBrains\Strings\bin\Debug\net10.0\Strings.runtimeconfig.json
+E:\LPU\TopBrains\Strings\bin\Debug\net10.0\Strings.dll
+E:\LPU\TopBrains\Strings\bin\Debug\net10.0\Strings.pdb
+E:\LPU\TopBrains\Strings\obj\Debug\net10.0\Strings.GeneratedMSBuildEditorConfig.editorconfig
+E:\LPU\TopBrains\Strings\obj\Debug\net10.0\Strings.AssemblyInfoInputs.cache
+E:\LPU\TopBrains\Strings\obj\Debug\net10.0\Strings.AssemblyInfo.cs
+E:\LPU\TopBrains\Strings\obj\Debug\net10.0\Strings.csproj.CoreCompileInputs.cache
+E:\LPU\TopBrains\Strings\obj\Debug\net10.0\Strings.sourcelink.json
+E:\LPU\TopBrains\Strings\obj\Debug\net10.0\Strings.dll
+E:\LPU\TopBrains\Strings\obj\Debug\net10.0\refint\Strings.dll
+E:\LPU\TopBrains\Strings\obj\Debug\net10.0\Strings.pdb
+E:\LPU\TopBrains\Strings\obj\Debug\net10.0\Strings.genruntimeconfig.cache
+E:\LPU\TopBrains\Strings\obj\Debug\net10.0\ref\Strings.dll

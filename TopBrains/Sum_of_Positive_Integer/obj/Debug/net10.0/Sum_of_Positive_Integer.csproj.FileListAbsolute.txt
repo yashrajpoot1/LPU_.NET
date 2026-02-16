@@ -1,0 +1,15 @@
+E:\LPU\TopBrains\Sum_of_Positive_Integer\bin\Debug\net10.0\Sum_of_Positive_Integer.exe
+E:\LPU\TopBrains\Sum_of_Positive_Integer\bin\Debug\net10.0\Sum_of_Positive_Integer.deps.json
+E:\LPU\TopBrains\Sum_of_Positive_Integer\bin\Debug\net10.0\Sum_of_Positive_Integer.runtimeconfig.json
+E:\LPU\TopBrains\Sum_of_Positive_Integer\bin\Debug\net10.0\Sum_of_Positive_Integer.dll
+E:\LPU\TopBrains\Sum_of_Positive_Integer\bin\Debug\net10.0\Sum_of_Positive_Integer.pdb
+E:\LPU\TopBrains\Sum_of_Positive_Integer\obj\Debug\net10.0\Sum_of_Positive_Integer.GeneratedMSBuildEditorConfig.editorconfig
+E:\LPU\TopBrains\Sum_of_Positive_Integer\obj\Debug\net10.0\Sum_of_Positive_Integer.AssemblyInfoInputs.cache
+E:\LPU\TopBrains\Sum_of_Positive_Integer\obj\Debug\net10.0\Sum_of_Positive_Integer.AssemblyInfo.cs
+E:\LPU\TopBrains\Sum_of_Positive_Integer\obj\Debug\net10.0\Sum_of_Positive_Integer.csproj.CoreCompileInputs.cache
+E:\LPU\TopBrains\Sum_of_Positive_Integer\obj\Debug\net10.0\Sum_of_Positive_Integer.sourcelink.json
+E:\LPU\TopBrains\Sum_of_Positive_Integer\obj\Debug\net10.0\Sum_of_Positive_Integer.dll
+E:\LPU\TopBrains\Sum_of_Positive_Integer\obj\Debug\net10.0\refint\Sum_of_Positive_Integer.dll
+E:\LPU\TopBrains\Sum_of_Positive_Integer\obj\Debug\net10.0\Sum_of_Positive_Integer.pdb
+E:\LPU\TopBrains\Sum_of_Positive_Integer\obj\Debug\net10.0\Sum_of_Positive_Integer.genruntimeconfig.cache
+E:\LPU\TopBrains\Sum_of_Positive_Integer\obj\Debug\net10.0\ref\Sum_of_Positive_Integer.dll
