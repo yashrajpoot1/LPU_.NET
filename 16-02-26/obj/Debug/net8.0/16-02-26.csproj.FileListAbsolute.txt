@@ -1,0 +1,15 @@
+C:\LPU_Capgemini\16-02-26\bin\Debug\net8.0\16-02-26.exe
+C:\LPU_Capgemini\16-02-26\bin\Debug\net8.0\16-02-26.deps.json
+C:\LPU_Capgemini\16-02-26\bin\Debug\net8.0\16-02-26.runtimeconfig.json
+C:\LPU_Capgemini\16-02-26\bin\Debug\net8.0\16-02-26.dll
+C:\LPU_Capgemini\16-02-26\bin\Debug\net8.0\16-02-26.pdb
+C:\LPU_Capgemini\16-02-26\obj\Debug\net8.0\16-02-26.GeneratedMSBuildEditorConfig.editorconfig
+C:\LPU_Capgemini\16-02-26\obj\Debug\net8.0\16-02-26.AssemblyInfoInputs.cache
+C:\LPU_Capgemini\16-02-26\obj\Debug\net8.0\16-02-26.AssemblyInfo.cs
+C:\LPU_Capgemini\16-02-26\obj\Debug\net8.0\16-02-26.csproj.CoreCompileInputs.cache
+C:\LPU_Capgemini\16-02-26\obj\Debug\net8.0\16-02-26.sourcelink.json
+C:\LPU_Capgemini\16-02-26\obj\Debug\net8.0\16-02-26.dll
+C:\LPU_Capgemini\16-02-26\obj\Debug\net8.0\refint\16-02-26.dll
+C:\LPU_Capgemini\16-02-26\obj\Debug\net8.0\16-02-26.pdb
+C:\LPU_Capgemini\16-02-26\obj\Debug\net8.0\16-02-26.genruntimeconfig.cache
+C:\LPU_Capgemini\16-02-26\obj\Debug\net8.0\ref\16-02-26.dll
