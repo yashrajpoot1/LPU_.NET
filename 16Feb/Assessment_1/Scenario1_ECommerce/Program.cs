@@ -16,7 +16,7 @@ namespace Scenario1_ECommerce
     public enum Category { Electronics, Clothing, Books, Groceries }
 
     // 1. Generic repository for products
-    public class ProductRepository<T> where T : class, IProduct
+    publ ic class ProductRepository<T> where T : class, IProduct
     {
         private List<T> _products = new List<T>();
 
