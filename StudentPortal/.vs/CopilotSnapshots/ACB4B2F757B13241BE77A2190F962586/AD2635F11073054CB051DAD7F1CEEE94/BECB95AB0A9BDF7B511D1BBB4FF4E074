@@ -1,0 +1,9 @@
+﻿using StudentPortal.Models;
+
+namespace StudentPortal.Services
+{
+    public interface IStudentService
+    {
+        Task<List<Student>> SearchAsync(string q = null);
+    }
+}

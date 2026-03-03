@@ -1,0 +1,11 @@
+﻿using StudentPortal.Models;
+
+namespace StudentPortal.Repositries
+{
+    public interface IStudentRepository
+    {
+        Task<List<Student>> GetAllAsync(string q = null);
+
+
+    }
+}
