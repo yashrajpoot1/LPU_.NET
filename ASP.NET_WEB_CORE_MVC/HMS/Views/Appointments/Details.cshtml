@@ -1,0 +1,57 @@
+@model HMS.Domain.Entities.Appointment
+
+@{
+    ViewData["Title"] = "Appointment Details";
+}
+
+<h1>Appointment Details</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">Patient</dt>
+        <dd class="col-sm-9">@Model.Patient?.Name</dd>
+
+        <dt class="col-sm-3">Doctor</dt>
+        <dd class="col-sm-9">@Model.Doctor?.Name (@Model.Doctor?.Specialization)</dd>
+
+        <dt class="col-sm-3">Appointment Date</dt>
+        <dd class="col-sm-9">@Model.AppointmentDate.ToString("MMMM dd, yyyy hh:mm tt")</dd>
+
+        <dt class="col-sm-3">Reason</dt>
+        <dd class="col-sm-9">@Model.Reason</dd>
+
+        <dt class="col-sm-3">Status</dt>
+        <dd class="col-sm-9">
+            @if (Model.Status == "Scheduled")
+            {
+                <span class="badge bg-primary">@Model.Status</span>
+            }
+            else if (Model.Status == "Completed")
+            {
+                <span class="badge bg-success">@Model.Status</span>
+            }
+            else
+            {
+                <span class="badge bg-danger">@Model.Status</span>
+            }
+        </dd>
+
+        @if (!string.IsNullOrEmpty(Model.Notes))
+        {
+            <dt class="col-sm-3">Notes</dt>
+            <dd class="col-sm-9">@Model.Notes</dd>
+        }
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.AppointmentId" class="btn btn-warning">Edit</a>
+    @if (Model.Status == "Scheduled")
+    {
+        <form asp-action="Cancel" asp-route-id="@Model.AppointmentId" method="post" style="display:inline;">
+            @Html.AntiForgeryToken()
+            <button type="submit" class="btn btn-danger" onclick="return confirm('Cancel this appointment?')">Cancel Appointment</button>
+        </form>
+    }
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>

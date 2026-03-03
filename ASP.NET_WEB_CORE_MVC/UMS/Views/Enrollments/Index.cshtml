@@ -1,0 +1,42 @@
+@model IEnumerable<UMS.Domain.Entities.Enrollment>
+
+@{
+    ViewData["Title"] = "Enrollments";
+}
+
+<div class="container mt-4">
+    <h2>Enrollments List</h2>
+    <p>All student course enrollments</p>
+
+    <table class="table table-striped table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Student Name</th>
+                <th>Course Code</th>
+                <th>Course Name</th>
+                <th>Enrollment Date</th>
+                <th>Grade</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var enrollment in Model)
+            {
+                <tr>
+                    <td>@enrollment.Id</td>
+                    <td>@enrollment.Student.FirstName @enrollment.Student.LastName</td>
+                    <td>@enrollment.Course.CourseCode</td>
+                    <td>@enrollment.Course.CourseName</td>
+                    <td>@enrollment.EnrollmentDate.ToString("MM/dd/yyyy")</td>
+                    <td>@(string.IsNullOrEmpty(enrollment.Grade) ? "N/A" : enrollment.Grade)</td>
+                    <td>
+                        <span class="badge bg-@(enrollment.Status == "Active" ? "success" : enrollment.Status == "Completed" ? "primary" : "secondary")">
+                            @enrollment.Status
+                        </span>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <div class="jumbotron bg-light p-5 rounded mb-4">
+        <h1 class="display-4">Welcome to Our Store</h1>
+        <p class="lead">Discover the latest fashion trends for Men, Women, and Kids</p>
+        <hr class="my-4">
+        <p>Shop our exclusive collection of clothing and accessories</p>
+        <a class="btn btn-primary btn-lg" asp-controller="Products" asp-action="Index" role="button">Shop Now</a>
+    </div>
+    
+    <div class="row mt-5">
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h3>Men's Collection</h3>
+                    <p>Stylish and comfortable clothing for men</p>
+                    <a asp-controller="Products" asp-action="Index" asp-route-gender="Men" class="btn btn-outline-primary">Shop Men</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h3>Women's Collection</h3>
+                    <p>Elegant and trendy fashion for women</p>
+                    <a asp-controller="Products" asp-action="Index" asp-route-gender="Women" class="btn btn-outline-primary">Shop Women</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h3>Kids' Collection</h3>
+                    <p>Fun and colorful clothing for kids</p>
+                    <a asp-controller="Products" asp-action="Index" asp-route-gender="Kids" class="btn btn-outline-primary">Shop Kids</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

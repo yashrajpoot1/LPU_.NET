@@ -1,0 +1,58 @@
+@model IEnumerable<HMS.Domain.Entities.Appointment>
+
+@{
+    ViewData["Title"] = "Appointments";
+}
+
+<h1>Appointments</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Book New Appointment</a>
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Date & Time</th>
+            <th>Patient</th>
+            <th>Doctor</th>
+            <th>Reason</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>@item.AppointmentDate.ToString("MM/dd/yyyy hh:mm tt")</td>
+            <td>@item.Patient?.Name</td>
+            <td>@item.Doctor?.Name</td>
+            <td>@item.Reason</td>
+            <td>
+                @if (item.Status == "Scheduled")
+                {
+                    <span class="badge bg-primary">@item.Status</span>
+                }
+                else if (item.Status == "Completed")
+                {
+                    <span class="badge bg-success">@item.Status</span>
+                }
+                else
+                {
+                    <span class="badge bg-danger">@item.Status</span>
+                }
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.AppointmentId" class="btn btn-sm btn-warning">Edit</a>
+                <a asp-action="Details" asp-route-id="@item.AppointmentId" class="btn btn-sm btn-info">Details</a>
+                @if (item.Status == "Scheduled")
+                {
+                    <form asp-action="Cancel" asp-route-id="@item.AppointmentId" method="post" style="display:inline;">
+                        @Html.AntiForgeryToken()
+                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Cancel this appointment?')">Cancel</button>
+                    </form>
+                }
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

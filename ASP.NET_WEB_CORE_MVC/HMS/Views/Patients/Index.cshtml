@@ -1,0 +1,41 @@
+@model IEnumerable<HMS.Domain.Entities.Patient>
+
+@{
+    ViewData["Title"] = "Patients";
+}
+
+<h1>Patients</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Register New Patient</a>
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Date of Birth</th>
+            <th>Gender</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Registration Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.DateOfBirth.ToString("MM/dd/yyyy")</td>
+            <td>@item.Gender</td>
+            <td>@item.Phone</td>
+            <td>@item.Email</td>
+            <td>@item.RegistrationDate.ToString("MM/dd/yyyy")</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.PatientId" class="btn btn-sm btn-warning">Edit</a>
+                <a asp-action="Details" asp-route-id="@item.PatientId" class="btn btn-sm btn-info">Details</a>
+                <a asp-action="Delete" asp-route-id="@item.PatientId" class="btn btn-sm btn-danger">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,76 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="hero-section">
+    <div class="container">
+        <div class="row align-items-center min-vh-75">
+            <div class="col-lg-6">
+                <h1 class="hero-title">Find Your Perfect Flight</h1>
+                <p class="hero-subtitle">Search and compare flights from multiple airlines. Book your journey with confidence.</p>
+                <div class="hero-features">
+                    <div class="feature-item">
+                        <i class="fas fa-plane-departure"></i>
+                        <span>Domestic & International Flights</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-hotel"></i>
+                        <span>Flight + Hotel Packages</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-tag"></i>
+                        <span>Best Price Guarantee</span>
+                    </div>
+                </div>
+                <a asp-controller="Flight" asp-action="Index" class="btn btn-primary btn-lg mt-4">
+                    <i class="fas fa-search"></i> Start Searching
+                </a>
+            </div>
+            <div class="col-lg-6">
+                <div class="hero-image">
+                    <i class="fas fa-plane-departure fa-10x text-primary"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="info-section">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-12">
+                <h2 class="section-title">Why Choose Us</h2>
+                <p class="section-subtitle">Simple, fast, and reliable flight booking</p>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-search fa-3x"></i>
+                    </div>
+                    <h3>Easy Search</h3>
+                    <p>Find flights quickly with our intuitive search interface. Compare prices and choose the best option.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-shield-alt fa-3x"></i>
+                    </div>
+                    <h3>Secure Booking</h3>
+                    <p>Your data is safe with us. We use industry-standard security measures to protect your information.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-headset fa-3x"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Our customer support team is always ready to help you with any questions or concerns.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

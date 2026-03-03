@@ -1,0 +1,59 @@
+@model HMS.Domain.Entities.Appointment
+
+@{
+    ViewData["Title"] = "Edit Appointment";
+}
+
+<h1>Edit Appointment</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="AppointmentId" />
+            <div class="form-group mb-3">
+                <label asp-for="PatientId" class="control-label">Patient</label>
+                <select asp-for="PatientId" class="form-control" asp-items="ViewBag.Patients"></select>
+                <span asp-validation-for="PatientId" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="DoctorId" class="control-label">Doctor</label>
+                <select asp-for="DoctorId" class="form-control" asp-items="ViewBag.Doctors"></select>
+                <span asp-validation-for="DoctorId" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="AppointmentDate" class="control-label">Appointment Date & Time</label>
+                <input asp-for="AppointmentDate" class="form-control" type="datetime-local" />
+                <span asp-validation-for="AppointmentDate" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Reason" class="control-label"></label>
+                <textarea asp-for="Reason" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="Reason" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Status" class="control-label"></label>
+                <select asp-for="Status" class="form-control">
+                    <option value="Scheduled">Scheduled</option>
+                    <option value="Completed">Completed</option>
+                    <option value="Cancelled">Cancelled</option>
+                </select>
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Notes" class="control-label"></label>
+                <textarea asp-for="Notes" class="form-control" rows="2"></textarea>
+                <span asp-validation-for="Notes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

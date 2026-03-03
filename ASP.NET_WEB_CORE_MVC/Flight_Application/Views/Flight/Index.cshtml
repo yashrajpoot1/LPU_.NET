@@ -1,0 +1,143 @@
+@model Flight_Application.Models.SearchViewModel
+
+@{
+    ViewData["Title"] = "Flight Search Engine";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="mb-0">
+                        <i class="fas fa-plane"></i> Flight Search Engine
+                    </h2>
+                </div>
+                <div class="card-body">
+                    @if (ViewBag.Error != null)
+                    {
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            @ViewBag.Error
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        </div>
+                    }
+
+                    <form id="searchForm" method="post">
+                        @Html.AntiForgeryToken()
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+                        <div class="mb-3">
+                            <label asp-for="Source" class="form-label fw-bold"></label>
+                            <select asp-for="Source" asp-items="Model.SourceList" class="form-select" id="sourceSelect">
+                                <option value="">-- Select Source --</option>
+                            </select>
+                            <span asp-validation-for="Source" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Destination" class="form-label fw-bold"></label>
+                            <select asp-for="Destination" asp-items="Model.DestinationList" class="form-select" id="destinationSelect">
+                                <option value="">-- Select Destination --</option>
+                            </select>
+                            <span asp-validation-for="Destination" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-4">
+                            <label asp-for="NumberOfPersons" class="form-label fw-bold"></label>
+                            <input asp-for="NumberOfPersons" type="number" class="form-control" min="1" max="10" placeholder="Enter number of persons" />
+                            <span asp-validation-for="NumberOfPersons" class="text-danger"></span>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" formaction="@Url.Action("SearchFlights", "Flight")" class="btn btn-success btn-lg" id="btnFlights">
+                                <i class="fas fa-search"></i> Search Flights Only
+                                <span class="spinner-border spinner-border-sm d-none" role="status" id="spinner1"></span>
+                            </button>
+                            <button type="submit" formaction="@Url.Action("SearchFlightsWithHotels", "Flight")" class="btn btn-warning btn-lg" id="btnPackages">
+                                <i class="fas fa-hotel"></i> Search Flight + Hotel
+                                <span class="spinner-border spinner-border-sm d-none" role="status" id="spinner2"></span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="mt-4 text-center text-muted">
+                <small>
+                    <i class="fas fa-info-circle"></i> Select your source and destination to find the best flight deals
+                </small>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    
+    <script>
+        $(document).ready(function() {
+            // Prevent selecting same source and destination
+            $('#sourceSelect, #destinationSelect').on('change', function() {
+                var source = $('#sourceSelect').val();
+                var destination = $('#destinationSelect').val();
+                
+                if (source && destination && source === destination) {
+                    alert('Source and Destination cannot be the same. Please select different locations.');
+                    $(this).val('');
+                }
+            });
+
+            // Show loading spinner on form submit
+            $('#searchForm').on('submit', function(e) {
+                var source = $('#sourceSelect').val();
+                var destination = $('#destinationSelect').val();
+                var persons = $('input[name="NumberOfPersons"]').val();
+
+                if (!source || !destination || !persons) {
+                    return true; // Let validation handle it
+                }
+
+                if (source === destination) {
+                    e.preventDefault();
+                    alert('Source and Destination cannot be the same.');
+                    return false;
+                }
+
+                // Show spinner on clicked button
+                var clickedButton = $(document.activeElement);
+                if (clickedButton.is('button[type="submit"]')) {
+                    clickedButton.prop('disabled', true);
+                    clickedButton.find('.spinner-border').removeClass('d-none');
+                }
+            });
+
+            // Client-side validation
+            $('#searchForm').validate({
+                rules: {
+                    Source: {
+                        required: true
+                    },
+                    Destination: {
+                        required: true
+                    },
+                    NumberOfPersons: {
+                        required: true,
+                        min: 1,
+                        max: 10,
+                        digits: true
+                    }
+                },
+                messages: {
+                    Source: "Please select a source location",
+                    Destination: "Please select a destination location",
+                    NumberOfPersons: {
+                        required: "Please enter number of persons",
+                        min: "Number must be at least 1",
+                        max: "Number cannot exceed 10",
+                        digits: "Please enter a valid number"
+                    }
+                }
+            });
+        });
+    </script>
+}

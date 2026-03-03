@@ -1,0 +1,67 @@
+@model UMS.Domain.Entities.Student
+
+@{
+    ViewData["Title"] = "Student Details";
+}
+
+<div class="container mt-4">
+    <h2>Student Details</h2>
+    
+    <div class="card">
+        <div class="card-header">
+            <h4>@Model.FirstName @Model.LastName</h4>
+        </div>
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-3">Student ID</dt>
+                <dd class="col-sm-9">@Model.Id</dd>
+
+                <dt class="col-sm-3">Email</dt>
+                <dd class="col-sm-9">@Model.Email</dd>
+
+                <dt class="col-sm-3">Phone Number</dt>
+                <dd class="col-sm-9">@Model.PhoneNumber</dd>
+
+                <dt class="col-sm-3">Date of Birth</dt>
+                <dd class="col-sm-9">@Model.DateOfBirth.ToString("MM/dd/yyyy")</dd>
+
+                <dt class="col-sm-3">Enrollment Date</dt>
+                <dd class="col-sm-9">@Model.EnrollmentDate.ToString("MM/dd/yyyy")</dd>
+            </dl>
+
+            <h5 class="mt-4">Enrolled Courses</h5>
+            @if (Model.Enrollments.Any())
+            {
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th>Course Code</th>
+                            <th>Course Name</th>
+                            <th>Grade</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var enrollment in Model.Enrollments)
+                        {
+                            <tr>
+                                <td>@enrollment.Course.CourseCode</td>
+                                <td>@enrollment.Course.CourseName</td>
+                                <td>@(string.IsNullOrEmpty(enrollment.Grade) ? "N/A" : enrollment.Grade)</td>
+                                <td>@enrollment.Status</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <p>No enrollments found.</p>
+            }
+        </div>
+    </div>
+
+    <div class="mt-3">
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</div>

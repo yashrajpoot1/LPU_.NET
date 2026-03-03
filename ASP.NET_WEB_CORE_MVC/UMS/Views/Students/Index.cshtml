@@ -1,0 +1,42 @@
+@model IEnumerable<UMS.Domain.Entities.Student>
+
+@{
+    ViewData["Title"] = "Students";
+}
+
+<div class="container mt-4">
+    <h2>Students List</h2>
+    <p>All registered students in the university management system</p>
+
+    <table class="table table-striped table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Date of Birth</th>
+                <th>Enrollment Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var student in Model)
+            {
+                <tr>
+                    <td>@student.Id</td>
+                    <td>@student.FirstName</td>
+                    <td>@student.LastName</td>
+                    <td>@student.Email</td>
+                    <td>@student.PhoneNumber</td>
+                    <td>@student.DateOfBirth.ToString("MM/dd/yyyy")</td>
+                    <td>@student.EnrollmentDate.ToString("MM/dd/yyyy")</td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@student.Id" class="btn btn-sm btn-info">Details</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
